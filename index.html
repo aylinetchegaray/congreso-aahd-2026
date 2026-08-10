@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Programa Interactivo - AAHD 2026</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Congreso AAHD 2026 - Viedma</h1>
+        <input type="text" id="buscador" placeholder="Buscar por titulo o autor">
+    </header>
+
+    <main>
+        <!-- <section id="seccion-mapa"> 
+            <h2>Mapa de Alojamientos</h2>
+            <div id="mapa-viedma" style="height: 300px; background-color: #e0e0e0; display: flex; align-items: center; justify-content: center;">
+                <p>mapa interactivo</p>
+            </div>
+        </section>
+        -->
+        
+        <section id="seccion-programa">
+            <div id="contenedor-pestañas"></div>
+                <button class="boton-pestaña activo" data-dia="11 de noviembre">Día 1(11 Nov)</button>
+                <button class="boton-pestaña" data-dia="12 de noviembre">Día 2(12 Nov)</button>
+                <button class="boton-pestaña" data-dia="13 de noviembre">Día 3(13 Nov)</button>
+                <button class="boton-pestaña" data-dia="todos">Ver Todo</button>
+                
+            </div>            
+            <div id="contenedor-programa"></div>
+        </section>
+    </main>
+
+    <script src="app.js"></script>
+</body>
+</html>
