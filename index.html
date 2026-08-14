@@ -7,32 +7,187 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
+    <header class="no-imprimir">
         <h1>Congreso AAHD 2026 - Viedma</h1>
-        <input type="text" id="buscador" placeholder="Buscar por titulo o autor">
+        
+        <!-- Controles de Búsqueda y Filtros -->
+        <div class="controles-busqueda">
+            <input type="text" id="buscador" placeholder="Buscar por título o autor">
+            
+            <select id="filtro-tipo">
+                <option value="todos">Todos los eventos</option>
+                <option value="taller">Talleres</option>
+                <option value="ponencia">Ponencias</option>
+                <option value="panel">Paneles</option>
+                <option value="pausa">Pausas / Acreditación</option>
+            </select>
+
+            <select id="filtro-horario">
+                <option value="todos">Cualquier horario</option>
+                <option value="mañana">Mañana (8:00 - 13:00)</option>
+                <option value="tarde">Tarde (13:00 - 20:00)</option>
+            </select>
+        </div>
+
+        <button id="btn-descargar" class="boton-descarga" onclick="descargarPrograma()">
+            📄 Descargar Programa de este día (PDF)
+        </button>
     </header>
 
+    <!-- Menú principal para alternar entre Programa y Ubicación -->
+    <nav id="menu-principal" class="no-imprimir">
+        <button class="boton-menu activo" onclick="cambiarSeccion('seccion-programa', this)">Programa</button>
+        <button class="boton-menu" onclick="cambiarSeccion('seccion-mapa', this)">Ubicación</button>
+    </nav>
+
     <main>
-        <!-- <section id="seccion-mapa"> 
-            <h2>Mapa de Alojamientos</h2>
-            <div id="mapa-viedma" style="height: 300px; background-color: #e0e0e0; display: flex; align-items: center; justify-content: center;">
-                <p>mapa interactivo</p>
-            </div>
-        </section>
-        -->
-        
+        <!-- SECCIÓN 1: EL PROGRAMA -->
         <section id="seccion-programa">
-            <div id="contenedor-pestañas"></div>
-                <button class="boton-pestaña activo" data-dia="11 de noviembre">Día 1(11 Nov)</button>
-                <button class="boton-pestaña" data-dia="12 de noviembre">Día 2(12 Nov)</button>
-                <button class="boton-pestaña" data-dia="13 de noviembre">Día 3(13 Nov)</button>
+            <div class="contenedor-pestañas no-imprimir"> 
+                <button class="boton-pestaña activo" data-dia="11 de noviembre">Día 1 (11 Nov)</button>
+                <button class="boton-pestaña" data-dia="12 de noviembre">Día 2 (12 Nov)</button>
+                <button class="boton-pestaña" data-dia="13 de noviembre">Día 3 (13 Nov)</button>
                 <button class="boton-pestaña" data-dia="todos">Ver Todo</button>
-                
             </div>            
             <div id="contenedor-programa"></div>
         </section>
+
+        <!-- SECCIÓN 2: MAPA DE UBICACIÓN Y TURISMO -->
+        <section id="seccion-mapa" class="seccion-oculta no-imprimir"> 
+            <h2>Ubicación del Congreso</h2>
+            
+            <div class="mapa-container">
+                <iframe 
+                    src="https://www.google.com/maps/d/embed?mid=1GsOfieqeP63qdgV_z59U_zYaPqYIYzg" 
+                    width="100%" height="400" style="border:0; border-radius: 10px;" allowfullscreen="" loading="lazy">
+                </iframe>
+            </div>
+
+            <!-- NUEVO: Sección de Turismo y Alojamiento -->
+            <div class="info-turismo">
+                
+                <!-- Columna 1: Turismo -->
+                <div class="turismo-bloque">
+                    <h3>🌊 ¿Qué visitar?</h3>
+                    <p>La ciudad de Viedma es la capital de la provincia de Río Negro. Está ubicada al margen del Río Negro, a 30km del mar y frente a Carmen de Patagones, la ciudad más austral de la provincia de Buenos Aires.</p>
+                    
+                    <div class="botones-enlaces">
+                        <a href="https://destinoviedma.gob.ar/" target="_blank" class="btn-turismo">Descubrí DESTINO VIEDMA</a>
+                        <a href="https://turismopatagones.gob.ar/" target="_blank" class="btn-turismo">PATAGONES – Portal de la Patagonia</a>
+                    </div>
+                </div>
+
+                <!-- Columna 2: Hoteles -->
+                <div class="turismo-bloque">
+                    <h3>🏨 ¿Dónde alojarse?</h3>
+                    <p>Consultá el mapa superior o revisá estas opciones recomendadas:</p>
+                    
+                    <ul class="lista-hoteles">
+                        <li>
+                            <div class="hotel-info"><strong>Hotel Casino del Río</strong></div>
+                            <a href="https://www.google.com/maps/search/?api=1&query=Hotel+Casino+del+Rio+Viedma" target="_blank" class="btn-llegar">📍 Cómo llegar</a>
+                        </li>
+                        <li>
+                            <div class="hotel-info"><strong>Hotel Nijar</strong></div>
+                            <a href="https://www.google.com/maps/search/?api=1&query=Hotel+Nijar+Viedma" target="_blank" class="btn-llegar">📍 Cómo llegar</a>
+                        </li>
+                        <li>
+                            <div class="hotel-info"><strong>Hotel Austral</strong></div>
+                            <a href="https://www.google.com/maps/search/?api=1&query=Hotel+Austral+Viedma" target="_blank" class="btn-llegar">📍 Cómo llegar</a>
+                        </li>
+                        <li>
+                            <div class="hotel-info"><strong>Hotel Peumayén</strong></div>
+                            <a href="https://www.google.com/maps/search/?api=1&query=Hotel+Peumayen+Viedma" target="_blank" class="btn-llegar">📍 Cómo llegar</a>
+                        </li>
+                        <li>
+                            <div class="hotel-info">
+                                <strong>Hotel Casa Crespo</strong>
+                                <span>(Carmen de Patagones, a 5km de Viedma)</span>
+                            </div>
+                            <a href="https://www.google.com/maps/search/?api=1&query=Casa+Crespo+Hotel+Boutique+Carmen+de+Patagones" target="_blank" class="btn-llegar">📍 Cómo llegar</a>
+                        </li>
+                        <li>
+                            <div class="hotel-info"><strong>Hotel Cristal</strong></div>
+                            <a href="https://www.google.com/maps/search/?api=1&query=Hotel+Cristal+Viedma" target="_blank" class="btn-llegar">📍 Cómo llegar</a>
+                        </li>
+                    </ul>
+                    
+                    <div class="enlaces-extra-alojamiento">
+                        <p><strong>Más opciones:</strong></p>
+                        <a href="https://turismoviedma.gov.ar/servicios/" target="_blank">Buscar alojamientos diarios en Viedma</a>
+                        <a href="https://turismopatagones.gob.ar/alojamientos/" target="_blank">Buscar alojamientos en Carmen de Patagones</a>
+                    </div>
+                </div>
+
+            </div>
+        </section>
     </main>
 
+<!-- FOOTER CON GRILLAS -->
+    <footer class="no-imprimir">
+        <div class="footer-bloque">
+            <h3>Organizadores</h3>
+            <div class="grilla-4">
+                <div class="foto-box"><img src="fotos/1.jpg" alt="Organizador 1" class="logo-footer"></div>
+                <div class="foto-box"><img src="fotos/2.jpg" alt="Organizador 2" class="logo-footer"></div>
+                <div class="foto-box"><img src="fotos/3.png" alt="Organizador 3" class="logo-footer"></div>
+                <div class="foto-box"><img src="fotos/4.png" alt="Organizador 4" class="logo-footer"></div>
+            </div>
+        </div>
+
+        <div class="footer-bloque">
+            <h3>Avales</h3>
+            <div class="grilla-12">
+                <div class="foto-box"><img src="fotos/5.png" alt="Aval 1" class="logo-footer"></div>
+                <div class="foto-box"><img src="fotos/6.png" alt="Aval 2" class="logo-footer"></div>
+                <div class="foto-box"><img src="fotos/7.png" alt="Aval 3" class="logo-footer"></div>
+                <div class="foto-box"><img src="fotos/8.png" alt="Aval 4" class="logo-footer"></div>
+                <div class="foto-box"><img src="fotos/9.png" alt="Aval 5" class="logo-footer"></div>
+                <div class="foto-box"><img src="fotos/10.jpg" alt="Aval 6" class="logo-footer"></div>
+                <div class="foto-box"><img src="fotos/11.jpg" alt="Aval 7" class="logo-footer"></div>
+                <div class="foto-box"><img src="fotos/12.png" alt="Aval 8" class="logo-footer"></div>
+                <div class="foto-box"><img src="fotos/13.png" alt="Aval 9" class="logo-footer"></div>
+                <div class="foto-box"><img src="fotos/14.png" alt="Aval 10" class="logo-footer"></div>
+                <div class="foto-box"><img src="fotos/15.png" alt="Aval 11" class="logo-footer"></div>
+                <div class="foto-box"><img src="fotos/16.png" alt="Aval 12" class="logo-footer"></div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- MODAL DE INFORMACIÓN EXTRA (Seguro) -->
+    <dialog id="modal-info" class="modal no-imprimir">
+        <div class="modal-contenido">
+            <button class="cerrar-modal" onclick="cerrarModal()">&times;</button>
+            <h2 id="modal-titulo"></h2>
+            <div class="etiqueta" id="modal-tipo-espacio"></div>
+            <p><strong>Expositores:</strong> <span id="modal-expositores"></span></p>
+            <hr style="margin: 15px 0; border: 0; border-top: 1px solid #ccc;">
+            
+            <h3 style="color: var(--unrn-rojo);">Resumen</h3>
+            <p id="modal-resumen"></p>
+            
+            <h3 style="color: var(--unrn-rojo); margin-top: 15px;">Requisitos</h3>
+            <p id="modal-requisitos"></p>
+        </div>
+    </dialog>
+
+    <script>
+        function cambiarSeccion(idSeccion, botonClickeado) {
+            document.getElementById('seccion-programa').style.display = 'none';
+            document.getElementById('seccion-mapa').style.display = 'none';
+            document.querySelectorAll('.boton-menu').forEach(btn => btn.classList.remove('activo'));
+            document.getElementById(idSeccion).style.display = 'block';
+            botonClickeado.classList.add('activo');
+        }
+
+        function cerrarModal() {
+            document.getElementById('modal-info').close();
+        }
+
+        function descargarPrograma() {
+            window.print();
+        }
+    </script>
     <script src="app.js"></script>
 </body>
 </html>

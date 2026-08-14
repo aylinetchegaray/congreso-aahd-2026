@@ -1,4 +1,13 @@
-/*Reset para que se vea igual en todos los navegadores*/
+/* Variables institucionales UNRN */
+:root {
+    --unrn-rojo: #A6192E; /* Rojo institucional */
+    --unrn-rojo-claro: #c22138;
+    --unrn-gris-oscuro: #333333;
+    --unrn-gris-medio: #5A5A5A;
+    --unrn-fondo: #f4f7f6;
+    --blanco: #ffffff;
+}
+
 * {
     box-sizing: border-box;
     margin: 0;
@@ -7,38 +16,204 @@
 }
 
 body {
-    background-color: #f4f7f6;
-    color: #333;
+    background-color: var(--unrn-fondo);
+    color: var(--unrn-gris-oscuro);
     padding: 20px;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
 
 header {
     text-align: center;
-    margin-bottom: 30px;
+    margin-bottom: 20px;
 }
 
 h1 {
-    color: #2c3e50;
+    color: var(--unrn-rojo);
     margin-bottom: 15px;
 }
 
-/*Diseño buscador*/
-#buscador {
-    width: 100%;
-    max-width: 500px;
+main { flex-grow: 1; }
+
+/* --- CONTROLES DE BÚSQUEDA Y FILTROS --- */
+.controles-busqueda {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+    margin-bottom: 15px;
+}
+
+#buscador, select {
     padding: 12px 20px;
-    font-size: 16px;
+    font-size: 15px;
     border: 1px solid #ccc;
     border-radius: 25px;
     outline: none;
     transition: border-color 0.3s;
 }
 
-#buscador:focus {
-    border-color: #3498db;
+#buscador { width: 100%; max-width: 350px; }
+select { background-color: var(--blanco); cursor: pointer; }
+
+#buscador:focus, select:focus {
+    border-color: var(--unrn-rojo);
 }
 
-/*Grilla responsiva*/
+.boton-descarga {
+    background-color: var(--unrn-gris-oscuro);
+    color: var(--blanco);
+    border: none;
+    padding: 10px 20px;
+    border-radius: 25px;
+    cursor: pointer;
+    font-weight: bold;
+    margin-top: 10px;
+    transition: background 0.3s;
+}
+.boton-descarga:hover { background-color: var(--unrn-gris-medio); }
+
+/* --- MENÚ PRINCIPAL --- */
+#menu-principal {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+.boton-menu {
+    padding: 10px 20px;
+    font-size: 16px;
+    border: 2px solid var(--unrn-rojo);
+    background-color: transparent;
+    color: var(--unrn-rojo);
+    border-radius: 25px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.boton-menu:hover { background-color: #fbebee; }
+.boton-menu.activo { background-color: var(--unrn-rojo); color: var(--blanco); }
+
+.seccion-oculta { display: none; }
+
+/* --- MAPA --- */
+#seccion-mapa h2 { color: var(--unrn-rojo); text-align: center; margin-bottom: 15px; }
+.mapa-container { max-width: 1000px; margin: 0 auto; box-shadow: 0 4px 6px rgba(0,0,0,0.1); border-radius: 10px; }
+
+/* --- SECCIÓN TURISMO Y ALOJAMIENTO --- */
+.info-turismo {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    max-width: 1000px;
+    margin: 30px auto 0;
+}
+
+.turismo-bloque {
+    background-color: var(--blanco);
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    border-top: 5px solid var(--unrn-rojo);
+}
+
+.turismo-bloque h3 {
+    color: var(--unrn-gris-oscuro);
+    margin-bottom: 15px;
+    font-size: 20px;
+}
+
+.turismo-bloque p {
+    color: var(--unrn-gris-medio);
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+/* Enlaces Turísticos */
+.botones-enlaces {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.btn-turismo {
+    display: inline-block;
+    background-color: #fbebee;
+    color: var(--unrn-rojo);
+    padding: 10px 15px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    text-align: center;
+    transition: background 0.3s;
+}
+
+.btn-turismo:hover {
+    background-color: var(--unrn-rojo);
+    color: var(--blanco);
+}
+
+/* Lista de Hoteles */
+.lista-hoteles {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 20px 0;
+}
+
+.lista-hoteles li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.lista-hoteles li:last-child { border-bottom: none; }
+
+.hotel-info strong { display: block; color: var(--unrn-gris-oscuro); font-size: 16px; }
+.hotel-info span { font-size: 13px; color: #777; }
+
+/* Botón Cómo Llegar */
+.btn-llegar {
+    background-color: var(--unrn-gris-oscuro);
+    color: white;
+    text-decoration: none;
+    padding: 8px 12px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: bold;
+    white-space: nowrap;
+    margin-left: 10px;
+    transition: background 0.3s;
+}
+
+.btn-llegar:hover { background-color: var(--unrn-gris-medio); }
+
+/* Enlaces extra (Directorio) */
+.enlaces-extra-alojamiento a {
+    display: block;
+    color: var(--unrn-rojo);
+    text-decoration: none;
+    margin-top: 5px;
+    font-weight: bold;
+}
+.enlaces-extra-alojamiento a:hover { text-decoration: underline; }
+
+/* Responsivo para celulares */
+@media (max-width: 768px) {
+    .info-turismo { grid-template-columns: 1fr; }
+    .lista-hoteles li {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+    .btn-llegar { margin-left: 0; width: 100%; text-align: center; }
+}
+
+/* --- GRILLA Y TARJETAS --- */
 #contenedor-programa {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
@@ -46,46 +221,48 @@ h1 {
     margin-top: 20px;
 }
 
-/*Estilo Tarjeta*/
 .tarjeta-evento {
-    background-color: #fff;
+    background-color: var(--blanco);
     border-radius: 10px;
     padding: 20px;
     box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-    border-left: 5px solid #3498db; /* Detalle de color en el borde */
+    border-left: 5px solid var(--unrn-rojo); 
     transition: transform 0.2s;
+    display: flex;
+    flex-direction: column;
 }
 
-.tarjeta-evento:hover {
-    transform: translateY(-5px); /* Efecto sutil al pasar el mouse */
-}
+.tarjeta-evento:hover { transform: translateY(-5px); }
 
-/*Taller-Espacio*/
 .etiqueta {
     display: inline-block;
-    background-color: #e8f4f8;
-    color: #2980b9;
+    background-color: #fbebee;
+    color: var(--unrn-rojo);
     font-size: 12px;
     font-weight: bold;
     padding: 5px 10px;
     border-radius: 15px;
     margin-bottom: 10px;
+    align-self: flex-start;
 }
 
-.tarjeta-evento h3 {
-    font-size: 18px;
-    margin-bottom: 10px;
-    color: #2c3e50;
-}
+.tarjeta-evento h3 { font-size: 18px; margin-bottom: 10px; color: var(--unrn-gris-oscuro); }
+.tarjeta-evento p { font-size: 14px; line-height: 1.5; margin-bottom: 8px; color: var(--unrn-gris-medio); }
 
-.tarjeta-evento p {
-    font-size: 14px;
-    line-height: 1.5;
-    margin-bottom: 8px;
-    color: #555;
+.btn-mas-info {
+    margin-top: auto;
+    background-color: var(--unrn-rojo);
+    color: white;
+    border: none;
+    padding: 8px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background 0.3s;
 }
+.btn-mas-info:hover { background-color: var(--unrn-rojo-claro); }
 
-/*Estilos de Pestañas*/
+/* --- PESTAÑAS (DÍAS) --- */
 .contenedor-pestañas {
     display: flex;
     justify-content: center;
@@ -99,29 +276,94 @@ h1 {
     border: none;
     border-radius: 20px;
     background-color: #e0e0e0;
-    color: #333;
+    color: var(--unrn-gris-oscuro);
     cursor: pointer;
     font-weight: bold;
     transition: background-color 0.3s, color 0.3s;
 }
 
-.boton-pestaña:hover {
-    background-color: #cbd5e1;
-}
+.boton-pestaña:hover { background-color: #cbd5e1; }
+.boton-pestaña.activo { background-color: var(--unrn-gris-oscuro); color: var(--blanco); }
 
-.boton-pestaña.activo {
-    background-color: #3498db;
-    color: white;
-}
-
-/*Estilo para Pausas*/
+/* --- PAUSAS --- */
 .tarjeta-evento.pausa {
     background-color: #f1f5f9;
     border-left: 5px solid #94a3b8;
     text-align: center;
+    align-items: center;
+}
+.tarjeta-evento.pausa h3 { color: #475569; margin-bottom: 0; }
+
+/* --- FOOTER --- */
+footer {
+    margin-top: 50px;
+    background-color: var(--unrn-gris-oscuro);
+    color: white;
+    padding: 40px 20px;
+    border-radius: 10px 10px 0 0;
+    text-align: center;
 }
 
-.tarjeta-evento.pausa h3 {
-    color: #475569;
-    margin-bottom: 0;
+.footer-bloque { margin-bottom: 40px; }
+.footer-bloque h3 { color: #bdc3c7; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 20px; font-size: 1.1rem; }
+
+.grilla-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; max-width: 800px; margin: 0 auto; }
+.grilla-12 { display: grid; grid-template-columns: repeat(6, 1fr); gap: 15px; max-width: 1000px; margin: 0 auto; }
+
+.foto-box {
+    background-color: transparent;
+    border: none; /* ← esto dice que no haya borde */
+    height: 80px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #a0a0a0;
+    font-size: 14px;
+
+}
+
+/* --- MODAL (VENTANA EMERGENTE) --- */
+.modal {
+    margin: auto;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    max-width: 600px;
+    width: 90%;
+    padding: 0;
+}
+.modal::backdrop { background-color: rgba(0, 0, 0, 0.6); }
+.modal-contenido { padding: 30px; position: relative; }
+.cerrar-modal {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: var(--unrn-gris-oscuro);
+}
+.cerrar-modal:hover { color: var(--unrn-rojo); }
+
+/* --- REGLAS PARA IMPRESIÓN (PDF) --- */
+@media print {
+    .no-imprimir { display: none !important; }
+    body { background-color: white; padding: 0; }
+    #contenedor-programa { display: block; }
+    .tarjeta-evento { 
+        break-inside: avoid; 
+        page-break-inside: avoid; 
+        margin-bottom: 15px; 
+        border: 1px solid #ccc;
+        box-shadow: none;
+    }
+}
+
+@media (max-width: 768px) {
+    .grilla-4 , .grilla-12 {
+         grid-template-columns: repeat(2, 1fr); 
+        gap: 15px;    
+    }
 }
