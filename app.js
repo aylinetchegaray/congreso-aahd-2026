@@ -4,104 +4,11 @@ const botonesPestañas = document.querySelectorAll('.boton-pestaña');
 const selectTipo = document.getElementById('filtro-tipo');
 const selectHorario = document.getElementById('filtro-horario');
 
-// Data incrustada
-let todosLosEventos = [
-  {
-    "dia": "11 de noviembre",
-    "horario": "9:00 a 11:00",
-    "espacio": "Espacio 1",
-    "tipo": "Taller 1",
-    "titulo": "Metodologías de trabajo en corpus",
-    "expositores": "Pierabella, Silvana (UNR)",
-    "resumen": "En este taller abordaremos técnicas para la limpieza y estructuración de corpus textuales destinados al análisis semántico.",
-    "requisitos": "Computadora portátil obligatoria. Conocimientos básicos de expresiones regulares (opcional)."
-  },
-  {
-    "dia": "11 de noviembre",
-    "horario": "11:00 a 13:00",
-    "espacio": "Espacio 1",
-    "tipo": "Taller 4",
-    "titulo": "Reconocimiento y transcripción automática de textos impresos antiguos con Transkribus",
-    "expositores": "De León, Romina (HD LAB, CONICET)"
-  },
-  {
-    "dia": "11 de noviembre",
-    "horario": "9:00 a 11:00",
-    "espacio": "Espacio 2",
-    "tipo": "Taller 2",
-    "titulo": "Trabajo editorial en revistas científicas 1: El artículo como dispositivo de conocimiento en Humanidades; edición digital, curación de metadatos y marcadores persistentes",
-    "expositores": "Corbellini, Natalia (UNLP)"
-  },
-  {
-    "dia": "11 de noviembre",
-    "horario": "11:00 a 13:00",
-    "espacio": "Espacio 2",
-    "tipo": "Taller 5",
-    "titulo": "Construcción de tableros interactivos en Tableau a partir de fuentes históricas",
-    "expositores": "Lissandrello, Guido (CONICET-UBA)"
-  },
-  {
-    "dia": "11 de noviembre",
-    "horario": "9:00 a 11:00",
-    "espacio": "Espacio 3",
-    "tipo": "Taller 3",
-    "titulo": "Introducción a la codificación y publicación digital en XML-TEI de textos dramáticos",
-    "expositores": "del Rio Riande, Gimena \n Volkind, Laura (HD LAB, CONICET)"
-  },
-  {
-    "dia": "11 de noviembre",
-    "horario": "11:00 a 13:00",
-    "espacio": "Espacio 3",
-    "tipo": "Taller 6",
-    "titulo": "Análisis Automático de Textos, Procesamiento del Lenguaje Natural y Minería de Textos: métodos no supervisados para la exploración de corpus",
-    "expositores": "Nusch, Carlos (UNLP)"
-  },
-  {
-    "dia": "11 de noviembre",
-    "horario": "14:00 a 16:00",
-    "espacio": "Espacio 1",
-    "tipo": "Taller 7",
-    "titulo": "Uso de herramientas computacionales para el análisis histórico: ARS y construcción de corpus digitales",
-    "expositores": "Riganti, Maria Valentina (CIEGeF, CONICET-UNS)"
-  },
-  {
-    "dia": "11 de noviembre",
-    "horario": "16:30 a 18:30",
-    "espacio": "Museo Emma Nozzi",
-    "tipo": "Panel",
-    "moderador": "Lucia Cantamutto",
-    "titulo": "Puentes hacia la justicia hídrica: memoria ambiental y tecnologías participativas",
-    "expositores": "Liberman, Mariana \n Birochio, Diego \n Musi Saluj, Cristian \n Zangra, Alejandro \n Viladrich, Leonel"
-  },
-  {
-    "dia": "11 de noviembre",
-    "horario": "16:30 a 18:30",
-    "espacio": "Espacio 2",
-    "tipo": "Taller 10",
-    "titulo": "Salud y Humanidades Digitales en tiempos de inteligencia artificial: paradigmas, tensiones y alcances",
-    "expositores": "Goldschmidt, Julieta Yasmín (UBA - UTN)"
-  },
-  {
-    "dia": "11 de noviembre",
-    "horario": "16:30 a 18:30",
-    "espacio": "Espacio 3",
-    "tipo": "Taller 11",
-    "titulo": "Mapas narrativos interactivos con tecnologías abiertas: una introducción práctica a los Storymaps",
-    "expositores": "Calarco, Gabriel (UTDT)"
-  },
-  {
-    "dia": "11 de noviembre",
-    "horario": "13:00",
-    "espacio": "Comedor Universitario",
-    "tipo": "Pausa",
-    "titulo": "PAUSA ALMUERZO",
-    "expositores": ""
-  }
-];
-
 let diaActual = '11 de noviembre';
 
-// Función segura para inyectar datos en el Modal
+// ==========================================================
+// MODAL DE INFORMACIÓN
+// ==========================================================
 function abrirModal(evento) {
     const modal = document.getElementById('modal-info');
     
@@ -115,90 +22,155 @@ function abrirModal(evento) {
     modal.showModal();
 }
 
-// Renderizado de tarjetas (Mezclado perfecto: HTML dinámico + Botón seguro)
-function renderizarTarjetas(eventosAMostrar){
+// ==========================================================
+// RENDERIZAR TARJETAS (AGRUPADAS POR HORARIO)
+// ==========================================================
+function renderizarTarjetas(eventosAMostrar) {
     contenedorPrograma.innerHTML = '';
 
     if(eventosAMostrar.length === 0){
-        contenedorPrograma.innerHTML = '<p style="grid-column: 1 / -1; text-align: center; font-weight: bold; color: var(--unrn-gris-medio); margin-top: 30px;">No se encontraron resultados con estos filtros.</p>';
+        contenedorPrograma.innerHTML = '<p style="text-align: center; font-weight: bold; color: var(--unrn-gris-medio); margin-top: 30px;">No se encontraron resultados con estos filtros.</p>';
         return;
     }
 
+    // 1. Agrupar los eventos cronológicamente por su horario
+    const gruposPorHorario = [];
     eventosAMostrar.forEach(evento => {
-        const tarjeta = document.createElement('div');
-        tarjeta.classList.add('tarjeta-evento'); 
-
-        const esPausa = evento.tipo.toLowerCase().includes('pausa') || evento.tipo.toLowerCase().includes('acreditación');
-
-        if(esPausa){
-            tarjeta.classList.add('pausa');
-            tarjeta.innerHTML = `
-                <p><em>${evento.horario} | ${evento.espacio}</em></p> 
-                <h3>☕ ${evento.titulo}</h3>
-            `;
-        } else {
-            let ponenciasHTML = '';
-            
-            // Lógica para paneles con sub-ponencias (Acordeón)
-            if(evento.ponencias && evento.ponencias.length > 0){
-                ponenciasHTML = `
-                    <details class="acordeon-ponencias no-imprimir" style="margin-top: 15px;">
-                        <summary style="cursor: pointer; font-weight: bold; color: var(--unrn-rojo);">Ver ${evento.ponencias.length} ponencias</summary>
-                        <div class="lista-ponencias" style="margin-top: 10px; padding-left: 10px; border-left: 3px solid var(--unrn-rojo);">
-                            ${evento.ponencias.map(p => `
-                                <div class="sub-ponencia" style="margin-bottom: 10px;">
-                                    <h4 style="margin: 0; font-size: 14px; color: var(--unrn-gris-oscuro);">🔹 ${p.titulo}</h4>
-                                    <p class="autor" style="margin: 3px 0 0 0; font-size: 13px; color: var(--unrn-gris-medio);">${p.expositores}</p>
-                                </div>
-                            `).join('')}
-                        </div>
-                    </details>
-                `;
-            }
-
-            // Estructura principal de la tarjeta
-            tarjeta.innerHTML = `
-                <div class="etiqueta">${evento.tipo} - ${evento.espacio}</div>
-                <h3>${evento.titulo}</h3>
-                ${evento.moderador ? `<p style="color: #666; margin-bottom: 8px;"><em>Moderador/a: ${evento.moderador}</em></p>` : ''}
-                ${evento.expositores ? `<p><strong>Expositor(es):</strong> ${evento.expositores}</p>` : ''}
-                <p><em>${evento.dia} | ${evento.horario}</em></p>
-                ${ponenciasHTML}
-            `;
-
-            // Botón de modal agregado de forma segura al final de la tarjeta
-            const boton = document.createElement('button');
-            boton.className = 'btn-mas-info no-imprimir';
-            boton.textContent = 'Ver más info';
-            boton.style.marginTop = '15px';
-            boton.onclick = () => abrirModal(evento);
-            
-            tarjeta.appendChild(boton);
+        let grupo = gruposPorHorario.find(g => g.horario === evento.horario);
+        if (!grupo) {
+            grupo = { horario: evento.horario, eventos: [] };
+            gruposPorHorario.push(grupo);
         }
+        grupo.eventos.push(evento);
+    });
+
+    // 2. Dibujar un bloque (Outline) por cada horario
+    gruposPorHorario.forEach(grupo => {
+        // Contenedor principal de la franja horaria
+        const bloqueHorario = document.createElement('div');
+        bloqueHorario.style.marginBottom = '40px'; 
+        bloqueHorario.style.width = '100%';
+
+        // Banner del Horario (Ocupa todo el ancho)
+        const bannerHora = document.createElement('div');
+        bannerHora.style.backgroundColor = 'var(--unrn-rojo, #a82020)';
+        bannerHora.style.color = 'white';
+        bannerHora.style.padding = '10px 20px';
+        bannerHora.style.borderRadius = '5px';
+        bannerHora.style.fontWeight = 'bold';
+        bannerHora.style.fontSize = '18px';
+        bannerHora.style.marginBottom = '20px';
+        bannerHora.style.textAlign = 'center';
+        bannerHora.style.boxShadow = '0 4px 6px rgba(0,0,0,0.1)';
+        bannerHora.textContent = `HORARIO: ${grupo.horario.toUpperCase()}`;
+        bloqueHorario.appendChild(bannerHora);
+
+        // Contenedor Flex "Inline" Adaptativo para las actividades de ese horario
+        const contenedorActividades = document.createElement('div');
+        contenedorActividades.style.display = 'flex';
+        contenedorActividades.style.flexWrap = 'wrap'; // Clave para que baje en celular
+        contenedorActividades.style.gap = '20px';
         
-        contenedorPrograma.appendChild(tarjeta);
+        // 3. Dibujar las actividades dentro de ese horario
+        grupo.eventos.forEach(evento => {
+            const tarjeta = document.createElement('div');
+            tarjeta.classList.add('tarjeta-evento'); 
+            tarjeta.style.flex = '1 1 300px'; 
+
+            const esPausa = (evento.tipo || '').toLowerCase().includes('pausa') || 
+                            (evento.tipo || '').toLowerCase().includes('acreditación') ||
+                            (evento.tipo || '').toLowerCase().includes('evento social') ||
+                            (evento.tipo || '').toLowerCase().includes('actividad');
+
+            if (esPausa) {
+                tarjeta.classList.add('pausa');
+                tarjeta.style.backgroundColor = '#f9f9f9';
+                tarjeta.style.borderLeft = '5px solid var(--unrn-rojo, #a82020)';
+                
+                // Detectar si es un Café para inyectar la foto
+                let imagenCafe = '';
+                if ((evento.titulo || '').toLowerCase().includes('café') || (evento.titulo || '').toLowerCase().includes('cafe')) {
+                    imagenCafe = `<img src="fotos/cafe.avif" alt="Pausa Café" style="width: 100%; height: 150px; object-fit: cover; border-radius: 5px; margin-bottom: 15px;">`;
+                }
+
+                tarjeta.innerHTML = `
+                    ${imagenCafe}
+                    <p style="color: #666;"><em>📍 ${evento.espacio}</em></p> 
+                    <h3 style="margin-top: 5px;">☕ ${evento.titulo}</h3>
+                    ${evento.expositores ? `<p>${evento.expositores}</p>` : ''}
+                `;
+            } else {
+                let ponenciasHTML = '';
+                
+                // Lógica para las mesas de ponencias con acordeón
+                if (evento.ponencias && evento.ponencias.length > 0) {
+                    ponenciasHTML = `
+                        <details class="acordeon-ponencias no-imprimir" style="margin-top: 15px; border: 1px solid #ddd; padding: 10px; border-radius: 5px; background: #fafafa;">
+                            <summary style="cursor: pointer; font-weight: bold; color: var(--unrn-rojo, #a82020);">Ver ${evento.ponencias.length} ponencias</summary>
+                            <div class="lista-ponencias" style="margin-top: 15px; padding-left: 10px; border-left: 3px solid var(--unrn-rojo, #a82020);">
+                                ${evento.ponencias.map(p => `
+                                    <div class="sub-ponencia" style="margin-bottom: 15px;">
+                                        <h4 style="margin: 0; font-size: 14px; color: #333;">🔹 ${p.titulo}</h4>
+                                        <p class="autor" style="margin: 3px 0 0 0; font-size: 13px; color: #666;">${p.expositores}</p>
+                                    </div>
+                                `).join('')}
+                            </div>
+                        </details>
+                    `;
+                }
+
+                tarjeta.innerHTML = `
+                    <div class="etiqueta" style="margin-bottom: 10px; display: inline-block;">${evento.tipo} - ${evento.espacio}</div>
+                    <h3 style="margin-top: 0;">${evento.titulo}</h3>
+                    ${evento.moderador ? `<p style="color: #666; margin-bottom: 8px;"><em>Moderador/a: ${evento.moderador}</em></p>` : ''}
+                    ${evento.expositores ? `<p><strong>Expositor(es):</strong> ${evento.expositores}</p>` : ''}
+                    ${ponenciasHTML}
+                `;
+
+                const boton = document.createElement('button');
+                boton.className = 'btn-mas-info no-imprimir';
+                boton.textContent = 'Ver más info';
+                boton.style.marginTop = '15px';
+                boton.style.width = '100%';
+                boton.onclick = () => abrirModal(evento);
+                
+                tarjeta.appendChild(boton);
+            }
+            
+            contenedorActividades.appendChild(tarjeta);
+        });
+
+        bloqueHorario.appendChild(contenedorActividades);
+        contenedorPrograma.appendChild(bloqueHorario);
     });
 }
 
-// Función súper útil para ignorar tildes en la búsqueda
+// ==========================================================
+// FUNCIÓN AUXILIAR (Búsqueda robusta)
+// ==========================================================
 function quitarAcentos(texto) {
     if (!texto) return "";
     return texto.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
 }
 
-// Lógica de filtros avanzada
+// ==========================================================
+// APLICAR FILTROS
+// ==========================================================
 function aplicarFiltros() {
-    const textoBusqueda = quitarAcentos(inputBuscador.value.toLowerCase());
+    const textoBusqueda = quitarAcentos(inputBuscador.value.toLowerCase().trim());
     const tipoSeleccionado = selectTipo.value;
     const horarioSeleccionado = selectHorario.value;
     
+    // Verificación de seguridad por si tarda en cargar el archivo de datos
+    if (typeof todosLosEventos === 'undefined') return;
+
     const eventosFiltrados = todosLosEventos.filter(evento => {
         
         // 1. Filtro por Día
         const coincideDia = diaActual === 'todos' || evento.dia === diaActual;
         
-        // 2. Filtro Inteligente por Texto (Busca en título, autores y sub-ponencias sin importar los tildes)
-        const tituloNormalizado = quitarAcentos(evento.titulo.toLowerCase());
+        // 2. Filtro Inteligente por Texto
+        const tituloNormalizado = quitarAcentos((evento.titulo || "").toLowerCase());
         const expositoresNormalizados = quitarAcentos((evento.expositores || "").toLowerCase());
 
         const coincideTitulo = tituloNormalizado.includes(textoBusqueda);
@@ -217,7 +189,7 @@ function aplicarFiltros() {
         // 3. Filtro por Tipo
         let coincideTipo = true;
         if(tipoSeleccionado !== 'todos') {
-            coincideTipo = evento.tipo.toLowerCase().includes(tipoSeleccionado);
+            coincideTipo = (evento.tipo || '').toLowerCase().includes(tipoSeleccionado);
         }
 
         // 4. Filtro por Horario
@@ -234,7 +206,9 @@ function aplicarFiltros() {
     renderizarTarjetas(eventosFiltrados);
 }
 
-// Event Listeners (Activadores)
+// ==========================================================
+// EVENT LISTENERS
+// ==========================================================
 inputBuscador.addEventListener('input', aplicarFiltros);
 selectTipo.addEventListener('change', aplicarFiltros);
 selectHorario.addEventListener('change', aplicarFiltros);
@@ -255,5 +229,7 @@ botonesPestañas.forEach(boton => {
     });
 });
 
-// Arrancar la página aplicando los filtros por defecto
+// ==========================================================
+// INICIALIZAR
+// ==========================================================
 aplicarFiltros();
