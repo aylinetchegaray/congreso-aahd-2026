@@ -4,7 +4,7 @@ const botonesPestañas = document.querySelectorAll('.boton-pestaña');
 const selectTipo = document.getElementById('filtro-tipo');
 const selectHorario = document.getElementById('filtro-horario');
 
-// Data incrustada para evitar errores CORS
+// Data incrustada
 let todosLosEventos = [
   {
     "dia": "11 de noviembre",
@@ -68,7 +68,8 @@ let todosLosEventos = [
     "dia": "11 de noviembre",
     "horario": "16:30 a 18:30",
     "espacio": "Museo Emma Nozzi",
-    "tipo": "Panel. Modera: Lucia Cantamutto",
+    "tipo": "Panel",
+    "moderador": "Lucia Cantamutto",
     "titulo": "Puentes hacia la justicia hídrica: memoria ambiental y tecnologías participativas",
     "expositores": "Liberman, Mariana \n Birochio, Diego \n Musi Saluj, Cristian \n Zangra, Alejandro \n Viladrich, Leonel"
   },
@@ -114,156 +115,112 @@ function abrirModal(evento) {
     modal.showModal();
 }
 
+// Renderizado de tarjetas (Mezclado perfecto: HTML dinámico + Botón seguro)
 function renderizarTarjetas(eventosAMostrar){
     contenedorPrograma.innerHTML = '';
 
-<<<<<<< HEAD
     if(eventosAMostrar.length === 0){
-        contenedorPrograma.innerHTML = '<p style="grid-column: 1 / -1; text-align: center; font-weight: bold;">No se encontraron resultados con estos filtros.</p>';
-=======
-    if(eventosAMostrar.length===0){
-        contenedorPrograma.innerHTML='<p>No se encontraron resultados.</p>';
->>>>>>> 3b5dc9b6d778f2c4d1bcf3a063f55df4572f5c32
+        contenedorPrograma.innerHTML = '<p style="grid-column: 1 / -1; text-align: center; font-weight: bold; color: var(--unrn-gris-medio); margin-top: 30px;">No se encontraron resultados con estos filtros.</p>';
         return;
     }
 
     eventosAMostrar.forEach(evento => {
-        // SEGURIDAD: Creación de elementos HTML de forma segura
         const tarjeta = document.createElement('div');
         tarjeta.classList.add('tarjeta-evento'); 
 
-<<<<<<< HEAD
         const esPausa = evento.tipo.toLowerCase().includes('pausa') || evento.tipo.toLowerCase().includes('acreditación');
 
         if(esPausa){
             tarjeta.classList.add('pausa');
-            
-            const textoHorario = document.createElement('p');
-            const em = document.createElement('em');
-            em.textContent = `${evento.horario} | ${evento.espacio}`;
-            textoHorario.appendChild(em);
-
-            const titulo = document.createElement('h3');
-            titulo.textContent = `☕ ${evento.titulo}`;
-
-            tarjeta.appendChild(textoHorario);
-            tarjeta.appendChild(titulo);
+            tarjeta.innerHTML = `
+                <p><em>${evento.horario} | ${evento.espacio}</em></p> 
+                <h3>☕ ${evento.titulo}</h3>
+            `;
         } else {
-            const etiqueta = document.createElement('div');
-            etiqueta.className = 'etiqueta';
-            etiqueta.textContent = `${evento.tipo} - ${evento.espacio}`;
-
-            const titulo = document.createElement('h3');
-            titulo.textContent = evento.titulo;
-
-            const expositores = document.createElement('p');
-            expositores.innerHTML = `<strong>Expositor(es):</strong> `;
-            expositores.appendChild(document.createTextNode(evento.expositores));
-
-            const horario = document.createElement('p');
-            const emHorario = document.createElement('em');
-            emHorario.textContent = `${evento.dia} | ${evento.horario}`;
-            horario.appendChild(emHorario);
-
-            const boton = document.createElement('button');
-            boton.className = 'btn-mas-info no-imprimir';
-            boton.textContent = 'Ver más info';
-            boton.onclick = () => abrirModal(evento);
-
-            tarjeta.appendChild(etiqueta);
-            tarjeta.appendChild(titulo);
-            tarjeta.appendChild(expositores);
-            tarjeta.appendChild(horario);
-            tarjeta.appendChild(boton);
-        }
-        
-        contenedorPrograma.appendChild(tarjeta);
-=======
-            if(evento.tipo.toLowerCase()==='pausa'){
-                tarjeta.classList.add('pausa');
-                tarjeta.innerHTML=`
-                    <p><em>${evento.horario} | ${evento.espacio}</em></p> 
-                    <h3>☕ ${evento.titulo}</h3>
-                `;
-            }else{
-            let ponenciasHTML='';
+            let ponenciasHTML = '';
+            
+            // Lógica para paneles con sub-ponencias (Acordeón)
             if(evento.ponencias && evento.ponencias.length > 0){
-                ponenciasHTML=`
-                    <details class="acordeon-ponencias">
-                        <summary>Ver ${evento.ponencias.length} ponencias</summary>
-                        <div class="lista-ponencias">
+                ponenciasHTML = `
+                    <details class="acordeon-ponencias no-imprimir" style="margin-top: 15px;">
+                        <summary style="cursor: pointer; font-weight: bold; color: var(--unrn-rojo);">Ver ${evento.ponencias.length} ponencias</summary>
+                        <div class="lista-ponencias" style="margin-top: 10px; padding-left: 10px; border-left: 3px solid var(--unrn-rojo);">
                             ${evento.ponencias.map(p => `
-                                <div class="sub-ponencia">
-                                    <h4>🔹 ${p.titulo}</h4>
-                                    <p class="autor">${p.expositores}</p>
+                                <div class="sub-ponencia" style="margin-bottom: 10px;">
+                                    <h4 style="margin: 0; font-size: 14px; color: var(--unrn-gris-oscuro);">🔹 ${p.titulo}</h4>
+                                    <p class="autor" style="margin: 3px 0 0 0; font-size: 13px; color: var(--unrn-gris-medio);">${p.expositores}</p>
                                 </div>
                             `).join('')}
                         </div>
                     </details>
                 `;
             }
-                tarjeta.innerHTML = `
+
+            // Estructura principal de la tarjeta
+            tarjeta.innerHTML = `
                 <div class="etiqueta">${evento.tipo} - ${evento.espacio}</div>
                 <h3>${evento.titulo}</h3>
-                ${evento.moderador ? `<p style="color: #00e5ff; margin-bottom: 8px;"><em>${evento.moderador}</em></p>` : ''}
+                ${evento.moderador ? `<p style="color: #666; margin-bottom: 8px;"><em>Moderador/a: ${evento.moderador}</em></p>` : ''}
                 ${evento.expositores ? `<p><strong>Expositor(es):</strong> ${evento.expositores}</p>` : ''}
                 <p><em>${evento.dia} | ${evento.horario}</em></p>
                 ${ponenciasHTML}
             `;
-            }
-            contenedorPrograma.appendChild(tarjeta);
->>>>>>> 3b5dc9b6d778f2c4d1bcf3a063f55df4572f5c32
+
+            // Botón de modal agregado de forma segura al final de la tarjeta
+            const boton = document.createElement('button');
+            boton.className = 'btn-mas-info no-imprimir';
+            boton.textContent = 'Ver más info';
+            boton.style.marginTop = '15px';
+            boton.onclick = () => abrirModal(evento);
+            
+            tarjeta.appendChild(boton);
+        }
+        
+        contenedorPrograma.appendChild(tarjeta);
     });
 }
 
+// Función súper útil para ignorar tildes en la búsqueda
 function quitarAcentos(texto) {
     if (!texto) return "";
     return texto.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
 }
 
+// Lógica de filtros avanzada
 function aplicarFiltros() {
-<<<<<<< HEAD
-    const textoBusqueda = inputBuscador.value.toLowerCase();
+    const textoBusqueda = quitarAcentos(inputBuscador.value.toLowerCase());
     const tipoSeleccionado = selectTipo.value;
     const horarioSeleccionado = selectHorario.value;
-=======
-    const textoBusqueda = quitarAcentos(inputBuscador.value.toLowerCase());
->>>>>>> 3b5dc9b6d778f2c4d1bcf3a063f55df4572f5c32
     
     const eventosFiltrados = todosLosEventos.filter(evento => {
-        // Filtro por Día
+        
+        // 1. Filtro por Día
         const coincideDia = diaActual === 'todos' || evento.dia === diaActual;
         
-<<<<<<< HEAD
-        // Filtro por Texto
-        const coincideTexto = evento.titulo.toLowerCase().includes(textoBusqueda) || 
-                              (evento.expositores && evento.expositores.toLowerCase().includes(textoBusqueda));
-=======
+        // 2. Filtro Inteligente por Texto (Busca en título, autores y sub-ponencias sin importar los tildes)
         const tituloNormalizado = quitarAcentos(evento.titulo.toLowerCase());
         const expositoresNormalizados = quitarAcentos((evento.expositores || "").toLowerCase());
 
         const coincideTitulo = tituloNormalizado.includes(textoBusqueda);
         const coincideExpositor = expositoresNormalizados.includes(textoBusqueda);
 
-        let coincideSub= false;
+        let coincideSub = false;
         if (evento.ponencias && evento.ponencias.length > 0) {
             coincideSub = evento.ponencias.some(p => {
                 const subTitulo = quitarAcentos((p.titulo || "").toLowerCase());
                 const subExpositor = quitarAcentos((p.expositores || "").toLowerCase());
-                
                 return subTitulo.includes(textoBusqueda) || subExpositor.includes(textoBusqueda);
             });
         }
         const coincideTexto = coincideTitulo || coincideExpositor || coincideSub;
->>>>>>> 3b5dc9b6d778f2c4d1bcf3a063f55df4572f5c32
         
-        // Filtro por Tipo
+        // 3. Filtro por Tipo
         let coincideTipo = true;
         if(tipoSeleccionado !== 'todos') {
             coincideTipo = evento.tipo.toLowerCase().includes(tipoSeleccionado);
         }
 
-        // Filtro por Horario
+        // 4. Filtro por Horario
         let coincideHorario = true;
         if(horarioSeleccionado === 'mañana') {
             coincideHorario = /8:|9:|10:|11:|12:/.test(evento.horario);
@@ -277,6 +234,7 @@ function aplicarFiltros() {
     renderizarTarjetas(eventosFiltrados);
 }
 
+// Event Listeners (Activadores)
 inputBuscador.addEventListener('input', aplicarFiltros);
 selectTipo.addEventListener('change', aplicarFiltros);
 selectHorario.addEventListener('change', aplicarFiltros);
@@ -297,4 +255,5 @@ botonesPestañas.forEach(boton => {
     });
 });
 
+// Arrancar la página aplicando los filtros por defecto
 aplicarFiltros();
