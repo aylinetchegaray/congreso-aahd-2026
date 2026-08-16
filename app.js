@@ -19,6 +19,9 @@ function abrirModal(evento) {
     document.getElementById('modal-resumen').textContent = evento.resumen || "No hay resumen disponible para esta actividad.";
     document.getElementById('modal-requisitos').textContent = evento.requisitos || "No se requieren conocimientos ni materiales previos.";
     
+    // 👇 ESTA ES LA LÍNEA NUEVA QUE CONGELA EL FONDO 👇
+    document.body.classList.add('bloquear-scroll');
+    
     modal.showModal();
 }
 
@@ -87,16 +90,35 @@ function renderizarTarjetas(eventosAMostrar) {
                 tarjeta.style.backgroundColor = '#f9f9f9';
                 tarjeta.style.borderLeft = '5px solid var(--unrn-rojo, #a82020)';
                 
-                // Detectar si es un Café para inyectar la foto
-                let imagenCafe = '';
-                if ((evento.titulo || '').toLowerCase().includes('café') || (evento.titulo || '').toLowerCase().includes('cafe')) {
-                    imagenCafe = `<img src="fotos/cafe.avif" alt="Pausa Café" style="width: 100%; height: 150px; object-fit: cover; border-radius: 5px; margin-bottom: 15px;">`;
+                // Normalizamos textos para buscar palabras clave más fácil
+                const tituloNormalizado = (evento.titulo || '').toLowerCase();
+                const tipoNormalizado = (evento.tipo || '').toLowerCase();
+
+                // Detectar qué imagen e icono inyectar
+                let imagenDinamica = '';
+                let iconoTexto = '📌'; // Icono por defecto por si es otra pausa
+
+                // 1. Caso: Pausa Café
+                if (tituloNormalizado.includes('café') || tituloNormalizado.includes('cafe')) {
+                    imagenDinamica = `<img src="fotos/cafe.avif" alt="Pausa Café" style="width: 100%; height: 150px; object-fit: cover; border-radius: 5px; margin-bottom: 15px;">`;
+                    iconoTexto = '☕';
+                } 
+                // 2. Caso: Acreditaciones
+                else if (tipoNormalizado.includes('acreditación') || tituloNormalizado.includes('acreditacion')) {
+                    imagenDinamica = `<img src="fotos/acreditacion2.jpg" alt="Acreditación" style="width: 100%; height: 150px; object-fit: cover; border-radius: 5px; margin-bottom: 15px;">`;
+                    iconoTexto = '📋';
+                } 
+                // 3. Caso: Eventos Sociales / Fin de Jornada (City Tour, Cena, etc.)
+                else if (tipoNormalizado.includes('evento social') || tituloNormalizado.includes('cena') || tituloNormalizado.includes('tour') || tituloNormalizado.includes('brindis')) {
+                    imagenDinamica = `<img src="fotos/social.jpg" alt="Evento Social" style="width: 100%; height: 150px; object-fit: cover; border-radius: 5px; margin-bottom: 15px;">`;
+                    iconoTexto = '🍷';
                 }
 
+                // Inyectamos todo en la tarjeta
                 tarjeta.innerHTML = `
-                    ${imagenCafe}
+                    ${imagenDinamica}
                     <p style="color: #666;"><em>📍 ${evento.espacio}</em></p> 
-                    <h3 style="margin-top: 5px;">☕ ${evento.titulo}</h3>
+                    <h3 style="margin-top: 5px;">${iconoTexto} ${evento.titulo}</h3>
                     ${evento.expositores ? `<p>${evento.expositores}</p>` : ''}
                 `;
             } else {
@@ -227,6 +249,12 @@ botonesPestañas.forEach(boton => {
             btnDescarga.textContent = `📄 Descargar Programa ${e.target.textContent} (PDF)`;
         }
     });
+});
+// ==========================================================
+// DESCONGELAR SCROLL AL CERRAR EL MODAL
+// ==========================================================
+document.getElementById('modal-info').addEventListener('close', () => {
+    document.body.classList.remove('bloquear-scroll');
 });
 
 // ==========================================================

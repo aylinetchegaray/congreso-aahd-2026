@@ -253,16 +253,25 @@ select { background-color: var(--blanco); cursor: pointer; }
 
 .btn-mas-info {
     margin-top: auto;
-    background-color: var(--unrn-rojo);
-    color: white;
-    border: none;
+    background-color: transparent; 
+    color: var(--unrn-rojo);       
+    border: 2px solid rgba(166, 25, 46, 0.3); 
     padding: 8px;
     border-radius: 5px;
     cursor: pointer;
     font-weight: bold;
-    transition: background 0.3s;
+    transition: all 0.3s ease;
 }
-.btn-mas-info:hover { background-color: var(--unrn-rojo-claro); }
+
+.btn-mas-info:hover { 
+    background-color: rgba(166, 25, 46, 0.05); 
+    border-color: var(--unrn-rojo); 
+}
+
+
+.bloquear-scroll {
+    overflow: hidden; 
+}
 
 /* --- PESTAÑAS (DÍAS) --- */
 .contenedor-pestañas {
@@ -345,7 +354,10 @@ footer {
     object-fit: contain; /* Esto asegura que el logo no se deforme ni se estire */
 }
 
-.modal::backdrop { background-color: rgba(0, 0, 0, 0.6); }
+.modal::backdrop { 
+    background-color: rgba(0, 0, 0, 0.5); 
+    backdrop-filter: blur(5px); 
+}
 .modal-contenido { padding: 30px; position: relative; }
 .cerrar-modal {
     position: absolute;
