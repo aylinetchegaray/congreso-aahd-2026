@@ -1,8 +1,7 @@
 # Programa Interactivo - Congreso AAHD 2026
 
-# Programa Interactivo - Congreso AAHD 2026
-
 Micrositio web interactivo para la consulta del cronograma, sedes, ponencias y actividades del **Congreso Internacional de Humanidades Digitales (AAHD 2026)**, a realizarse en la **Universidad Nacional de Río Negro (UNRN - Sede Atlántica)**.
+
 
 ## Características
 
