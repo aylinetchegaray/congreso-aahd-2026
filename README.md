@@ -30,5 +30,28 @@ Micrositio web interactivo para la consulta del cronograma, sedes, ponencias y a
 ```
 
 
+## Mantenimiento
+Para modificar horarios, aulas o expositores no es necesario tocar el código fuente. Toda la información se gestiona desde programa.json:
+- Abrir el archivo programa.json.
+- Localizar el bloque del evento a editar:
+
+```text
+JSON
+{
+  "id": 1,
+  "dia": "11 nov",
+  "horario": "16:30 A 18:30",
+  "tipo": "Taller",
+  "espacio": "Espacio 2",
+  "titulo": "Salud y Humanidades Digitales...",
+  "expositores": "Goldschmidt, Julieta Yasmin",
+  "resumen": "Descripción o resumen de la ponencia..."
+}
+```
+Realizar las modificaciones necesarias y guardar los cambios.
+
+Al hacer commit y push a la rama main, la plataforma desplegará la actualización de forma automática en pocos segundos.
+
+
 ## Equipo de Desarrollo
 Desarrollado para el Comité Organizador de AAHD 2026.
