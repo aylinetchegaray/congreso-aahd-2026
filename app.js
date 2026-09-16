@@ -54,19 +54,33 @@ function renderizarTarjetas(eventosAMostrar) {
         bloqueHorario.style.marginBottom = '40px'; 
         bloqueHorario.style.width = '100%';
 
-        // Banner del Horario (Ocupa todo el ancho)
+        // Contenedor de la línea divisoria
+        const bannerContainer = document.createElement('div');
+        bannerContainer.style.width = '100%';
+        bannerContainer.style.borderTop = '1px solid #d1d5db';
+        bannerContainer.style.marginBottom = '25px';
+        bannerContainer.style.marginTop = '15px';
+        
+        // Bloque compacto de la hora
         const bannerHora = document.createElement('div');
-        bannerHora.style.backgroundColor = 'var(--unrn-rojo, #a82020)';
+        bannerHora.style.display = 'inline-block';
+        bannerHora.style.backgroundColor = 'var(--unrn-rojo)';
         bannerHora.style.color = 'white';
-        bannerHora.style.padding = '10px 20px';
-        bannerHora.style.borderRadius = '5px';
+        bannerHora.style.padding = '6px 14px';
         bannerHora.style.fontWeight = 'bold';
-        bannerHora.style.fontSize = '18px';
-        bannerHora.style.marginBottom = '20px';
-        bannerHora.style.textAlign = 'center';
-        bannerHora.style.boxShadow = '0 4px 6px rgba(0,0,0,0.1)';
-        bannerHora.textContent = `HORARIO: ${grupo.horario.toUpperCase()}`;
-        bloqueHorario.appendChild(bannerHora);
+        bannerHora.style.fontSize = '12px';
+        bannerHora.style.textTransform = 'uppercase';
+        bannerHora.style.letterSpacing = '1px';
+        
+        // Ajuste de posición para cortar la línea
+        bannerHora.style.position = 'relative';
+        bannerHora.style.top = '-13px';
+        bannerHora.style.left = '0';
+        
+        bannerHora.textContent = `HORARIO: ${grupo.horario}`;
+        
+        bannerContainer.appendChild(bannerHora);
+        bloqueHorario.appendChild(bannerContainer);
 
         // Contenedor Flex "Inline" Adaptativo para las actividades de ese horario
         const contenedorActividades = document.createElement('div');
@@ -87,8 +101,9 @@ function renderizarTarjetas(eventosAMostrar) {
 
             if (esPausa) {
                 tarjeta.classList.add('pausa');
-                tarjeta.style.backgroundColor = '#f9f9f9';
-                tarjeta.style.borderLeft = '5px solid var(--unrn-rojo, #a82020)';
+                tarjeta.style.backgroundColor = 'var(--unrn-claro)';
+                tarjeta.style.border = '1px solid #ddd';
+                tarjeta.style.borderLeft = '5px solid var(--unrn-rojo)';
                 
                 // Normalizamos textos para buscar palabras clave más fácil
                 const tituloNormalizado = (evento.titulo || '').toLowerCase();
@@ -96,29 +111,31 @@ function renderizarTarjetas(eventosAMostrar) {
 
                 // Detectar qué imagen e icono inyectar
                 let imagenDinamica = '';
-                let iconoTexto = '📌'; // Icono por defecto por si es otra pausa
+                let iconoTexto = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square" style="vertical-align: middle; margin-right: 5px;"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>';
 
                 // 1. Caso: Pausa Café
                 if (tituloNormalizado.includes('café') || tituloNormalizado.includes('cafe')) {
-                    imagenDinamica = `<img src="fotos/cafe.avif" alt="Pausa Café" style="width: 100%; height: 150px; object-fit: cover; border-radius: 5px; margin-bottom: 15px;">`;
-                    iconoTexto = '☕';
+                    imagenDinamica = `<img src="fotos/cafe.avif" alt="Pausa Café" style="width: 100%; height: 150px; object-fit: cover; border-radius: 0; margin-bottom: 15px;">`;
+                    iconoTexto = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square" style="vertical-align: middle; margin-right: 5px;"><path d="M18 8h1a4 4 0 0 1 0 8h-1"></path><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"></path><line x1="6" y1="1" x2="6" y2="4"></line><line x1="10" y1="1" x2="10" y2="4"></line><line x1="14" y1="1" x2="14" y2="4"></line></svg>';
                 } 
                 // 2. Caso: Acreditaciones
                 else if (tipoNormalizado.includes('acreditación') || tituloNormalizado.includes('acreditacion')) {
-                    imagenDinamica = `<img src="fotos/acreditacion2.jpg" alt="Acreditación" style="width: 100%; height: 150px; object-fit: cover; border-radius: 5px; margin-bottom: 15px;">`;
-                    iconoTexto = '📋';
+                    imagenDinamica = `<img src="fotos/acreditacion2.jpg" alt="Acreditación" style="width: 100%; height: 150px; object-fit: cover; border-radius: 0; margin-bottom: 15px;">`;
+                    iconoTexto = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square" style="vertical-align: middle; margin-right: 5px;"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path><rect x="8" y="2" width="8" height="4" rx="0" ry="0"></rect></svg>';
                 } 
                 // 3. Caso: Eventos Sociales / Fin de Jornada (City Tour, Cena, etc.)
                 else if (tipoNormalizado.includes('evento social') || tituloNormalizado.includes('cena') || tituloNormalizado.includes('tour') || tituloNormalizado.includes('brindis')) {
-                    imagenDinamica = `<img src="fotos/social.jpg" alt="Evento Social" style="width: 100%; height: 150px; object-fit: cover; border-radius: 5px; margin-bottom: 15px;">`;
-                    iconoTexto = '🍷';
+                    imagenDinamica = `<img src="fotos/social.jpg" alt="Evento Social" style="width: 100%; height: 150px; object-fit: cover; border-radius: 0; margin-bottom: 15px;">`;
+                    iconoTexto = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square" style="vertical-align: middle; margin-right: 5px;"><path d="M8 22l4-10 4 10"></path><path d="M12 12v-2"></path><path d="M12 10a4 4 0 0 0 4-4V2H8v4a4 4 0 0 0 4 4z"></path></svg>';
                 }
+                
+                const svgPin = '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square" style="vertical-align: middle; margin-right: 3px;"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>';
 
                 // Inyectamos todo en la tarjeta
                 tarjeta.innerHTML = `
                     ${imagenDinamica}
-                    <p style="color: #666;"><em>📍 ${evento.espacio}</em></p> 
-                    <h3 style="margin-top: 5px;">${iconoTexto} ${evento.titulo}</h3>
+                    <p style="color: #666; text-transform: uppercase; letter-spacing: 1.5px; font-size: 12px; margin-bottom: 8px;"><em>${svgPin} ${evento.espacio}</em></p> 
+                    <h3 style="margin-top: 5px; display: flex; align-items: center; justify-content: center;">${iconoTexto} <span style="margin-left: 5px;">${evento.titulo}</span></h3>
                     ${evento.expositores ? `<p>${evento.expositores}</p>` : ''}
                 `;
             } else {
@@ -127,13 +144,13 @@ function renderizarTarjetas(eventosAMostrar) {
                 // Lógica para las mesas de ponencias con acordeón
                 if (evento.ponencias && evento.ponencias.length > 0) {
                     ponenciasHTML = `
-                        <details class="acordeon-ponencias no-imprimir" style="margin-top: 15px; border: 1px solid #ddd; padding: 10px; border-radius: 5px; background: #fafafa;">
-                            <summary style="cursor: pointer; font-weight: bold; color: var(--unrn-rojo, #a82020);">Ver ${evento.ponencias.length} ponencias</summary>
-                            <div class="lista-ponencias" style="margin-top: 15px; padding-left: 10px; border-left: 3px solid var(--unrn-rojo, #a82020);">
+                        <details class="acordeon-ponencias no-imprimir" style="margin-top: 15px; border: 1px solid #ddd; padding: 10px; border-radius: 0; background: #fafafa;">
+                            <summary style="cursor: pointer; font-weight: bold; color: var(--unrn-rojo); text-transform: uppercase; letter-spacing: 1.5px;">VER ${evento.ponencias.length} PONENCIAS</summary>
+                            <div class="lista-ponencias" style="margin-top: 15px; padding-left: 10px; border-left: 3px solid var(--unrn-rojo);">
                                 ${evento.ponencias.map(p => `
                                     <div class="sub-ponencia" style="margin-bottom: 15px;">
-                                        <h4 style="margin: 0; font-size: 14px; color: #333;">🔹 ${p.titulo}</h4>
-                                        <p class="autor" style="margin: 3px 0 0 0; font-size: 13px; color: #666;">${p.expositores}</p>
+                                        <h4 style="margin: 0; font-size: 14px; color: #333; text-transform: uppercase;"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square" style="vertical-align: middle; margin-right: 5px;"><polyline points="9 18 15 12 9 6"></polyline></svg> ${p.titulo}</h4>
+                                        <p class="autor" style="margin: 3px 0 0 17px; font-size: 13px; color: #666;">${p.expositores}</p>
                                     </div>
                                 `).join('')}
                             </div>
@@ -151,7 +168,7 @@ function renderizarTarjetas(eventosAMostrar) {
 
                 const boton = document.createElement('button');
                 boton.className = 'btn-mas-info no-imprimir';
-                boton.textContent = 'Ver más info';
+                boton.textContent = 'VER MÁS INFO →';
                 boton.style.marginTop = '15px';
                 boton.style.width = '100%';
                 boton.onclick = () => abrirModal(evento);
