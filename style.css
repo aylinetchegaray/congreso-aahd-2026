@@ -1,9 +1,13 @@
 /* Variables institucionales UNRN */
 :root {
-    --unrn-rojo: #E3002B; /* Rojo vibrante institucional */
-    --unrn-oscuro: #1A1D20; /* Gris antracita profundo */
-    --unrn-claro: #F4F5F7; /* Gris muy tenue para el body */
-    --unrn-gris-medio: #777777; /* Gris medio para bordes */
+    --unrn-rojo: #E3002B;
+    /* Rojo vibrante institucional */
+    --unrn-oscuro: #1A1D20;
+    /* Gris antracita profundo */
+    --unrn-claro: #F4F5F7;
+    /* Gris muy tenue para el body */
+    --unrn-gris-medio: #777777;
+    /* Gris medio para bordes */
     --blanco: #ffffff;
 }
 
@@ -12,7 +16,8 @@
     margin: 0;
     padding: 0;
     font-family: 'Roboto', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    border-radius: 0 !important; /* Geometría Recta absoluta */
+    border-radius: 0 !important;
+    /* Geometría Recta absoluta */
 }
 
 body {
@@ -27,9 +32,41 @@ body {
 header {
     text-align: center;
     margin-bottom: 20px;
+    background-color: #1a1d20;
+    border-bottom: 4px solid var(--unrn-rojo);
+    padding: 30px 20px;
 }
 
-h1, h2, h3, h4, h5, h6 {
+.header-titulos {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 25px;
+}
+
+.antetitulo {
+    color: var(--unrn-rojo);
+    font-weight: bold;
+    font-size: 13px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+header h1 {
+    color: #ffffff;
+    font-weight: 900;
+    margin-bottom: 0;
+    font-size: clamp(1.5rem, 4vw, 2.5rem);
+    border-radius: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
     color: var(--unrn-oscuro);
     margin-bottom: 15px;
     letter-spacing: 1.5px;
@@ -40,7 +77,9 @@ h1 {
     color: var(--unrn-rojo);
 }
 
-main { flex-grow: 1; }
+main {
+    flex-grow: 1;
+}
 
 /* --- CONTROLES DE BÚSQUEDA Y FILTROS --- */
 .controles-busqueda {
@@ -51,7 +90,8 @@ main { flex-grow: 1; }
     margin-bottom: 15px;
 }
 
-#buscador, select {
+#buscador,
+select {
     padding: 10px 15px;
     font-size: 15px;
     border: 1px solid var(--unrn-gris-medio);
@@ -61,10 +101,17 @@ main { flex-grow: 1; }
     box-shadow: none !important;
 }
 
-#buscador { width: 100%; max-width: 350px; }
-select { cursor: pointer; }
+#buscador {
+    width: 100%;
+    max-width: 350px;
+}
 
-#buscador:focus, select:focus {
+select {
+    cursor: pointer;
+}
+
+#buscador:focus,
+select:focus {
     border: 1px solid var(--unrn-rojo);
     box-shadow: none !important;
 }
@@ -84,7 +131,11 @@ button {
     margin-top: 10px;
     transition: background 0.2s;
 }
-.boton-descarga:hover { background-color: var(--unrn-rojo); border-color: var(--unrn-rojo); }
+
+.boton-descarga:hover {
+    background-color: var(--unrn-rojo);
+    border-color: var(--unrn-rojo);
+}
 
 /* --- MENÚ PRINCIPAL --- */
 #menu-principal {
@@ -105,15 +156,38 @@ button {
     transition: all 0.2s ease;
 }
 
-.boton-menu:hover { background-color: var(--unrn-rojo); color: var(--blanco); }
-.boton-menu.activo { background-color: var(--unrn-rojo); color: var(--blanco); }
+.boton-menu:hover {
+    background-color: var(--unrn-rojo);
+    color: var(--blanco);
+}
 
-.seccion-oculta { display: none; }
+.boton-menu.activo {
+    background-color: var(--unrn-rojo);
+    color: var(--blanco);
+}
+
+.seccion-oculta {
+    display: none;
+}
 
 /* --- MAPA --- */
-#seccion-mapa h2 { color: var(--unrn-rojo); text-align: center; margin-bottom: 15px; }
-.mapa-container { max-width: 1000px; margin: 0 auto; border: 1px solid var(--unrn-gris-medio); }
-.mapa-container iframe { width: 100%; height: 400px; border: 0; }
+#seccion-mapa h2 {
+    color: var(--unrn-rojo);
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.mapa-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    border: 1px solid var(--unrn-gris-medio);
+}
+
+.mapa-container iframe {
+    width: 100%;
+    height: 400px;
+    border: 0;
+}
 
 /* --- SECCIÓN TURISMO Y ALOJAMIENTO --- */
 .info-turismo {
@@ -177,10 +251,20 @@ button {
     border-bottom: 1px solid #eee;
 }
 
-.lista-hoteles li:last-child { border-bottom: none; }
+.lista-hoteles li:last-child {
+    border-bottom: none;
+}
 
-.hotel-info strong { display: block; color: var(--unrn-oscuro); font-size: 16px; }
-.hotel-info span { font-size: 13px; color: #777; }
+.hotel-info strong {
+    display: block;
+    color: var(--unrn-oscuro);
+    font-size: 16px;
+}
+
+.hotel-info span {
+    font-size: 13px;
+    color: #777;
+}
 
 /* Botón Cómo Llegar */
 .btn-llegar {
@@ -198,7 +282,10 @@ button {
     letter-spacing: 1.5px;
 }
 
-.btn-llegar:hover { background-color: var(--unrn-oscuro); color: var(--blanco); }
+.btn-llegar:hover {
+    background-color: var(--unrn-oscuro);
+    color: var(--blanco);
+}
 
 /* Enlaces extra (Directorio) */
 .enlaces-extra-alojamiento a {
@@ -208,22 +295,35 @@ button {
     margin-top: 5px;
     font-weight: bold;
 }
-.enlaces-extra-alojamiento a:hover { background-color: var(--unrn-rojo); color: var(--blanco); padding: 5px; }
+
+.enlaces-extra-alojamiento a:hover {
+    background-color: var(--unrn-rojo);
+    color: var(--blanco);
+    padding: 5px;
+}
 
 /* Responsivo para celulares */
 @media (max-width: 768px) {
-    .info-turismo { grid-template-columns: 1fr; }
+    .info-turismo {
+        grid-template-columns: 1fr;
+    }
+
     .lista-hoteles li {
         flex-direction: column;
         align-items: flex-start;
         gap: 10px;
     }
-    .btn-llegar { margin-left: 0; width: 100%; text-align: center; }
+
+    .btn-llegar {
+        margin-left: 0;
+        width: 100%;
+        text-align: center;
+    }
 }
 
 /* --- GRILLA Y TARJETAS --- */
 #contenedor-programa {
-    display: block; 
+    display: block;
     width: 100%;
 }
 
@@ -238,7 +338,9 @@ button {
     box-shadow: none !important;
 }
 
-.tarjeta-evento:hover { border-color: var(--unrn-rojo); }
+.tarjeta-evento:hover {
+    border-color: var(--unrn-rojo);
+}
 
 .etiqueta {
     display: inline-block;
@@ -254,26 +356,40 @@ button {
     letter-spacing: 0.5px;
 }
 
-.tarjeta-evento h3 { font-size: 18px; margin-bottom: 10px; color: var(--unrn-oscuro); text-transform: none; letter-spacing: normal; }
-.tarjeta-evento p { font-size: 14px; line-height: 1.5; margin-bottom: 8px; color: #444; }
+.tarjeta-evento h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+    color: var(--unrn-oscuro);
+    text-transform: none;
+    letter-spacing: normal;
+}
+
+.tarjeta-evento p {
+    font-size: 14px;
+    line-height: 1.5;
+    margin-bottom: 8px;
+    color: #444;
+}
 
 .btn-mas-info {
     margin-top: auto;
-    background-color: transparent; 
-    color: var(--unrn-rojo);       
-    border: 1px solid var(--unrn-rojo); 
+    background-color: transparent;
+    color: var(--unrn-rojo);
+    border: 1px solid var(--unrn-rojo);
     padding: 10px;
     cursor: pointer;
     font-weight: bold;
     transition: all 0.2s ease;
 }
 
-.btn-mas-info:hover { 
-    background-color: var(--unrn-rojo); 
+.btn-mas-info:hover {
+    background-color: var(--unrn-rojo);
     color: var(--blanco);
 }
 
-.bloquear-scroll { overflow: hidden; }
+.bloquear-scroll {
+    overflow: hidden;
+}
 
 /* --- PESTAÑAS (DÍAS) --- */
 .contenedor-pestañas {
@@ -295,8 +411,17 @@ button {
     transition: all 0.2s;
 }
 
-.boton-pestaña:hover { background-color: var(--unrn-oscuro); color: var(--blanco); border-color: var(--unrn-oscuro); }
-.boton-pestaña.activo { border-color: var(--unrn-oscuro); background-color: var(--unrn-oscuro); color: var(--blanco); }
+.boton-pestaña:hover {
+    background-color: var(--unrn-oscuro);
+    color: var(--blanco);
+    border-color: var(--unrn-oscuro);
+}
+
+.boton-pestaña.activo {
+    border-color: var(--unrn-oscuro);
+    background-color: var(--unrn-oscuro);
+    color: var(--blanco);
+}
 
 /* --- PAUSAS --- */
 .tarjeta-evento.pausa {
@@ -306,10 +431,15 @@ button {
     text-align: center;
     align-items: center;
 }
+
 .tarjeta-evento.pausa:hover {
     border-color: var(--unrn-rojo);
 }
-.tarjeta-evento.pausa h3 { margin-bottom: 0; justify-content: center; }
+
+.tarjeta-evento.pausa h3 {
+    margin-bottom: 0;
+    justify-content: center;
+}
 
 /* --- FOOTER --- */
 footer {
@@ -321,11 +451,30 @@ footer {
     text-align: center;
 }
 
-.footer-bloque { margin-bottom: 40px; }
-.footer-bloque h3 { color: var(--blanco); font-size: 1.1rem; }
+.footer-bloque {
+    margin-bottom: 40px;
+}
 
-.grilla-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; max-width: 800px; margin: 0 auto; }
-.grilla-12 { display: grid; grid-template-columns: repeat(6, 1fr); gap: 15px; max-width: 1000px; margin: 0 auto; }
+.footer-bloque h3 {
+    color: var(--blanco);
+    font-size: 1.1rem;
+}
+
+.grilla-4 {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.grilla-12 {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 15px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
 
 .foto-box {
     background-color: var(--blanco);
@@ -347,7 +496,9 @@ footer {
     box-shadow: none !important;
 }
 
-.modal h2 { margin-top: 0; }
+.modal h2 {
+    margin-top: 0;
+}
 
 /* --- IMÁGENES DEL FOOTER --- */
 .logo-footer {
@@ -356,10 +507,16 @@ footer {
     object-fit: contain;
 }
 
-.modal::backdrop { 
-    background-color: rgba(26, 29, 32, 0.85); 
+.modal::backdrop {
+    background-color: rgba(26, 29, 32, 0.85);
 }
-.modal-contenido { padding: 30px; position: relative; background-color: var(--unrn-claro); }
+
+.modal-contenido {
+    padding: 30px;
+    position: relative;
+    background-color: var(--unrn-claro);
+}
+
 .cerrar-modal {
     position: absolute;
     top: 15px;
@@ -372,24 +529,39 @@ footer {
     text-transform: none;
     letter-spacing: 0;
 }
-.cerrar-modal:hover { color: var(--unrn-rojo); }
+
+.cerrar-modal:hover {
+    color: var(--unrn-rojo);
+}
 
 /* --- REGLAS PARA IMPRESIÓN (PDF) --- */
 @media print {
-    .no-imprimir { display: none !important; }
-    body { background-color: white; padding: 0; }
-    #contenedor-programa { display: block; }
-    .tarjeta-evento { 
-        break-inside: avoid; 
-        page-break-inside: avoid; 
-        margin-bottom: 15px; 
+    .no-imprimir {
+        display: none !important;
+    }
+
+    body {
+        background-color: white;
+        padding: 0;
+    }
+
+    #contenedor-programa {
+        display: block;
+    }
+
+    .tarjeta-evento {
+        break-inside: avoid;
+        page-break-inside: avoid;
+        margin-bottom: 15px;
         border: 1px solid #ccc;
     }
 }
 
 @media (max-width: 768px) {
-    .grilla-4 , .grilla-12 {
-         grid-template-columns: repeat(2, 1fr); 
-        gap: 15px;    
+
+    .grilla-4,
+    .grilla-12 {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
     }
 }
