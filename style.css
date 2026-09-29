@@ -128,8 +128,10 @@ button {
     padding: 10px 20px;
     cursor: pointer;
     font-weight: bold;
-    margin-top: 10px;
     transition: background 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .boton-descarga:hover {
@@ -564,4 +566,30 @@ footer {
         grid-template-columns: repeat(2, 1fr);
         gap: 15px;
     }
+}
+
+/* --- ACCIONES MODAL --- */
+.btn-inscripcion,
+.btn-inscripcion-global { 
+    display: flex; 
+    align-items: center;
+    justify-content: center;
+    background-color: var(--unrn-rojo, #E3002B); 
+    color: #ffffff; 
+    padding: 10px 20px; 
+    text-decoration: none; 
+    font-weight: 700; 
+    text-transform: uppercase; 
+    letter-spacing: 1px; 
+    font-size: 14px; 
+    border: 1px solid var(--unrn-rojo, #E3002B); 
+    border-radius: 0 !important; 
+    transition: background-color 0.2s ease; 
+    cursor: pointer;
+    text-align: center;
+}
+.btn-inscripcion:hover,
+.btn-inscripcion-global:hover { 
+    background-color: var(--unrn-oscuro, #1a1d20); 
+    color: #ffffff; 
 }
