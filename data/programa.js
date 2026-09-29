@@ -1,7 +1,4 @@
 let todosLosEventos = [
-  // ==========================================
-  // DÍA 1 - 11 DE NOVIEMBRE
-  // ==========================================
   {
     "dia": "11 de noviembre",
     "horario": "8:30 a 9:00",
@@ -16,7 +13,8 @@ let todosLosEventos = [
     "espacio": "Campus UNRN-Espacio 1",
     "tipo": "Taller 1",
     "titulo": "Metodologías de trabajo en corpus",
-    "expositores": "Pierabella, Silvana (UNR)"
+    "expositores": "Pierabella, Silvana (UNR)",
+    "resumen": "Dado que el concepto de corpus se renueva a medida que el campo de las Humanidades Digitales se expande, conviene precisar cómo se entiende en el siglo XXI y conocer las metodologías que se utilizan. Por tal motivo, se propone un taller en el que se aplican los procedimientos de la lingüística de corpus en la selección de las fuentes, su organización y anotación. A tal fin se utiliza la aplicación NooJ la cual consiste en un software libre orientado al procesamiento automático de corpus en Humanidades Digitales."
   },
   {
     "dia": "11 de noviembre",
@@ -24,7 +22,8 @@ let todosLosEventos = [
     "espacio": "UPCN-Alem 240",
     "tipo": "Taller 2",
     "titulo": "Trabajo editorial en revistas científicas 1: El artículo como dispositivo de conocimiento en Humanidades; edición digital, curación de metadatos y marcadores persistentes",
-    "expositores": "Corbellini, Natalia (UNLP)"
+    "expositores": "Corbellini, Natalia (UNLP)",
+    "resumen": "El taller propone abordar la tarea editorial en revistas científicas en humanidades y ciencias sociales por pasos. El primer paso es consolidar la correcta comunicación de las Condiciones de envío de la revista adecuadas a la forma de trabajo y el objetivo de la publicación. Con el texto del artículo avanzaremos en técnicas para curar los datos, metadatos e identificadores persistentes, priorizando la sistematización del trabajo editorial, la visibilidad de la revista y sus contenidos. Se trabajará especialmente en la curaduría de los datos de investigación de las disciplinas para que cumplan los principios de buenas prácticas para mejorar la gestión, visibilidad y aprovechamiento de los datos de investigación (principios FAIR) y los lineamientos de ciencia abierta. La actividad está pensada como un taller práctico sobre ejemplos."
   },
   {
     "dia": "11 de noviembre",
@@ -32,7 +31,8 @@ let todosLosEventos = [
     "espacio": "Campus UNRN-Espacio 2",
     "tipo": "Taller 3",
     "titulo": "Introducción a la codificación y publicación digital en XML-TEI de textos dramáticos",
-    "expositores": "del Rio Riande, Gimena - Volkind, Laura (HD LAB, CONICET)"
+    "expositores": "del Rio Riande, Gimena - Volkind, Laura (HD LAB, CONICET)",
+    "resumen": "Este taller presenta un flujo de trabajo para codificar obras teatrales en el lenguaje de codificación XML-TEI. Se explicarán los pasos para transformar un texto plano en un documento marcado en XML-TEI que pueda luego ser publicado en formato HTML. El corpus generado en el taller se integrará como parte de ArDraCor (Argentina Drama Corpus) en DraCor (Drama Corpora), ecosistema de corpus programables que agrupa obras dramáticas codificadas en TEI. Más información: https://dracor.org/ar."
   },
   {
     "dia": "11 de noviembre",
@@ -40,7 +40,8 @@ let todosLosEventos = [
     "espacio": "Campus UNRN-Espacio 1",
     "tipo": "Taller 4",
     "titulo": "Reconocimiento y transcripción automática de textos impresos antiguos con Transkribus",
-    "expositores": "De León, Romina (HD LAB, CONICET)"
+    "expositores": "De León, Romina (HD LAB, CONICET)",
+    "resumen": "En este taller se ofrecerá una introducción práctica al uso de Transkribus, una de las plataformas más difundidas para el reconocimiento automático de texto manuscrito (Handwritten Text Recognition, HTR), aplicada al estudio de fuentes antiguas. En primer lugar, se abordarán los fundamentos conceptuales del HTR, sus diferencias respecto de las tecnologías tradicionales de OCR y las posibilidades que ofrecen los modelos de aprendizaje automático para la lectura de escrituras históricas. Se trabajará sobre aspectos clave del flujo de trabajo en Transkribus: preparación y carga de documentos, análisis del diseño de página, segmentación de regiones y líneas de texto, aplicación de modelos públicos, evaluación de resultados, corrección de transcripciones y exportación de datos para su posterior análisis."
   },
   {
     "dia": "11 de noviembre",
@@ -48,7 +49,8 @@ let todosLosEventos = [
     "espacio": "UPCN-Alem 240",
     "tipo": "Taller 5",
     "titulo": "Construcción de tableros interactivos en Tableau a partir de fuentes históricas",
-    "expositores": "Lissandrello, Guido (Instituto Ravignani, FFyL, UBA, CONICET)"
+    "expositores": "Lissandrello, Guido (Instituto Ravignani, FFyL, UBA, CONICET)",
+    "resumen": "El taller pretende ser una introducción a la herramienta Tableau para construir tableros con visualizaciones interactivas a partir de una fuente de fines de siglo XIX que registra una importante cantidad de datos sobre la gran epidemia de fiebre amarilla que asoló a Buenos Aires en 1871. Los procedimientos que veremos nos permitirán construir un tablero que muestre la evolución de fallecimientos producidos por dicha epidemia día a día a la par que nos servirá para conocer características de la población afectada. Haremos uso también de filtros interactivos que posibiliten al usuario conocer las estadísticas de mortalidad según subgrupos. Finalmente, construimos un mapa de Buenos Aires para visualizar cómo la fiebre amarilla se extendió de manera desigual en la ciudad."
   },
   {
     "dia": "11 de noviembre",
@@ -56,12 +58,13 @@ let todosLosEventos = [
     "espacio": "Campus UNRN-Espacio 2",
     "tipo": "Taller 6",
     "titulo": "Análisis Automático de Textos, Procesamiento del Lenguaje Natural y Minería de Textos: métodos no supervisados para la exploración de corpus",
-    "expositores": "Nusch, Carlos (UNLP)"
+    "expositores": "Nusch, Carlos (UNLP)",
+    "resumen": "Este taller propone una introducción práctica al análisis automático de textos, el procesamiento del lenguaje natural y la minería de textos, con énfasis en métodos no supervisados de agrupamiento o clustering. A partir de ejemplos aplicados sobre corpus textuales, se abordarán estrategias para representar documentos, explorar patrones latentes y organizar grandes volúmenes de información sin recurrir a etiquetas previamente definidas. No se requiere experiencia en programación, aunque se recomienda familiaridad básica con el trabajo con datos textuales."
   },
   {
     "dia": "11 de noviembre",
     "horario": "13:00",
-    "espacio": "", //Lugar a definir
+    "espacio": "",
     "tipo": "Pausa",
     "titulo": "PAUSA ALMUERZO",
     "expositores": ""
@@ -72,7 +75,8 @@ let todosLosEventos = [
     "espacio": "Campus UNRN-Espacio 1",
     "tipo": "Taller 7",
     "titulo": "Uso de herramientas computacionales para el análisis histórico: ARS y construcción de corpus digitales",
-    "expositores": "Riganti, Maria Valentina (CESXX, Humas, UNS, CONICET)"
+    "expositores": "Riganti, Maria Valentina (CESXX, Humas, UNS, CONICET)",
+    "resumen": "Este taller propone un abordaje teórico-práctico sobre el Análisis de Redes Sociales (ARS) como metodología para la Historia, en particular apliicada a la investigación social. La propuesta ofrece herramientas para transformar fuentes documentales en estructuras relacionales complejas. El taller se organiza en tres partes que inician con la construcción de corpus para ARS, explorando metodologías de recolección y captación de datos a partir de fuentes históricas diversas. Se discutirá cómo identificar entidades y vínculos, y cómo la curaduría de estos datos constituye el primer paso para una investigación reproducible y escalable. Posteriormente, se introducirán las nociones básicas de ARS y las potencialidades del software libre Gephi. Finalmente, se presentará un estudio de caso desarrollado mediante la metodología del ARS y perspectiva feminista."
   },
   {
     "dia": "11 de noviembre",
@@ -80,7 +84,8 @@ let todosLosEventos = [
     "espacio": "UPCN-Alem 240",
     "tipo": "Taller 8",
     "titulo": "Fotogrametría y preservación digital: estrategias para la documentación tridimensional del patrimonio",
-    "expositores": "Roteta Lannes, Candela (IHUMA, Humas, UNS, CONICET) - Canclini, Eunice (UNS)"
+    "expositores": "Roteta Lannes, Candela (IHUMA, Humas, UNS, CONICET) - Canclini, Eunice (UNS)",
+    "resumen": "Este taller propone una introducción práctica a los principios y etapas fundamentales de la fotogrametría aplicada al patrimonio cultural. A través de ejemplos provenientes de proyectos de digitalización de materialidades arqueológicas y museológicas, se abordarán las distintas fases del proceso: planificación y captura fotográfica; procesamiento de imágenes; generación de nube de puntos; mallado; texturado; exportación de archivos; estrategias de preservación y comunicación digital. Asimismo, se presentarán y compararán diferentes alternativas de software."
   },
   {
     "dia": "11 de noviembre",
@@ -88,12 +93,13 @@ let todosLosEventos = [
     "espacio": "Campus UNRN-Espacio 2",
     "tipo": "Taller 9",
     "titulo": "Diagnosticar y reparar textos producidos con inteligencia artificial: criterios lingüísticos para las Humanidades Digitales",
-    "expositores": "Colella, Valeria Magalí - Gómez Belart, Nuria (USAL)"
+    "expositores": "Colella, Valeria Magalí - Gómez Belart, Nuria (USAL)",
+    "resumen": "La propuesta aborda la producción y la postedición de textos generados mediante inteligencia artificial desde una perspectiva lingüística, pragmática y discursiva. El objetivo consiste en ofrecer herramientas de análisis que permitan identificar problemas frecuentes en textos sintéticos y desarrollar criterios de intervención orientados a mejorar su calidad comunicativa, precisión y adecuación contextual. La dinámica de trabajo articula una instancia teórica introductoria con actividades prácticas de diagnóstico y reparación textual. Se trabajará sobre casos producidos con modelos lingüísticos de uso extendido, a partir de la comparación entre versiones generadas automáticamente y versiones intervenidas mediante criterios vinculados con la macrosintaxis, la construcción de la voz enunciativa, la claridad discursiva y la organización de la información."
   },
   {
     "dia": "11 de noviembre",
     "horario": "16:00",
-    "espacio": "", //Lugar a definir
+    "espacio": "",
     "tipo": "Pausa",
     "titulo": "PAUSA CAFÉ",
     "expositores": ""
@@ -113,7 +119,8 @@ let todosLosEventos = [
     "espacio": "UPCN-Alem 240",
     "tipo": "Taller 10",
     "titulo": "Mapas narrativos interactivos con tecnologías abiertas: una introducción práctica a los Storymaps",
-    "expositores": "Calarco, Gabriel (UTDT)"
+    "expositores": "Calarco, Gabriel (UTDT)",
+    "resumen": "Este taller propone una introducción práctica a la creación de storymaps interactivos mediante tecnologías abiertas, integrando GitHub, GitHub Pages, Google Sheets y la biblioteca Leaflet. A lo largo de la actividad, los participantes aprenderán a generar y publicar un mapa narrativo georreferenciado a partir de una plantilla reutilizable, sin necesidad de conocimientos avanzados de programación. Durante el taller se abordará la configuración inicial del repositorio en GitHub, la publicación del proyecto mediante GitHub Pages y la vinculación de una hoja de cálculo de Google como fuente de datos dinámica. Asimismo, se trabajará sobre la personalización del mapa mediante la incorporación de textos, imágenes, audio y video, la georreferenciación de lugares y la edición de los principales parámetros de presentación del proyecto."
   },
   {
     "dia": "11 de noviembre",
@@ -121,7 +128,8 @@ let todosLosEventos = [
     "espacio": "Campus UNRN-Espacio 1",
     "tipo": "Taller 11",
     "titulo": "Experimentación I.A. (Imágenes Análogo-digito-artificial): experimentación gráfico visual con IAs gratuitas",
-    "expositores": "Malugani Costantino - Juan Sebastian (UNR)"
+    "expositores": "Malugani Costantino - Juan Sebastian (UNR)",
+    "resumen": "Este taller propone una experiencia práctica e introductoria orientada a explorar, de manera crítica y reflexiva, las relaciones entre los procesos analógicos, digitales y artificiales en la producción visual. Quienes participen transitan un recorrido que comienza en el gesto manual —el boceto, el trazo— para dialogar luego con herramientas digitales convencionales e incorporar finalmente la IA generativa como un eslabón más en esa cadena de producción. El taller problematiza el funcionamiento de estas tecnologías: los modelos generativos no crean contenido genuinamente nuevo, sino que recombinan patrones estadísticos extraídos de imágenes producidas por personas, sobre una infraestructura material y humana frecuentemente invisibilizada. El formato es participativo y experimental, combinando consignas de producción visual con momentos de reflexión colectiva. Solo se requiere computadora con acceso a internet; no se necesita experiencia previa."
   },
   {
     "dia": "11 de noviembre",
@@ -139,10 +147,6 @@ let todosLosEventos = [
     "titulo": "City Tour. Brindis con guindado con gancho",
     "expositores": ""
   },
-
-  // ==========================================
-  // DÍA 2 - 12 DE NOVIEMBRE
-  // ==========================================
   {
     "dia": "12 de noviembre",
     "horario": "Todo el día",
@@ -485,10 +489,6 @@ let todosLosEventos = [
     "titulo": "CENA CAMARADERÍA",
     "expositores": ""
   },
-
-  // ==========================================
-  // DÍA 3 - 13 DE NOVIEMBRE
-  // ==========================================
   {
     "dia": "13 de noviembre",
     "horario": "Todo el día",
@@ -503,7 +503,8 @@ let todosLosEventos = [
     "espacio": "Campus UNRN-Espacio 1",
     "tipo": "Taller 12",
     "titulo": "Salud y Humanidades Digitales en tiempos de inteligencia artificial: paradigmas, tensiones y alcances",
-    "expositores": "Goldschmidt, Julieta Yasmín (UBA-UTN)"
+    "expositores": "Goldschmidt, Julieta Yasmín (UBA-UTN)",
+    "resumen": "El procesamiento de registros médicos, organizados en datos discretos y tabulables, cuenta hoy con herramientas robustas. El taller propone recorrer tres modos posibles de incorporar IA a este material: el consumo de APIs comerciales, el despliegue de modelos abiertos en infraestructura híbrida con GPU, y la ejecución local de modelos pequeños bajo el paradigma del minimal computing. La actividad cierra con un intercambio sobre experiencias regionales, donde se discutirán las dimensiones políticas, éticas y culturales en juego."
   },
   {
     "dia": "13 de noviembre",
@@ -511,7 +512,8 @@ let todosLosEventos = [
     "espacio": "Campus UNRN-Espacio 2",
     "tipo": "Taller 13",
     "titulo": "Inteligencia artificial para la extracción de información en Ciencias Humanas y Sociales: grafos de conocimiento a partir de documentos no estructurados",
-    "expositores": "Cortés, Federico (CITECDE, UNRN)"
+    "expositores": "Cortés, Federico (CITECDE, UNRN)",
+    "resumen": "Los grandes modelos de lenguaje (LLM) han abierto la posibilidad de extraer información estructurada a partir de documentoso no estructurados. Este taller, de orientación práctica, introduce a investigadores e investigadoras de Ciencias Humanas y Sociales en la extracción automática de grafos de conocimiento (knowledge graphs) desde un corpus de PDF, utilizando la herramienta de código abierto KGGen. El recorrido parte de un problema concreto: la mayor parte del patrimonio textual con el que trabajamos —artículos, revistas, archivos— circula como documentos no estructurados, de los que resulta difícil derivar datos analizables. Tomaremos como caso la revista literaria argentina SITIO (1981-1987). No se requieren conocimientos previos de programación; se trabajará con materiales guiados paso a paso. El código sobre el que nos basaremos está publicado en https://github.com/fedexx1/sitio-revista."
   },
   {
     "dia": "13 de noviembre",
@@ -519,7 +521,8 @@ let todosLosEventos = [
     "espacio": "Campus UNRN-Espacio 3",
     "tipo": "Taller 14",
     "titulo": "Trabajo editorial en revistas científicas 2: Introducción a la gestión administrativa a través de OJS",
-    "expositores": "Corbellini, Natalia (UNLP)"
+    "expositores": "Corbellini, Natalia (UNLP)",
+    "resumen": "El taller propone un primer acercamiento a la gestión global del proceso editorial a través de la plataforma OJS, personalizando las diferentes opciones para adecuarlas al modo de trabajo de cada revista y su equipo editorial. Tendrá en cuenta las actualizaciones disponibles de módulos para marcado y publicación. Se recorrerán distintas opciones de la plataforma para vincularse con autores, lectores, revisores y miembros de los comités académicos."
   },
   {
     "dia": "13 de noviembre",
@@ -684,5 +687,3 @@ let todosLosEventos = [
     "expositores": "del Rio Riande, Gimena - De León, Romina - Calarco, Gabriel - Volkind, Laura (HD LAB, IIBICRIT/HD LAB, CONICET) - Hernández, Nidia (DILA/HD LAB, CONICET)"
   }
 ];
-
-//hola

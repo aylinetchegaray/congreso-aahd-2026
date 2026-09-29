@@ -32,9 +32,14 @@
             </select>
         </div>
 
-        <button id="btn-descargar" class="boton-descarga" onclick="descargarPrograma()">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter" style="vertical-align: middle; margin-right: 5px;"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg> Descargar Programa de este día (PDF)
-        </button>
+        <div style="display: flex; justify-content: center; align-items: stretch; gap: 15px; flex-wrap: wrap; margin-top: 15px;">
+            <button id="btn-descargar" class="boton-descarga" onclick="descargarPrograma()">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter" style="vertical-align: middle; margin-right: 5px;"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg> Descargar Programa de este día (PDF)
+            </button>
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLSc2f4kEFNfcgZ0g5_y5YBwKNjlrBGXkX-x7rfMxdh02y47_uw/viewform?usp=dialog" target="_blank" class="btn-inscripcion-global">
+                INSCRIPCIÓN A TALLERES
+            </a>
+        </div>
     </header>
 
     <!-- Menú principal para alternar entre Programa y Ubicación -->
@@ -175,6 +180,8 @@
             
             <h3 style="color: var(--unrn-rojo); margin-top: 15px;">Requisitos</h3>
             <p id="modal-requisitos"></p>
+
+            <div id="modal-acciones" style="margin-top: 25px; text-align: center;"></div>
         </div>
     </dialog>
 
