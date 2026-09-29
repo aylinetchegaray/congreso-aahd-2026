@@ -17,7 +17,6 @@ function abrirModal(evento) {
     document.getElementById('modal-expositores').textContent = evento.expositores || "N/A";
 
     document.getElementById('modal-resumen').textContent = evento.resumen || "No hay resumen disponible para esta actividad.";
-    document.getElementById('modal-requisitos').textContent = evento.requisitos || "No se requieren conocimientos ni materiales previos.";
 
     document.body.classList.add('bloquear-scroll');
 
@@ -179,14 +178,16 @@ function renderizarTarjetas(eventosAMostrar) {
                     ${ponenciasHTML}
                 `;
 
-                const boton = document.createElement('button');
-                boton.className = 'btn-mas-info no-imprimir';
-                boton.textContent = 'VER MÁS INFO →';
-                boton.style.marginTop = '15px';
-                boton.style.width = '100%';
-                boton.onclick = () => abrirModal(evento);
+                if (evento.tipo && evento.tipo.toLowerCase().includes('taller')) {
+                    const boton = document.createElement('button');
+                    boton.className = 'btn-mas-info no-imprimir';
+                    boton.textContent = 'VER MÁS INFO →';
+                    boton.style.marginTop = '15px';
+                    boton.style.width = '100%';
+                    boton.onclick = () => abrirModal(evento);
 
-                tarjeta.appendChild(boton);
+                    tarjeta.appendChild(boton);
+                }
             }
 
             contenedorActividades.appendChild(tarjeta);
