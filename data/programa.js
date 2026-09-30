@@ -107,7 +107,7 @@ let todosLosEventos = [
   {
     "dia": "11 de noviembre",
     "horario": "16:30 a 18:30",
-    "espacio": "Museo Emma Nozzi",
+    "espacio": "Museo Emma Nozzi (A CONFIRMAR)",
     "tipo": "Panel",
     "moderador": "Lucía Cantamutto",
     "titulo": "Puentes hacia la justicia hídrica: memoria ambiental y tecnologías participativas",
@@ -134,7 +134,7 @@ let todosLosEventos = [
   {
     "dia": "11 de noviembre",
     "horario": "19:00 a 19:30",
-    "espacio": "Museo Emma Nozzi",
+    "espacio": "Museo Emma Nozzi (A CONFIRMAR)",
     "tipo": "Intercambio",
     "titulo": "Archivos y digitalización. Intercambio de experiencias",
     "expositores": ""
@@ -142,7 +142,7 @@ let todosLosEventos = [
   {
     "dia": "11 de noviembre",
     "horario": "19:30",
-    "espacio": "Museo Emma Nozzi",
+    "espacio": "Museo Emma Nozzi (A CONFIRMAR)",
     "tipo": "Evento Social",
     "titulo": "City Tour. Brindis con guindado con gancho",
     "expositores": ""
@@ -423,6 +423,14 @@ let todosLosEventos = [
   },
   {
     "dia": "12 de noviembre",
+    "horario": "15:00 a 16:00",
+    "espacio": "Campus UNRN-Espacio 3",
+    "tipo": "Semillero HD",
+    "titulo": "Semillero de ideas para proyectos de Humanidades Digitales",
+    "expositores": ""
+  },
+  {
+    "dia": "12 de noviembre",
     "horario": "17:00 a 18:30",
     "espacio": "Campus UNRN-Espacio 1",
     "tipo": "Ponencias 10",
@@ -464,14 +472,6 @@ let todosLosEventos = [
         "expositores": "del Rio Riande, Gimena - De León, Romina (HD LAB, CONICET)"
       }
     ]
-  },
-  {
-    "dia": "12 de noviembre",
-    "horario": "17:00 a 18:30",
-    "espacio": "Campus UNRN-Espacio 3",
-    "tipo": "SemilleroHD",
-    "titulo": "Semillero de ideas para proyectos de Humanidades Digitales",
-    "expositores": ""
   },
   {
     "dia": "12 de noviembre",
@@ -684,6 +684,6 @@ let todosLosEventos = [
     "espacio": "Manzana Histórica-Feria del Libro",
     "tipo": "Panel",
     "titulo": "HD LAB: una apuesta por la sostenibilidad, sustentabilidad y preservación en Humanidades Digitales",
-    "expositores": "del Rio Riande, Gimena - De León, Romina - Calarco, Gabriel - Volkind, Laura (HD LAB, IIBICRIT/HD LAB, CONICET) - Hernández, Nidia (DILA/HD LAB, CONICET)"
+    "expositores": "del Rio Riande, Gimena - De León, Romina - Calarco, Gabriel - Volkind, Laura (IIBICRIT/HD LAB, CONICET) - Hernández, Nidia (DILA/HD LAB, CONICET)"
   }
 ];
