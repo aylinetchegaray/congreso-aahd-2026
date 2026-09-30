@@ -391,27 +391,9 @@ let todosLosEventos = [
     "dia": "12 de noviembre",
     "horario": "15:00 a 16:30",
     "espacio": "Campus UNRN-Espacio 3",
-    "tipo": "Ponencias 9",
-    "titulo": "Sociedad y subjetividades",
-    "moderador": "María Valentina Riganti",
-    "ponencias": [
-      {
-        "titulo": "Construcción de subjetividades y control social en un mundo 4.0",
-        "expositores": "Giordana, Patricia - Aguirre, Guillermina (UNRN)"
-      },
-      {
-        "titulo": "(re)Ciclarse en la ciudad: el archivo digital comunitario y la vida póstuma de la ciudad latinoamericana",
-        "expositores": "Zamora, Alejandro (York University, Canadá)"
-      },
-      {
-        "titulo": "Inteligencia artificial y métricas de legibilidad para la implementación del lenguaje claro",
-        "expositores": "Colella,Valeria Magali (USAL)"
-      },
-      {
-        "titulo": "Mapear las desigualdades: análisis georreferenciado de la demanda de atención por violencia de género y la densidad institucional en Bahía Blanca",
-        "expositores": "Riganti, Maria Valentina (CIECOeF, CONICET-UNS) - Costantino, Agostina (IIESS, CONICET-UNS) - D’Amico Arceo, Octavio - Cantamutto, Francisco (UNS)"
-      }
-    ]
+    "tipo": "Semillero HD",
+    "titulo": "Semillero de ideas para proyectos de Humanidades Digitales",
+    "expositores": ""
   },
   {
     "dia": "12 de noviembre",
@@ -419,14 +401,6 @@ let todosLosEventos = [
     "espacio": "",
     "tipo": "Pausa",
     "titulo": "PAUSA CAFÉ",
-    "expositores": ""
-  },
-  {
-    "dia": "12 de noviembre",
-    "horario": "15:00 a 16:00",
-    "espacio": "Campus UNRN-Espacio 3",
-    "tipo": "Semillero HD",
-    "titulo": "Semillero de ideas para proyectos de Humanidades Digitales",
     "expositores": ""
   },
   {
@@ -470,6 +444,32 @@ let todosLosEventos = [
       {
         "titulo": "Reflexiones sobre el macroanálisis supervisado de datos en proyectos de Humanidades Digitales",
         "expositores": "del Rio Riande, Gimena - De León, Romina (HD LAB, CONICET)"
+      }
+    ]
+  },
+  {
+    "dia": "12 de noviembre",
+    "horario": "17:00 a 18:30",
+    "espacio": "Campus UNRN-Espacio 3",
+    "tipo": "Ponencias 9",
+    "titulo": "Sociedad y subjetividades",
+    "moderador": "María Valentina Riganti",
+    "ponencias": [
+      {
+        "titulo": "Construcción de subjetividades y control social en un mundo 4.0",
+        "expositores": "Giordana, Patricia - Aguirre, Guillermina (UNRN)"
+      },
+      {
+        "titulo": "(re)Ciclarse en la ciudad: el archivo digital comunitario y la vida póstuma de la ciudad latinoamericana",
+        "expositores": "Zamora, Alejandro (York University, Canadá)"
+      },
+      {
+        "titulo": "Inteligencia artificial y métricas de legibilidad para la implementación del lenguaje claro",
+        "expositores": "Colella,Valeria Magali (USAL)"
+      },
+      {
+        "titulo": "Mapear las desigualdades: análisis georreferenciado de la demanda de atención por violencia de género y la densidad institucional en Bahía Blanca",
+        "expositores": "Riganti, Maria Valentina (CIECOeF, CONICET-UNS) - Costantino, Agostina (IIESS, CONICET-UNS) - D’Amico Arceo, Octavio - Cantamutto, Francisco (UNS)"
       }
     ]
   },

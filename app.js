@@ -48,12 +48,13 @@ function renderizarTarjetas(eventosAMostrar) {
         return;
     }
 
-    // 1. Agrupar los eventos cronológicamente por su horario
+    // 1. Agrupar los eventos cronológicamente por su día y horario
     const gruposPorHorario = [];
     eventosAMostrar.forEach(evento => {
-        let grupo = gruposPorHorario.find(g => g.horario === evento.horario);
+        let claveGrupo = `${evento.dia} - ${evento.horario}`;
+        let grupo = gruposPorHorario.find(g => g.clave === claveGrupo);
         if (!grupo) {
-            grupo = { horario: evento.horario, eventos: [] };
+            grupo = { clave: claveGrupo, horario: evento.horario, dia: evento.dia, eventos: [] };
             gruposPorHorario.push(grupo);
         }
         grupo.eventos.push(evento);
@@ -89,7 +90,11 @@ function renderizarTarjetas(eventosAMostrar) {
         bannerHora.style.top = '-13px';
         bannerHora.style.left = '0';
 
-        bannerHora.textContent = `HORARIO: ${grupo.horario}`;
+        let textoBanner = `HORARIO: ${grupo.horario}`;
+        if (diaActual === 'todos') {
+            textoBanner = `${grupo.dia} - HORARIO: ${grupo.horario}`;
+        }
+        bannerHora.textContent = textoBanner.toUpperCase();
 
         bannerContainer.appendChild(bannerHora);
         bloqueHorario.appendChild(bannerContainer);
