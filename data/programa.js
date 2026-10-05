@@ -107,7 +107,7 @@ let todosLosEventos = [
   {
     "dia": "11 de noviembre",
     "horario": "16:30 a 18:30",
-    "espacio": "Museo Emma Nozzi (A CONFIRMAR)",
+    "espacio": "Lugar a definir",
     "tipo": "Panel",
     "moderador": "Lucía Cantamutto",
     "titulo": "Puentes hacia la justicia hídrica: memoria ambiental y tecnologías participativas",
@@ -131,7 +131,7 @@ let todosLosEventos = [
     "expositores": "Malugani Costantino - Juan Sebastian (UNR)",
     "resumen": "Este taller propone una experiencia práctica e introductoria orientada a explorar, de manera crítica y reflexiva, las relaciones entre los procesos analógicos, digitales y artificiales en la producción visual. Quienes participen transitan un recorrido que comienza en el gesto manual —el boceto, el trazo— para dialogar luego con herramientas digitales convencionales e incorporar finalmente la IA generativa como un eslabón más en esa cadena de producción. El taller problematiza el funcionamiento de estas tecnologías: los modelos generativos no crean contenido genuinamente nuevo, sino que recombinan patrones estadísticos extraídos de imágenes producidas por personas, sobre una infraestructura material y humana frecuentemente invisibilizada. El formato es participativo y experimental, combinando consignas de producción visual con momentos de reflexión colectiva. Solo se requiere computadora con acceso a internet; no se necesita experiencia previa."
   },
-  {
+  /*{
     "dia": "11 de noviembre",
     "horario": "19:00 a 19:30",
     "espacio": "Museo Emma Nozzi (A CONFIRMAR)",
@@ -146,7 +146,7 @@ let todosLosEventos = [
     "tipo": "Evento Social",
     "titulo": "City Tour. Brindis con guindado con gancho",
     "expositores": ""
-  },
+  },*/
   {
     "dia": "12 de noviembre",
     "horario": "Todo el día",
@@ -275,10 +275,10 @@ let todosLosEventos = [
     "titulo": "Literatura, Filología y Lingüística",
     "moderador": "Carlos Nusch",
     "ponencias": [
-      {
+      /*{
         "titulo": "Las poesías de la Historia troyana polimétrica: una propuesta de edición digital y estudio",
         "expositores": "Miguens, Agustina (CNBA-UBA)"
-      },
+      },*/
       {
         "titulo": "Fragmentos Restaurados LLaMA 3 y la Recuperación de Registros Históricos Empresariales",
         "expositores": "Torres Flawiá, Eugenio (Fundación Bunge y Born)"

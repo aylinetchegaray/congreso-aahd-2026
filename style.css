@@ -575,6 +575,39 @@ footer {
     }
 }
 
+.acciones-globales { 
+    display: flex; 
+    flex-wrap: wrap; 
+    gap: 12px; 
+    justify-content: center; 
+    align-items: stretch;
+    margin: 20px 0 30px 0; 
+}
+
+.btn-inscripcion-asistentes {
+    display: flex; 
+    align-items: center;
+    justify-content: center;
+    border-radius: 0 !important; 
+    font-weight: 700; 
+    text-transform: uppercase; 
+    font-size: 14px; 
+    padding: 10px 20px; 
+    text-decoration: none;
+    background-color: var(--unrn-oscuro, #1a1d20); 
+    color: #ffffff;
+    border: 1px solid var(--unrn-oscuro, #1a1d20);
+    transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+    text-align: center;
+    cursor: pointer;
+}
+
+.btn-inscripcion-asistentes:hover {
+    background-color: var(--unrn-rojo, #E3002B); 
+    color: #ffffff;
+    border-color: var(--unrn-rojo, #E3002B);
+}
+
 /* --- ACCIONES MODAL --- */
 .btn-inscripcion,
 .btn-inscripcion-global { 
