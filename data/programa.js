@@ -518,7 +518,7 @@ let todosLosEventos = [
   {
     "dia": "13 de noviembre",
     "horario": "8:00 a 10:00",
-    "espacio": "Campus UNRN-Espacio 3",
+    "espacio": "Manzana Histórica-Feria del Libro",
     "tipo": "Taller 14",
     "titulo": "Trabajo editorial en revistas científicas 2: Introducción a la gestión administrativa a través de OJS",
     "expositores": "Corbellini, Natalia (UNLP)",
