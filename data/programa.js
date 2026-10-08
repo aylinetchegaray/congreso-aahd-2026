@@ -121,7 +121,7 @@ let todosLosEventos = [
     "titulo": "Mapas narrativos interactivos con tecnologías abiertas: una introducción práctica a los Storymaps",
     "expositores": "Calarco, Gabriel (UTDT)",
     "resumen": "Este taller propone una introducción práctica a la creación de storymaps interactivos mediante tecnologías abiertas, integrando GitHub, GitHub Pages, Google Sheets y la biblioteca Leaflet. A lo largo de la actividad, los participantes aprenderán a generar y publicar un mapa narrativo georreferenciado a partir de una plantilla reutilizable, sin necesidad de conocimientos avanzados de programación. Durante el taller se abordará la configuración inicial del repositorio en GitHub, la publicación del proyecto mediante GitHub Pages y la vinculación de una hoja de cálculo de Google como fuente de datos dinámica. Asimismo, se trabajará sobre la personalización del mapa mediante la incorporación de textos, imágenes, audio y video, la georreferenciación de lugares y la edición de los principales parámetros de presentación del proyecto."
-  },
+  }, /*
   {
     "dia": "11 de noviembre",
     "horario": "16:30 a 18:30",
@@ -131,7 +131,7 @@ let todosLosEventos = [
     "expositores": "Malugani Costantino - Juan Sebastian (UNR)",
     "resumen": "Este taller propone una experiencia práctica e introductoria orientada a explorar, de manera crítica y reflexiva, las relaciones entre los procesos analógicos, digitales y artificiales en la producción visual. Quienes participen transitan un recorrido que comienza en el gesto manual —el boceto, el trazo— para dialogar luego con herramientas digitales convencionales e incorporar finalmente la IA generativa como un eslabón más en esa cadena de producción. El taller problematiza el funcionamiento de estas tecnologías: los modelos generativos no crean contenido genuinamente nuevo, sino que recombinan patrones estadísticos extraídos de imágenes producidas por personas, sobre una infraestructura material y humana frecuentemente invisibilizada. El formato es participativo y experimental, combinando consignas de producción visual con momentos de reflexión colectiva. Solo se requiere computadora con acceso a internet; no se necesita experiencia previa."
   },
-  /*{
+ {
     "dia": "11 de noviembre",
     "horario": "19:00 a 19:30",
     "espacio": "Museo Emma Nozzi (A CONFIRMAR)",
@@ -460,7 +460,7 @@ let todosLosEventos = [
         "expositores": "Giordana, Patricia - Aguirre, Guillermina (UNRN)"
       },
       {
-        "titulo": "(re)Ciclarse en la ciudad: el archivo digital comunitario y la vida póstuma de la ciudad latinoamericana",
+        "titulo": "(re)Ciclarse en la ciudad: el archivo digital comunitario y la posvida de la ciudad latinoamericana",
         "expositores": "Zamora, Alejandro (York University, Canadá)"
       },
       {
