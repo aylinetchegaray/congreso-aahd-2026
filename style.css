@@ -122,21 +122,26 @@ button {
 }
 
 .boton-descarga {
-    background-color: var(--unrn-oscuro);
+    background-color: var(--unrn-rojo);
     color: var(--blanco);
-    border: 1px solid var(--unrn-oscuro);
+    border: 1px solid var(--unrn-rojo);
     padding: 10px 20px;
     cursor: pointer;
-    font-weight: bold;
-    transition: background 0.2s;
+    font-weight: 700;
+    font-size: 14px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
     display: flex;
     align-items: center;
     justify-content: center;
+    text-align: center;
 }
 
 .boton-descarga:hover {
-    background-color: var(--unrn-rojo);
-    border-color: var(--unrn-rojo);
+    background-color: var(--unrn-oscuro);
+    border-color: var(--unrn-oscuro);
 }
 
 /* --- MENÚ PRINCIPAL --- */
@@ -690,23 +695,23 @@ footer {
     font-size: 14px; 
     padding: 10px 20px; 
     text-decoration: none;
-    background-color: var(--unrn-oscuro, #1a1d20); 
+    letter-spacing: 1px;
+    background-color: var(--unrn-rojo, #E3002B);
     color: #ffffff;
-    border: 1px solid var(--unrn-oscuro, #1a1d20);
+    border: 1px solid var(--unrn-rojo, #E3002B);
     transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
     text-align: center;
     cursor: pointer;
 }
 
 .btn-inscripcion-asistentes:hover {
-    background-color: var(--unrn-rojo, #E3002B); 
+    background-color: var(--unrn-oscuro, #1a1d20);
     color: #ffffff;
-    border-color: var(--unrn-rojo, #E3002B);
+    border-color: var(--unrn-oscuro, #1a1d20);
 }
 
 /* --- ACCIONES MODAL --- */
-.btn-inscripcion,
-.btn-inscripcion-global { 
+.btn-inscripcion {
     display: flex; 
     align-items: center;
     justify-content: center;
@@ -724,8 +729,31 @@ footer {
     cursor: pointer;
     text-align: center;
 }
-.btn-inscripcion:hover,
-.btn-inscripcion-global:hover { 
+.btn-inscripcion:hover {
     background-color: var(--unrn-oscuro, #1a1d20); 
     color: #ffffff; 
+}
+
+.btn-inscripcion-global {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--unrn-rojo, #E3002B);
+    color: #ffffff;
+    padding: 10px 20px;
+    text-decoration: none;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 14px;
+    border: 1px solid var(--unrn-rojo, #E3002B);
+    transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+    cursor: pointer;
+    text-align: center;
+}
+
+.btn-inscripcion-global:hover {
+    background-color: var(--unrn-oscuro, #1a1d20);
+    color: #ffffff;
+    border-color: var(--unrn-oscuro, #1a1d20);
 }
