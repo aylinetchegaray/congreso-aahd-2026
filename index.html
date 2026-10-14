@@ -35,13 +35,8 @@
         </div>
 
         <div class="acciones-globales">
-            <button id="btn-descargar" class="boton-descarga" onclick="descargarPrograma()">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                    stroke-linecap="square" stroke-linejoin="miter" style="vertical-align: middle; margin-right: 5px;">
-                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
-                    <polyline points="7 10 12 15 17 10"></polyline>
-                    <line x1="12" y1="15" x2="12" y2="3"></line>
-                </svg> Descargar Programa de este día (PDF)
+            <button id="btn-descargar" class="boton-descarga" onclick="imprimirPrograma()">
+                Imprimir / Guardar programa como PDF
             </button>
             <a href="https://docs.google.com/forms/d/e/1FAIpQLSc2f4kEFNfcgZ0g5_y5YBwKNjlrBGXkX-x7rfMxdh02y47_uw/viewform?usp=dialog"
                 target="_blank" class="btn-inscripcion-global">
@@ -204,6 +199,8 @@
     </main>
 
     <!-- FOOTER CON GRILLAS -->
+    <section id="contenedor-impresion" aria-hidden="true"></section>
+
     <footer class="no-imprimir">
         <div class="footer-bloque">
             <h3>Organizadores</h3>
@@ -270,28 +267,6 @@
             document.getElementById('modal-info').close();
         }
 
-        function descargarPrograma() {
-            const btnActivo = document.querySelector('.boton-pestaña.activo');
-            const diaActivo = btnActivo ? btnActivo.getAttribute('data-dia') : 'todos';
-            
-            let pdfName = '';
-            if (diaActivo === '11 de noviembre') {
-                pdfName = 'Programa AAHD 2026-Dia1.pdf';
-            } else if (diaActivo === '12 de noviembre') {
-                pdfName = 'Programa AAHD 2026-Dia2.pdf';
-            } else if (diaActivo === '13 de noviembre') {
-                pdfName = 'Programa AAHD 2026-Dia3.pdf';
-            } else {
-                pdfName = 'Programa AAHD 2026-Completo.pdf';
-            }
-
-            const a = document.createElement('a');
-            a.href = 'descargas/' + pdfName;
-            a.download = pdfName;
-            document.body.appendChild(a);
-            a.click();
-            document.body.removeChild(a);
-        }
     </script>
 
     <!-- Acá está la magia: primero los datos, después la lógica -->
