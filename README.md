@@ -9,13 +9,13 @@ Micrositio web interactivo para la consulta del cronograma, sedes, ponencias y a
 - **Buscador integrado:** Localización instantánea de expositores, moderadores y títulos de ponencias.
 - **Detalle en modal:** Acceso a resúmenes y datos institucionales sin recargar la página.
 - **Optimizado para móviles:** Diseño responsive ligero (Vanilla JS) sin dependencias externas pesadas.
-- **Exportación:** Función de impresión y guardado en PDF de la grilla diaria.
+- **Impresión dinámica:** Genera la vista para imprimir o guardar como PDF con los datos actuales del día seleccionado o del programa completo, sin usar archivos PDF estáticos.
 
 
 ## Stack Tecnológico
 
 - **Frontend:** HTML5, CSS3 modular (diseño institucional UNRN/CACIC), Vanilla JavaScript (ES6+).
-- **Persistencia de Datos:** JSON estático (`programa.json`), arquitectura Serverless / Jamstack.
+- **Datos del programa:** Actividades y horarios editables en `data/programa.js`, servidos sin backend.
 - **Despliegue:** GitHub Pages / Vercel CDN con integración continua (CI/CD).
 
 
@@ -25,27 +25,25 @@ Micrositio web interactivo para la consulta del cronograma, sedes, ponencias y a
 ├── index.html        # Estructura principal de la SPA
 ├── style.css         # Estilos visuales y reglas institucionales
 ├── app.js            # Lógica de renderizado, búsqueda y filtros
-├── programa.json     # Base de datos editable con los eventos y horarios
+├── data/programa.js  # Base de datos editable con los eventos y horarios
 └── fotos/            # Recursos gráficos y logotipos
 ```
 
 
 ## Mantenimiento
-Para modificar horarios, aulas o expositores no es necesario tocar el código fuente. Toda la información se gestiona desde programa.json:
-- Abrir el archivo programa.json.
+Para modificar horarios, aulas o expositores no es necesario tocar la lógica de la aplicación. Toda la información se gestiona desde data/programa.js:
+- Abrir el archivo data/programa.js.
 - Localizar el bloque del evento a editar:
 
 ```text
-JSON
 {
-  "id": 1,
-  "dia": "11 nov",
-  "horario": "16:30 A 18:30",
-  "tipo": "Taller",
-  "espacio": "Espacio 2",
+  "dia": "13 de noviembre",
+  "horario": "8:00 a 10:00",
+  "tipo": "Taller 12",
+  "espacio": "Campus UNRN-Espacio 1",
   "titulo": "Salud y Humanidades Digitales...",
-  "expositores": "Goldschmidt, Julieta Yasmin",
-  "resumen": "Descripción o resumen de la ponencia..."
+  "expositores": "Goldschmidt, Julieta Yasmín",
+  "resumen": "Descripción o resumen de la actividad..."
 }
 ```
 Realizar las modificaciones necesarias y guardar los cambios.

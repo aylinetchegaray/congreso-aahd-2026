@@ -1,4 +1,5 @@
 const contenedorPrograma = document.getElementById('contenedor-programa');
+const contenedorImpresion = document.getElementById('contenedor-impresion');
 const inputBuscador = document.getElementById('buscador');
 const botonesPestañas = document.querySelectorAll('.boton-pestaña');
 const selectTipo = document.getElementById('filtro-tipo');
@@ -58,6 +59,18 @@ function renderizarTarjetas(eventosAMostrar) {
             gruposPorHorario.push(grupo);
         }
         grupo.eventos.push(evento);
+    });
+
+    gruposPorHorario.sort((a, b) => {
+        const diaA = Number((a.dia.match(/\d+/) || [0])[0]);
+        const diaB = Number((b.dia.match(/\d+/) || [0])[0]);
+        if (diaA !== diaB) return diaA - diaB;
+
+        const horaA = a.horario.match(/(\d{1,2}):(\d{2})/);
+        const horaB = b.horario.match(/(\d{1,2}):(\d{2})/);
+        const minutosA = horaA ? Number(horaA[1]) * 60 + Number(horaA[2]) : -1;
+        const minutosB = horaB ? Number(horaB[1]) * 60 + Number(horaB[2]) : -1;
+        return minutosA - minutosB;
     });
 
     // 2. Dibujar un bloque (Outline) por cada horario
@@ -203,6 +216,136 @@ function renderizarTarjetas(eventosAMostrar) {
     });
 }
 
+function imprimirPrograma() {
+    if (!Array.isArray(todosLosEventos)) {
+        throw new Error('No se pudieron cargar los datos del programa.');
+    }
+
+    const eventos = todosLosEventos.filter(evento =>
+        diaActual === 'todos' || evento.dia === diaActual
+    );
+    const gruposPorHorario = new Map();
+
+    eventos.forEach(evento => {
+        const clave = `${evento.dia} - ${evento.horario}`;
+        if (!gruposPorHorario.has(clave)) {
+            gruposPorHorario.set(clave, {
+                dia: evento.dia,
+                horario: evento.horario,
+                eventos: []
+            });
+        }
+        gruposPorHorario.get(clave).eventos.push(evento);
+    });
+
+    const grupos = [...gruposPorHorario.values()].sort((a, b) => {
+        const diaA = Number((a.dia.match(/\d+/) || [0])[0]);
+        const diaB = Number((b.dia.match(/\d+/) || [0])[0]);
+        if (diaA !== diaB) return diaA - diaB;
+
+        const horaA = a.horario.match(/(\d{1,2}):(\d{2})/);
+        const horaB = b.horario.match(/(\d{1,2}):(\d{2})/);
+        const minutosA = horaA ? Number(horaA[1]) * 60 + Number(horaA[2]) : -1;
+        const minutosB = horaB ? Number(horaB[1]) * 60 + Number(horaB[2]) : -1;
+        return minutosA - minutosB;
+    });
+
+    contenedorImpresion.replaceChildren();
+    const encabezado = document.createElement('header');
+    encabezado.className = 'encabezado-impresion';
+
+    const nombreCongreso = document.createElement('p');
+    nombreCongreso.textContent = 'Congreso Internacional de Humanidades Digitales · AAHD 2026';
+    encabezado.appendChild(nombreCongreso);
+
+    const tituloPrograma = document.createElement('h1');
+    tituloPrograma.textContent = diaActual === 'todos'
+        ? 'Programa completo'
+        : `Programa · ${diaActual}`;
+    encabezado.appendChild(tituloPrograma);
+    contenedorImpresion.appendChild(encabezado);
+
+    let diaImpreso = '';
+    grupos.forEach(grupo => {
+        if (diaActual === 'todos' && grupo.dia !== diaImpreso) {
+            diaImpreso = grupo.dia;
+            const tituloDia = document.createElement('h2');
+            tituloDia.className = 'titulo-dia-impresion';
+            tituloDia.textContent = grupo.dia;
+            contenedorImpresion.appendChild(tituloDia);
+        }
+
+        const grupoImpresion = document.createElement('section');
+        grupoImpresion.className = 'grupo-horario-impresion';
+
+        const horario = document.createElement('h2');
+        horario.className = 'horario-impresion';
+        horario.textContent = grupo.horario;
+        grupoImpresion.appendChild(horario);
+
+        const actividades = document.createElement('div');
+        actividades.className = 'actividades-impresion';
+
+        grupo.eventos.forEach(evento => {
+            const tarjeta = document.createElement('article');
+            tarjeta.className = 'actividad-impresion';
+
+            const tipoEspacio = [evento.tipo, evento.espacio].filter(Boolean).join(' · ');
+            if (tipoEspacio) {
+                const detalle = document.createElement('p');
+                detalle.className = 'detalle-impresion';
+                detalle.textContent = tipoEspacio;
+                tarjeta.appendChild(detalle);
+            }
+
+            const titulo = document.createElement('h3');
+            titulo.textContent = evento.titulo || '';
+            tarjeta.appendChild(titulo);
+
+            if (evento.moderador) {
+                const moderador = document.createElement('p');
+                moderador.textContent = `Moderador/a: ${evento.moderador}`;
+                tarjeta.appendChild(moderador);
+            }
+
+            if (evento.expositores) {
+                const expositores = document.createElement('p');
+                expositores.textContent = `Expositor(es): ${evento.expositores}`;
+                tarjeta.appendChild(expositores);
+            }
+
+            if (evento.ponencias && evento.ponencias.length > 0) {
+                const listaPonencias = document.createElement('ul');
+                listaPonencias.className = 'ponencias-impresion';
+
+                evento.ponencias.forEach(ponencia => {
+                    const item = document.createElement('li');
+                    const tituloPonencia = document.createElement('strong');
+                    tituloPonencia.textContent = ponencia.titulo || '';
+                    item.appendChild(tituloPonencia);
+
+                    if (ponencia.expositores) {
+                        const autores = document.createElement('span');
+                        autores.textContent = ` — ${ponencia.expositores}`;
+                        item.appendChild(autores);
+                    }
+
+                    listaPonencias.appendChild(item);
+                });
+
+                tarjeta.appendChild(listaPonencias);
+            }
+
+            actividades.appendChild(tarjeta);
+        });
+
+        grupoImpresion.appendChild(actividades);
+        contenedorImpresion.appendChild(grupoImpresion);
+    });
+
+    window.print();
+}
+
 // ==========================================================
 // FUNCIÓN AUXILIAR (Búsqueda robusta)
 // ==========================================================
@@ -278,12 +421,6 @@ botonesPestañas.forEach(boton => {
         diaActual = e.target.getAttribute('data-dia');
         aplicarFiltros();
 
-        const btnDescarga = document.getElementById('btn-descargar');
-        if (diaActual === 'todos') {
-            btnDescarga.textContent = '📄 Descargar Programa Completo (PDF)';
-        } else {
-            btnDescarga.textContent = `📄 Descargar Programa ${e.target.textContent} (PDF)`;
-        }
     });
 });
 // ==========================================================

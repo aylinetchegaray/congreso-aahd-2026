@@ -80,7 +80,7 @@ let todosLosEventos = [
   },
   {
     "dia": "11 de noviembre",
-    "horario": "14:00 a 16:00",
+    "horario": "16:30 a 18:30",
     "espacio": "UPCN-Alem 240",
     "tipo": "Taller 8",
     "titulo": "Fotogrametría y preservación digital: estrategias para la documentación tridimensional del patrimonio",
@@ -115,7 +115,7 @@ let todosLosEventos = [
   },
   {
     "dia": "11 de noviembre",
-    "horario": "16:30 a 18:30",
+    "horario": "14:00 a 16:00",
     "espacio": "UPCN-Alem 240",
     "tipo": "Taller 10",
     "titulo": "Mapas narrativos interactivos con tecnologías abiertas: una introducción práctica a los Storymaps",
@@ -503,7 +503,7 @@ let todosLosEventos = [
     "espacio": "Campus UNRN-Espacio 1",
     "tipo": "Taller 12",
     "titulo": "Salud y Humanidades Digitales en tiempos de inteligencia artificial: paradigmas, tensiones y alcances",
-    "expositores": "Goldschmidt, Julieta Yasmín (UBA-UTN)",
+    "expositores": "Goldsmidt, Julieta Yasmín (UBA-UTN)",
     "resumen": "El procesamiento de registros médicos, organizados en datos discretos y tabulables, cuenta hoy con herramientas robustas. El taller propone recorrer tres modos posibles de incorporar IA a este material: el consumo de APIs comerciales, el despliegue de modelos abiertos en infraestructura híbrida con GPU, y la ejecución local de modelos pequeños bajo el paradigma del minimal computing. La actividad cierra con un intercambio sobre experiencias regionales, donde se discutirán las dimensiones políticas, éticas y culturales en juego."
   },
   {
