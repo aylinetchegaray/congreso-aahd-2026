@@ -107,7 +107,7 @@ let todosLosEventos = [
   {
     "dia": "11 de noviembre",
     "horario": "16:30 a 18:30",
-    "espacio": "Lugar a definir",
+    "espacio": "Biblioteca Mitre",
     "tipo": "Panel",
     "moderador": "Lucía Cantamutto",
     "titulo": "Puentes hacia la justicia hídrica: memoria ambiental y tecnologías participativas",
@@ -275,10 +275,10 @@ let todosLosEventos = [
     "titulo": "Literatura, Filología y Lingüística",
     "moderador": "Carlos Nusch",
     "ponencias": [
-      /*{
-        "titulo": "Las poesías de la Historia troyana polimétrica: una propuesta de edición digital y estudio",
-        "expositores": "Miguens, Agustina (CNBA-UBA)"
-      },*/
+      {
+        "titulo": "Inteligencia artificial y métricas de legibilidad para la implementación del lenguaje claro",
+        "expositores": "Colella,Valeria Magali (USAL)"
+      },
       {
         "titulo": "Fragmentos Restaurados LLaMA 3 y la Recuperación de Registros Históricos Empresariales",
         "expositores": "Torres Flawiá, Eugenio (Fundación Bunge y Born)"
@@ -413,16 +413,16 @@ let todosLosEventos = [
     "ponencias": [
       {
         "titulo": "Inteligencia artificial situada y soberanía tecnológica: Modelos de Lenguaje Compactos (SLMs) de código abierto en entornos educativos con recursos limitados",
-        "expositores": "Camera, Cecilia - García, Poggi, Ramiro - Boisseleier, Leandro (CURZAS, UNComa)"
+        "expositores": "Camera, Cecilia - García Poggi, Ramiro - Boisselier, Leandro (CURZAS, UNComa)"
       },
       {
         "titulo": "Inteligencia artificial sobre infraestructura local: un proyecto de gestión del patrimonio documental con soberanía tecnológica y de datos",
         "expositores": "Archuby, Gustavo (IdIHCS, CONICET)"
       },
-      {
+      /*{
         "titulo": "SoberanIA: Inferencia Local, Optimización Austera y Autonomía Pedagógica desde la Patagonia",
         "expositores": "Novoa, Daniel Ricardo (Territorio y Desarrollo Local)"
-      }
+      }*/
     ]
   },
   {
@@ -462,10 +462,6 @@ let todosLosEventos = [
       {
         "titulo": "(re)Ciclarse en la ciudad: el archivo digital comunitario y la posvida de la ciudad latinoamericana",
         "expositores": "Zamora, Alejandro (York University, Canadá)"
-      },
-      {
-        "titulo": "Inteligencia artificial y métricas de legibilidad para la implementación del lenguaje claro",
-        "expositores": "Colella,Valeria Magali (USAL)"
       },
       {
         "titulo": "Mapear las desigualdades: análisis georreferenciado de la demanda de atención por violencia de género y la densidad institucional en Bahía Blanca",
