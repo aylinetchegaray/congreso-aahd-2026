@@ -116,6 +116,25 @@ select:focus {
     box-shadow: none !important;
 }
 
+.btn-limpiar-filtros {
+    padding: 10px 15px;
+    border: 1px solid var(--unrn-rojo);
+    background-color: var(--blanco);
+    color: var(--unrn-rojo);
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.2s ease;
+}
+
+.btn-limpiar-filtros.activo {
+    background-color: var(--unrn-rojo);
+    color: var(--blanco);
+}
+
+.btn-limpiar-filtros:disabled {
+    cursor: default;
+}
+
 button {
     text-transform: uppercase;
     letter-spacing: 1.5px;

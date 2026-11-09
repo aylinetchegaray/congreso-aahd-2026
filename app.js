@@ -4,6 +4,7 @@ const inputBuscador = document.getElementById('buscador');
 const botonesPestañas = document.querySelectorAll('.boton-pestaña');
 const selectTipo = document.getElementById('filtro-tipo');
 const selectHorario = document.getElementById('filtro-horario');
+const botonLimpiarFiltros = document.getElementById('btn-limpiar-filtros');
 
 let diaActual = '11 de noviembre';
 
@@ -144,17 +145,21 @@ function renderizarTarjetas(eventosAMostrar) {
                 let imagenDinamica = '';
                 let iconoTexto = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square" style="vertical-align: middle; margin-right: 5px;"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>';
 
-                // 1. Caso: Pausa Café
-                if (tituloNormalizado.includes('café') || tituloNormalizado.includes('cafe')) {
+                // 1. Caso: Pausa almuerzo
+                if (tituloNormalizado.includes('almuerzo')) {
+                    imagenDinamica = `<img src="fotos/almuerzo.jpg" alt="Pausa de almuerzo" style="width: 100%; height: 150px; object-fit: cover; border-radius: 0; margin-bottom: 15px;">`;
+                }
+                // 2. Caso: Pausa Café
+                else if (tituloNormalizado.includes('café') || tituloNormalizado.includes('cafe')) {
                     imagenDinamica = `<img src="fotos/cafe.avif" alt="Pausa Café" style="width: 100%; height: 150px; object-fit: cover; border-radius: 0; margin-bottom: 15px;">`;
                     iconoTexto = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square" style="vertical-align: middle; margin-right: 5px;"><path d="M18 8h1a4 4 0 0 1 0 8h-1"></path><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"></path><line x1="6" y1="1" x2="6" y2="4"></line><line x1="10" y1="1" x2="10" y2="4"></line><line x1="14" y1="1" x2="14" y2="4"></line></svg>';
                 }
-                // 2. Caso: Acreditaciones
+                // 3. Caso: Acreditaciones
                 else if (tipoNormalizado.includes('acreditación') || tituloNormalizado.includes('acreditacion')) {
                     imagenDinamica = `<img src="fotos/acreditacion2.jpg" alt="Acreditación" style="width: 100%; height: 150px; object-fit: cover; border-radius: 0; margin-bottom: 15px;">`;
                     iconoTexto = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square" style="vertical-align: middle; margin-right: 5px;"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path><rect x="8" y="2" width="8" height="4" rx="0" ry="0"></rect></svg>';
                 }
-                // 3. Caso: Eventos Sociales / Fin de Jornada (City Tour, Cena, etc.)
+                // 4. Caso: Eventos Sociales / Fin de Jornada (City Tour, Cena, etc.)
                 else if (tipoNormalizado.includes('evento social') || tituloNormalizado.includes('cena') || tituloNormalizado.includes('tour') || tituloNormalizado.includes('brindis')) {
                     imagenDinamica = `<img src="fotos/social.jpg" alt="Evento Social" style="width: 100%; height: 150px; object-fit: cover; border-radius: 0; margin-bottom: 15px;">`;
                     iconoTexto = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square" style="vertical-align: middle; margin-right: 5px;"><path d="M8 22l4-10 4 10"></path><path d="M12 12v-2"></path><path d="M12 10a4 4 0 0 0 4-4V2H8v4a4 4 0 0 0 4 4z"></path></svg>';
@@ -362,6 +367,12 @@ function aplicarFiltros() {
     const textoBusqueda = quitarAcentos(inputBuscador.value.toLowerCase().trim());
     const tipoSeleccionado = selectTipo.value;
     const horarioSeleccionado = selectHorario.value;
+    const hayFiltrosActivos = textoBusqueda !== '' ||
+        tipoSeleccionado !== 'todos' ||
+        horarioSeleccionado !== 'todos';
+
+    botonLimpiarFiltros.disabled = !hayFiltrosActivos;
+    botonLimpiarFiltros.classList.toggle('activo', hayFiltrosActivos);
 
     // Verificación de seguridad por si tarda en cargar el archivo de datos
     if (typeof todosLosEventos === 'undefined') return;
@@ -414,6 +425,12 @@ function aplicarFiltros() {
 inputBuscador.addEventListener('input', aplicarFiltros);
 selectTipo.addEventListener('change', aplicarFiltros);
 selectHorario.addEventListener('change', aplicarFiltros);
+botonLimpiarFiltros.addEventListener('click', () => {
+    inputBuscador.value = '';
+    selectTipo.value = 'todos';
+    selectHorario.value = 'todos';
+    aplicarFiltros();
+});
 
 botonesPestañas.forEach(boton => {
     boton.addEventListener('click', (e) => {
