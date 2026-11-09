@@ -116,6 +116,7 @@ function renderizarTarjetas(eventosAMostrar) {
         const contenedorActividades = document.createElement('div');
         contenedorActividades.style.display = 'flex';
         contenedorActividades.style.flexWrap = 'wrap'; // Clave para que baje en celular
+        contenedorActividades.style.alignItems = 'flex-start';
         contenedorActividades.style.gap = '20px';
 
         // 3. Dibujar las actividades dentro de ese horario
