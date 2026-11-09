@@ -215,6 +215,126 @@ button {
     border: 0;
 }
 
+.pestanas-ubicacion {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+}
+
+.boton-pestana-ubicacion {
+    padding: 10px 18px;
+    border: 1px solid var(--unrn-rojo);
+    background: var(--blanco);
+    color: var(--unrn-rojo);
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.boton-pestana-ubicacion:hover,
+.boton-pestana-ubicacion.activo {
+    background: var(--unrn-rojo);
+    color: var(--blanco);
+}
+
+.panel-ubicacion[hidden] {
+    display: none;
+}
+
+.colectivos-intro,
+.aviso-colectivos {
+    max-width: 1000px;
+    margin: 0 auto 18px;
+    line-height: 1.6;
+    text-align: center;
+}
+
+.mapa-colectivos {
+    max-width: 1000px;
+    margin: 0 auto 22px;
+}
+
+.mapa-colectivos img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border: 1px solid var(--unrn-gris-medio);
+}
+
+.mapa-colectivos p {
+    margin: 8px 0 0;
+    color: #555;
+    font-size: 13px;
+    text-align: center;
+}
+
+.lineas-colectivo {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+    max-width: 1000px;
+    margin: 0 auto 18px;
+}
+
+.linea-colectivo {
+    padding: 20px;
+    background: var(--blanco);
+    border: 1px solid var(--unrn-gris-medio);
+    border-top: 4px solid var(--linea-color);
+}
+
+.linea-g {
+    --linea-color: #ef9b16;
+}
+
+.linea-d {
+    --linea-color: #183a9e;
+}
+
+.linea-colectivo h3 {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    margin: 0 0 12px;
+    color: var(--unrn-oscuro);
+}
+
+.indicador-linea {
+    flex: 0 0 14px;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: var(--linea-color);
+}
+
+.linea-colectivo p,
+.linea-colectivo li {
+    line-height: 1.55;
+}
+
+.linea-colectivo ul {
+    padding-left: 20px;
+}
+
+.enlaces-linea {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px 18px;
+    margin-top: 14px;
+}
+
+.enlaces-linea a {
+    color: var(--unrn-rojo);
+    font-weight: bold;
+}
+
+.aviso-colectivos {
+    color: #555;
+    font-size: 13px;
+}
+
 /* --- SECCIÓN TURISMO Y ALOJAMIENTO --- */
 .info-turismo {
     display: grid;
@@ -331,6 +451,10 @@ button {
 /* Responsivo para celulares */
 @media (max-width: 768px) {
     .info-turismo {
+        grid-template-columns: 1fr;
+    }
+
+    .lineas-colectivo {
         grid-template-columns: 1fr;
     }
 

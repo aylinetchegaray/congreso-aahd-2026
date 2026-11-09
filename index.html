@@ -70,60 +70,74 @@
 
         <!-- SECCIÓN 2: MAPA DE UBICACIÓN Y TURISMO -->
         <section id="seccion-mapa" class="seccion-oculta no-imprimir">
-            <h2>Ubicación del Congreso</h2>
-
-            <div class="mapa-container">
-                <iframe src="https://www.google.com/maps/d/embed?mid=1GsOfieqeP63qdgV_z59U_zYaPqYIYzg" width="100%"
-                    height="400" style="border:0; border-radius: 2px;" allowfullscreen="" loading="lazy">
-                </iframe>
+            <div class="pestanas-ubicacion" role="tablist" aria-label="Información de ubicación">
+                <button type="button" class="boton-pestana-ubicacion activo" id="tab-lugares"
+                    role="tab" aria-selected="true" aria-controls="panel-lugares"
+                    onclick="cambiarPestanaUbicacion('panel-lugares', this)">
+                    Lugares y turismo
+                </button>
+                <button type="button" class="boton-pestana-ubicacion" id="tab-colectivos"
+                    role="tab" aria-selected="false" aria-controls="panel-colectivos"
+                    onclick="cambiarPestanaUbicacion('panel-colectivos', this)">
+                    Cómo llegar en colectivo
+                </button>
             </div>
 
-            <!-- NUEVO: Sección de Turismo y Alojamiento -->
-            <div class="info-turismo">
+            <div id="panel-lugares" class="panel-ubicacion" role="tabpanel" aria-labelledby="tab-lugares">
+                <h2>Ubicación del Congreso</h2>
 
-                <!-- Columna 1: Turismo -->
-                <div class="turismo-bloque">
-                    <h3><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="2" stroke-linecap="square" stroke-linejoin="miter"
-                            style="vertical-align: middle; margin-right: 5px;">
-                            <circle cx="12" cy="12" r="10"></circle>
-                            <line x1="2" y1="12" x2="22" y2="12"></line>
-                            <path
-                                d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z">
-                            </path>
-                        </svg> ¿Qué visitar?</h3>
-                    <p>La ciudad de Viedma es la capital de la provincia de Río Negro. Está ubicada al margen del Río
-                        Negro, a 30km del mar y frente a Carmen de Patagones, la ciudad más austral de la provincia de
-                        Buenos Aires.</p>
-
-                    <div class="botones-enlaces">
-                        <a href="https://destinoviedma.gob.ar/" target="_blank" class="btn-turismo">Descubrí DESTINO
-                            VIEDMA</a>
-                        <a href="https://turismo.patagones.gob.ar/" target="_blank" class="btn-turismo">PATAGONES –
-                            Portal de la Patagonia</a>
-                    </div>
+                <div class="mapa-container">
+                    <iframe src="https://www.google.com/maps/d/embed?mid=1GsOfieqeP63qdgV_z59U_zYaPqYIYzg" width="100%"
+                        height="400" style="border:0; border-radius: 2px;" allowfullscreen="" loading="lazy">
+                    </iframe>
                 </div>
 
-                <!-- Columna 2: Hoteles -->
-                <div class="turismo-bloque">
-                    <h3><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="2" stroke-linecap="square" stroke-linejoin="miter"
-                            style="vertical-align: middle; margin-right: 5px;">
-                            <rect x="4" y="2" width="16" height="20" rx="2" ry="2"></rect>
-                            <path d="M9 22v-4h6v4"></path>
-                            <path d="M8 6h.01"></path>
-                            <path d="M16 6h.01"></path>
-                            <path d="M12 6h.01"></path>
-                            <path d="M12 10h.01"></path>
-                            <path d="M12 14h.01"></path>
-                            <path d="M16 10h.01"></path>
-                            <path d="M16 14h.01"></path>
-                            <path d="M8 10h.01"></path>
-                            <path d="M8 14h.01"></path>
-                        </svg> ¿Dónde alojarse?</h3>
-                    <p>Consultá el mapa superior o revisá estas opciones recomendadas:</p>
+                <!-- NUEVO: Sección de Turismo y Alojamiento -->
+                <div class="info-turismo">
 
-                    <ul class="lista-hoteles">
+                    <!-- Columna 1: Turismo -->
+                    <div class="turismo-bloque">
+                        <h3><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="square" stroke-linejoin="miter"
+                                style="vertical-align: middle; margin-right: 5px;">
+                                <circle cx="12" cy="12" r="10"></circle>
+                                <line x1="2" y1="12" x2="22" y2="12"></line>
+                                <path
+                                    d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z">
+                                </path>
+                            </svg> ¿Qué visitar?</h3>
+                        <p>La ciudad de Viedma es la capital de la provincia de Río Negro. Está ubicada al margen del Río
+                            Negro, a 30km del mar y frente a Carmen de Patagones, la ciudad más austral de la provincia de
+                            Buenos Aires.</p>
+
+                        <div class="botones-enlaces">
+                            <a href="https://destinoviedma.gob.ar/" target="_blank" class="btn-turismo">Descubrí DESTINO
+                                VIEDMA</a>
+                            <a href="https://turismo.patagones.gob.ar/" target="_blank" class="btn-turismo">PATAGONES –
+                                Portal de la Patagonia</a>
+                        </div>
+                    </div>
+
+                    <!-- Columna 2: Hoteles -->
+                    <div class="turismo-bloque">
+                        <h3><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="square" stroke-linejoin="miter"
+                                style="vertical-align: middle; margin-right: 5px;">
+                                <rect x="4" y="2" width="16" height="20" rx="2" ry="2"></rect>
+                                <path d="M9 22v-4h6v4"></path>
+                                <path d="M8 6h.01"></path>
+                                <path d="M16 6h.01"></path>
+                                <path d="M12 6h.01"></path>
+                                <path d="M12 10h.01"></path>
+                                <path d="M12 14h.01"></path>
+                                <path d="M16 10h.01"></path>
+                                <path d="M16 14h.01"></path>
+                                <path d="M8 10h.01"></path>
+                                <path d="M8 14h.01"></path>
+                            </svg> ¿Dónde alojarse?</h3>
+                        <p>Consultá el mapa superior o revisá estas opciones recomendadas:</p>
+
+                        <ul class="lista-hoteles">
                         <li>
                             <div class="hotel-info"><strong>Hotel Casino del Río</strong></div>
                             <a href="https://www.google.com/maps/search/?api=1&query=Hotel+Casino+del+Rio+Viedma"
@@ -187,17 +201,65 @@
                                     <circle cx="12" cy="10" r="3"></circle>
                                 </svg> Cómo llegar</a>
                         </li>
-                    </ul>
+                        </ul>
 
-                    <div class="enlaces-extra-alojamiento">
-                        <p><strong>Más opciones:</strong></p>
-                        <a href="https://turismoviedma.gov.ar/servicios/" target="_blank">Buscar alojamientos diarios en
-                            Viedma</a>
-                        <a href="https://turismo.patagones.gob.ar/alojamientos/" target="_blank">Buscar alojamientos en
-                            Carmen de Patagones</a>
+                        <div class="enlaces-extra-alojamiento">
+                            <p><strong>Más opciones:</strong></p>
+                            <a href="https://turismoviedma.gov.ar/servicios/" target="_blank">Buscar alojamientos diarios en
+                                Viedma</a>
+                            <a href="https://turismo.patagones.gob.ar/alojamientos/" target="_blank">Buscar alojamientos en
+                                Carmen de Patagones</a>
+                        </div>
                     </div>
                 </div>
+            </div>
 
+            <div id="panel-colectivos" class="panel-ubicacion" role="tabpanel" aria-labelledby="tab-colectivos" hidden>
+                <h2>Cómo llegar en colectivo al Campus Bi Modal</h2>
+                <p class="colectivos-intro">Las líneas G y D llegan al Campus Bi Modal. El mapa muestra sus recorridos
+                    aproximados por Viedma: la línea G en naranja y la línea D en azul.</p>
+
+                <div class="mapa-colectivos">
+                    <img src="fotos/Recorrido%20colectivos%20que%20van%20al%20Campus-%20MEJORADA.jpg"
+                        alt="Mapa de los recorridos de colectivo al Campus Bi Modal: línea G en naranja y línea D en azul"
+                        loading="lazy">
+                    <p>Los recorridos y horarios pueden cambiar. Consultá los enlaces de cada línea antes de viajar.</p>
+                </div>
+
+                <div class="lineas-colectivo">
+                    <article class="linea-colectivo linea-g">
+                        <h3><span class="indicador-linea" aria-hidden="true"></span>Línea G — recorrido naranja</h3>
+                        <p>Servicio operado por Ceferino.</p>
+                        <ul>
+                            <li><strong>Días hábiles:</strong> aproximadamente de 5:00 a 22:00, cada 10–15 minutos.</li>
+                            <li><strong>Sábados:</strong> aproximadamente de 5:00 a 21:55, cada 18–23 minutos.</li>
+                            <li><strong>Domingos:</strong> aproximadamente de 5:00 a 21:53, cada 27–32 minutos.</li>
+                        </ul>
+                        <div class="enlaces-linea">
+                            <a href="https://moovitapp.com/index/es-419/transporte_p%C3%BAblico-line-g-Viedma-6068-1742806-360033991-0"
+                                target="_blank" rel="noopener noreferrer">Recorrido y paradas en Moovit</a>
+                            <a href="https://www.empresaceferino.com.ar/recorridoUrbano.php" target="_blank"
+                                rel="noopener noreferrer">Empresa Ceferino</a>
+                        </div>
+                    </article>
+
+                    <article class="linea-colectivo linea-d">
+                        <h3><span class="indicador-linea" aria-hidden="true"></span>Línea D — recorrido azul</h3>
+                        <p>Servicio urbano operado por La Comarca / Ceferino.</p>
+                        <ul>
+                            <li><strong>Días hábiles:</strong> aproximadamente de 6:00 a 22:20, con frecuencia cercana a 20 minutos.</li>
+                            <li><strong>Fines de semana y feriados:</strong> frecuencia aproximada de 30–40 minutos; los horarios pueden variar.</li>
+                        </ul>
+                        <div class="enlaces-linea">
+                            <a href="https://moovitapp.com/index/es-419/transporte_p%C3%BAblico-line-d-Viedma-6068-1742807-360033993-0"
+                                target="_blank" rel="noopener noreferrer">Recorrido y paradas en Moovit</a>
+                            <a href="https://www.facebook.com/urbanoviedmapatagones/?locale=es_LA" target="_blank"
+                                rel="noopener noreferrer">Novedades de Urbano Viedma Patagones</a>
+                        </div>
+                    </article>
+                </div>
+                <p class="aviso-colectivos">Los horarios y frecuencias son orientativos y pueden modificarse. Verificá
+                    la información actualizada con las empresas o en las aplicaciones de transporte.</p>
             </div>
         </section>
     </main>
@@ -267,6 +329,17 @@
             document.querySelectorAll('.boton-menu').forEach(btn => btn.classList.remove('activo'));
             document.getElementById(idSeccion).style.display = 'block';
             botonClickeado.classList.add('activo');
+        }
+
+        function cambiarPestanaUbicacion(idPanel, botonClickeado) {
+            document.querySelectorAll('.panel-ubicacion').forEach(panel => {
+                panel.hidden = panel.id !== idPanel;
+            });
+            document.querySelectorAll('.boton-pestana-ubicacion').forEach(boton => {
+                const seleccionado = boton === botonClickeado;
+                boton.classList.toggle('activo', seleccionado);
+                boton.setAttribute('aria-selected', seleccionado);
+            });
         }
 
         function cerrarModal() {
