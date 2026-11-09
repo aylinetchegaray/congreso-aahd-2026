@@ -76,13 +76,13 @@ let todosLosEventos = [
     "tipo": "Taller 7",
     "titulo": "Uso de herramientas computacionales para el análisis histórico: ARS y construcción de corpus digitales",
     "expositores": "Riganti, Maria Valentina (CESXX, Humas, UNS, CONICET)",
-    "resumen": "Este taller propone un abordaje teórico-práctico sobre el Análisis de Redes Sociales (ARS) como metodología para la Historia, en particular apliicada a la investigación social. La propuesta ofrece herramientas para transformar fuentes documentales en estructuras relacionales complejas. El taller se organiza en tres partes que inician con la construcción de corpus para ARS, explorando metodologías de recolección y captación de datos a partir de fuentes históricas diversas. Se discutirá cómo identificar entidades y vínculos, y cómo la curaduría de estos datos constituye el primer paso para una investigación reproducible y escalable. Posteriormente, se introducirán las nociones básicas de ARS y las potencialidades del software libre Gephi. Finalmente, se presentará un estudio de caso desarrollado mediante la metodología del ARS y perspectiva feminista."
+    "resumen": "Este taller propone un abordaje teórico-práctico sobre el Análisis de Redes Sociales (ARS) como metodología para la Historia, en particular aplicada a la investigación social. La propuesta ofrece herramientas para transformar fuentes documentales en estructuras relacionales complejas. El taller se organiza en tres partes que inician con la construcción de corpus para ARS, explorando metodologías de recolección y captación de datos a partir de fuentes históricas diversas. Se discutirá cómo identificar entidades y vínculos, y cómo la curaduría de estos datos constituye el primer paso para una investigación reproducible y escalable. Posteriormente, se introducirán las nociones básicas de ARS y las potencialidades del software libre Gephi. Finalmente, se presentará un estudio de caso desarrollado mediante la metodología del ARS y perspectiva feminista."
   },
   {
     "dia": "11 de noviembre",
     "horario": "16:30 a 18:30",
     "espacio": "UPCN-Alem 240",
-    "tipo": "Taller 8",
+    "tipo": "Taller 10",
     "titulo": "Fotogrametría y preservación digital: estrategias para la documentación tridimensional del patrimonio",
     "expositores": "Roteta Lannes, Candela (IHUMA, Humas, UNS, CONICET) - Canclini, Eunice (UNS)",
     "resumen": "Este taller propone una introducción práctica a los principios y etapas fundamentales de la fotogrametría aplicada al patrimonio cultural. A través de ejemplos provenientes de proyectos de digitalización de materialidades arqueológicas y museológicas, se abordarán las distintas fases del proceso: planificación y captura fotográfica; procesamiento de imágenes; generación de nube de puntos; mallado; texturado; exportación de archivos; estrategias de preservación y comunicación digital. Asimismo, se presentarán y compararán diferentes alternativas de software."
@@ -90,11 +90,11 @@ let todosLosEventos = [
   {
     "dia": "11 de noviembre",
     "horario": "14:00 a 16:00",
-    "espacio": "Campus UNRN-Espacio 2",
-    "tipo": "Taller 9",
-    "titulo": "Diagnosticar y reparar textos producidos con inteligencia artificial: criterios lingüísticos para las Humanidades Digitales",
-    "expositores": "Colella, Valeria Magalí - Gómez Belart, Nuria (USAL)",
-    "resumen": "La propuesta aborda la producción y la postedición de textos generados mediante inteligencia artificial desde una perspectiva lingüística, pragmática y discursiva. El objetivo consiste en ofrecer herramientas de análisis que permitan identificar problemas frecuentes en textos sintéticos y desarrollar criterios de intervención orientados a mejorar su calidad comunicativa, precisión y adecuación contextual. La dinámica de trabajo articula una instancia teórica introductoria con actividades prácticas de diagnóstico y reparación textual. Se trabajará sobre casos producidos con modelos lingüísticos de uso extendido, a partir de la comparación entre versiones generadas automáticamente y versiones intervenidas mediante criterios vinculados con la macrosintaxis, la construcción de la voz enunciativa, la claridad discursiva y la organización de la información."
+    "espacio": "UPCN-Alem 240",
+    "tipo": "Taller 8",
+    "titulo": "Mapas narrativos interactivos con tecnologías abiertas: una introducción práctica a los Storymaps",
+    "expositores": "Calarco, Gabriel (UTDT)",
+    "resumen": "Este taller propone una introducción práctica a la creación de storymaps interactivos mediante tecnologías abiertas, integrando GitHub, GitHub Pages, Google Sheets y la biblioteca Leaflet. A lo largo de la actividad, los participantes aprenderán a generar y publicar un mapa narrativo georreferenciado a partir de una plantilla reutilizable, sin necesidad de conocimientos avanzados de programación. Durante el taller se abordará la configuración inicial del repositorio en GitHub, la publicación del proyecto mediante GitHub Pages y la vinculación de una hoja de cálculo de Google como fuente de datos dinámica. Asimismo, se trabajará sobre la personalización del mapa mediante la incorporación de textos, imágenes, audio y video, la georreferenciación de lugares y la edición de los principales parámetros de presentación del proyecto."
   },
   {
     "dia": "11 de noviembre",
@@ -109,18 +109,27 @@ let todosLosEventos = [
     "horario": "16:30 a 18:30",
     "espacio": "Biblioteca Mitre",
     "tipo": "Panel",
-    "moderador": "Lucía Cantamutto",
+    "moderador": "Juan Pablo Bohoslavsky (CONICET-UNRN, ex director de AySA en representación del Estado nacional)",
     "titulo": "Puentes hacia la justicia hídrica: memoria ambiental y tecnologías participativas",
     "expositores": "Liberman, Mariana (Instituto Universitario de Agua y Saneamiento)- Birochio, Diego (UNRN) - Musi Saluj, Cristian (UNRN-INTA) - Zangra, Alejandro (Museo Emma Nozzi) - Viladrich, Leonel (UNRN)"
   },
   {
     "dia": "11 de noviembre",
+    "horario": "16:30 a 18:30",
+    "espacio": "Campus UNRN-Espacio 1",
+    "tipo": "Semillero HD",
+    "moderador": "Lucía Cantamutto",
+    "titulo": "Semillero de ideas para proyectos de Humanidades Digitales",
+    "expositores": ""
+  },
+  {
+    "dia": "11 de noviembre",
     "horario": "14:00 a 16:00",
-    "espacio": "UPCN-Alem 240",
-    "tipo": "Taller 10",
-    "titulo": "Mapas narrativos interactivos con tecnologías abiertas: una introducción práctica a los Storymaps",
-    "expositores": "Calarco, Gabriel (UTDT)",
-    "resumen": "Este taller propone una introducción práctica a la creación de storymaps interactivos mediante tecnologías abiertas, integrando GitHub, GitHub Pages, Google Sheets y la biblioteca Leaflet. A lo largo de la actividad, los participantes aprenderán a generar y publicar un mapa narrativo georreferenciado a partir de una plantilla reutilizable, sin necesidad de conocimientos avanzados de programación. Durante el taller se abordará la configuración inicial del repositorio en GitHub, la publicación del proyecto mediante GitHub Pages y la vinculación de una hoja de cálculo de Google como fuente de datos dinámica. Asimismo, se trabajará sobre la personalización del mapa mediante la incorporación de textos, imágenes, audio y video, la georreferenciación de lugares y la edición de los principales parámetros de presentación del proyecto."
+    "espacio": "Campus UNRN-Espacio 2",
+    "tipo": "Taller 9",
+    "titulo": "Diagnosticar y reparar textos producidos con inteligencia artificial: criterios lingüísticos para las Humanidades Digitales",
+    "expositores": "Colella, Valeria Magalí - Gómez Belart, Nuria (USAL)",
+    "resumen": "La propuesta aborda la producción y la postedición de textos generados mediante inteligencia artificial desde una perspectiva lingüística, pragmática y discursiva. El objetivo consiste en ofrecer herramientas de análisis que permitan identificar problemas frecuentes en textos sintéticos y desarrollar criterios de intervención orientados a mejorar su calidad comunicativa, precisión y adecuación contextual. La dinámica de trabajo articula una instancia teórica introductoria con actividades prácticas de diagnóstico y reparación textual. Se trabajará sobre casos producidos con modelos lingüísticos de uso extendido, a partir de la comparación entre versiones generadas automáticamente y versiones intervenidas mediante criterios vinculados con la macrosintaxis, la construcción de la voz enunciativa, la claridad discursiva y la organización de la información."
   }, /*
   {
     "dia": "11 de noviembre",
@@ -169,7 +178,7 @@ let todosLosEventos = [
       },
       {
         "titulo": "La historia de la doncella Tawaddud: un proyecto de edición digital filológica anotada de un manuscrito árabe (el ms. IIº A-5-20 de la Escuela de Estudios Árabes de Granada)",
-        "expositores": "Miranda, Florencia Lucía (CONICET - UBA - UNLZ)"
+        "expositores": "Miranda, Florencia Lucía (UBA-UNLZ)"
       },
       {
         "titulo": "Transitando el archivo: una cartografía de los afectos a partir del archivo fotográfico de Alberto Saldarriaga",
@@ -199,11 +208,11 @@ let todosLosEventos = [
       },
       {
         "titulo": "Análisis de discurso mediante técnicas de NLP en Python",
-        "expositores": "Guerra, Daniela (USAL - Universidad Austral)"
+        "expositores": "Guerra, Daniela (USAL-Universidad Austral)"
       },
       {
         "titulo": "“Programar hablando”: análisis lingüístico de vibe coding con IAGen",
-        "expositores": "de-Matteis, Lorena M. A. (ICIC, CONICET-UNS)"
+        "expositores": "de Matteis, Lorena M. A. (ICIC, CONICET-UNS)"
       }
     ]
   },
@@ -217,7 +226,7 @@ let todosLosEventos = [
     "ponencias": [
       {
         "titulo": "Mapeando la oferta sexual digital: análisis exploratorio de datos sobre el sistema prostibulario bonaerense (2019-2024)",
-        "expositores": "Riganti, Maria Valentina (CESXX, Humas, UNS, CONICET)- Cravero, Fiorella (ICIC, CONICET-UNS)"
+        "expositores": "Riganti, Maria Valentina (UNS, CONICET) - Cravero, Fiorella (ICIC, CONICET-UNS)"
       },
       {
         "titulo": "Arqueología de datos en Buenos Aires: sistemas de catalogación cultural del ecosistema municipal",
@@ -263,7 +272,7 @@ let todosLosEventos = [
       },
       {
         "titulo": "Usos y funciones que la esfera pública le atribuye a la literatura: un aporte desde las Humanidades Digitales",
-        "expositores": "lzate Gallo, Dora Cecilia - Pino Posada, Juan Pablo (Universidad EAFIT, Colombia)"
+        "expositores": "Alzate Gallo, Dora Cecilia - Pino Posada, Juan Pablo (Universidad EAFIT, Colombia)"
       }
     ]
   },
@@ -289,7 +298,7 @@ let todosLosEventos = [
       },
       {
         "titulo": "Avances en un proyecto de análisis automático del discurso amoroso: Procesamiento del Lenguaje Natural, Minería de Textos y Humanidades Digitales desde Argentina",
-        "expositores": "Nusch, Carlos Javier (UNLP)"
+        "expositores": "Nusch, Carlos Javier (UNLP) - del Rio Riande, Gimena (HD LAB, CONICET) - Cagnina, Leticia Cecilia (LIDIC, CONICET-UNSL) - Errecalde, Marcelo Luis (UNSL) - Antonelli, Leandro (LIFIA-UAI)"
       }
     ]
   },
@@ -299,23 +308,23 @@ let todosLosEventos = [
     "espacio": "Campus UNRN-Espacio 3",
     "tipo": "Ponencias 6",
     "titulo": "Inteligencia Artificial y Alfabetización",
-    "moderador": "Silvina Celeste Fazio",
+    "moderador": "Gabriela Comezaña",
     "ponencias": [
       {
         "titulo": "La herramienta PALABRIA: mucho más que un corrector textual",
-        "expositores": "Muñoz-Merino, Pedro J. - Moreno-Marcos, Pedro Manuel - Centeno Alejandre, Natalia - Serrano Marín, Marina - Pavón Lucero, María Victoria - Delgado Kloos, Carlos (Universidad Carlos III de Madrid,España)"
+        "expositores": "Muñoz-Merino, Pedro J. - Moreno-Marcos, Pedro Manuel - Centeno Alejandre, Natalia - Serrano Marín, Marina - Pavón Lucero, María Victoria - Delgado Kloos, Carlos (Universidad Carlos III de Madrid, España)"
       },
       {
         "titulo": "Escribir con IA: mediaciones tecnológicas y desafíos para la alfabetización académica",
-        "expositores": "Caixeta, Nájla - Cariaga, Romina (FADEL-UNCOMA)"
+        "expositores": "Caixeta, Nájla (FADEL-UNComa) - Cariaga, Romina (FADEL-UNComa)"
       },
       {
-        "titulo": "Aporte para un ecosistema digital de investigación: integración dinámica Zotero-Moodle mediante script desarrollado con IA",
-        "expositores": "Lanza, Luis Alberto (UCSF, IUNIR)"
+        "titulo": "Aporte para un ecosistema digital de investigación: integración dinámica Zotero-Moodle mediante un script desarrollado con IA",
+        "expositores": "Lanza, Luis Alberto (UCSF-IUNIR)"
       },
       {
         "titulo": "La formación del Profesorado en Lengua en tiempos de Inteligencia Artificial Generativa",
-        "expositores": "Fazio, Silvina Celeste - Comezaña, Gabriela Patricia (CURZAS-UNComa)"
+        "expositores": "Fazio, Silvina Celeste - Comezaña, Gabriela Patricia (CURZAS UNComa)"
       }
     ]
   },
@@ -329,23 +338,31 @@ let todosLosEventos = [
   },
   {
     "dia": "12 de noviembre",
+    "horario": "13:00",
+    "espacio": "Aula Magna",
+    "tipo": "Bienvenida",
+    "titulo": "Palabras de bienvenida",
+    "expositores": "Comité organizador AAHD · CIEDIS, UNRN y autoridades provinciales"
+  },
+  {
+    "dia": "12 de noviembre",
     "horario": "14:00 a 15:00",
     "espacio": "Aula Magna",
     "tipo": "Conferencia",
-    "titulo": "Palabras de bienvenida — Comité organizador AAHD · CIEDIS, UNRN y Conferencia plenaria: AI-assisted Reading: Modelos de Lenguaje en las Humanidades Digitales",
-    "expositores": "Ortuño Casanova, Rocío (UNED)"
+    "titulo": "AI-assisted Reading: Modelos de Lenguaje en las Humanidades Digitales",
+    "expositores": "Ortuño Casanova, Rocío (UNED) — Presenta: Laura Volkind"
   },
   {
     "dia": "12 de noviembre",
     "horario": "15:00 a 16:30",
-    "espacio": "Campus UNRNEspacio 1",
+    "espacio": "Campus UNRN-Espacio 1",
     "tipo": "Ponencias 7",
     "titulo": "Corpus y tecnología",
     "moderador": "Lucía Cantamutto",
     "ponencias": [
       {
         "titulo": "Una experiencia de anotación lingüística para el desarrollo de un sistema de clasificación automática de textos periodísticos",
-        "expositores": "de Matteis, Lorena (ICIC-UNS-CONICET) - Martín Istilart, Rocio (IIESS UNS) - Frapolli, Diamela - Chaparro, Aylen - Saint Lary, Stefania - Orler, Emanuel - Maguitman, Ana - Soto, Axel (UNS)"
+        "expositores": "de Matteis, Lorena M. A. (ICIC, UNS-CONICET) - Martín Istilart, Rocío (IIESS UNS) - Frapolli, Diamela - Chaparro, Aylén - Saint Lary, Stefania - Orler, Emanuel - Maguitman, Ana - Soto, Axel (UNS)"
       },
       {
         "titulo": "Investigación en Humanidades mediante medios digitales: análisis metodológico del empleo de WhatsApp como instrumento para la implementación de una entrevista digital",
@@ -353,10 +370,10 @@ let todosLosEventos = [
       },
       {
         "titulo": "CoDiCE: una base de datos para el análisis lingüístico de datos digitales",
-        "expositores": "Cantamutto, L. (CIEDIS, UNRN-CONICET), Boisselier, L. (CURZAS-UNComa), Vela Defla, C. (Universidad de Valladolid, Madrid)"
+        "expositores": "Cantamutto, L. (CIEDIS, UNRN-CONICET), Boisselier, L. (CURZAS-UNComa), Vela Defla, C. (Universidad de Valladolid, España)"
       },
       {
-        "titulo": "Medidas de prevención, preservación digital y curaduría de datos en plataformas de mensajería instantánea: El rol de la IA",
+        "titulo": "Medidas de prevención, preservación digital y curaduría de datos en plataformas de mensajería instantánea: El rol de la inteligencia artificial",
         "expositores": "Di Gionantonio, Alejandra - Ligorria, Laura - Manera, Roxana - Di Gionantonio, Mairena - Peralta, Lorena - Contrera, Luis (Investigadores independientes)"
       }
     ]
@@ -367,11 +384,11 @@ let todosLosEventos = [
     "espacio": "Campus UNRN-Espacio 2",
     "tipo": "Ponencias 8",
     "titulo": "Humanidades Digitales en acción 1",
-    "moderador": "Virginia, Brussa",
+    "moderador": "Laura Volkind",
     "ponencias": [
       {
-        "titulo": "Humanidades Digitales y variedades de la ciencia: epistemologías localizadas",
-        "expositores": "Peña Pimentel, Miriam (UNAM)"
+        "titulo": "Edición crítica digital de la revista Sitio (1981-1987): XML-TEI, embeddings y recuperación de información",
+        "expositores": "Cortés, Federico (CITECDE UNRN)"
       },
       {
         "titulo": "De los modelos generalistas a las arquitecturas especializadas: competencias cognitivas e inteligencia artificial en Humanidades Digitales",
@@ -383,17 +400,9 @@ let todosLosEventos = [
       },
       {
         "titulo": "Queremos cuidar/curar el patrimonio natural ¿por dónde empezar?: Proyecto Archivos del Paraná",
-        "expositores": "Brussa, Virginia (UNR) - del Rio, Gimena (HD LAB, CONICET)"
+        "expositores": "Brussa, Virginia (UNR) - Gimena del Rio Riande (HD Lab CONICET)"
       }
     ]
-  },
-  {
-    "dia": "12 de noviembre",
-    "horario": "15:00 a 16:30",
-    "espacio": "Campus UNRN-Espacio 3",
-    "tipo": "Semillero HD",
-    "titulo": "Semillero de ideas para proyectos de Humanidades Digitales",
-    "expositores": ""
   },
   {
     "dia": "12 de noviembre",
@@ -407,35 +416,31 @@ let todosLosEventos = [
     "dia": "12 de noviembre",
     "horario": "17:00 a 18:30",
     "espacio": "Campus UNRN-Espacio 1",
-    "tipo": "Ponencias 10",
-    "titulo": "Soberanía e Inteligencia Artificial",
-    "moderador": "Cecilia Camera",
+    "tipo": "Ponencias 9",
+    "titulo": "PANEL: Soberanía e inteligencia artificial",
+    "moderador": "Lucía Cantamutto",
     "ponencias": [
       {
         "titulo": "Inteligencia artificial situada y soberanía tecnológica: Modelos de Lenguaje Compactos (SLMs) de código abierto en entornos educativos con recursos limitados",
-        "expositores": "Camera, Cecilia - García Poggi, Ramiro - Boisselier, Leandro (CURZAS, UNComa)"
+        "expositores": "Camera, Cecilia - García Poggi, Ramiro - Boisselier, Leandro (CURZAS UNComa)"
       },
       {
         "titulo": "Inteligencia artificial sobre infraestructura local: un proyecto de gestión del patrimonio documental con soberanía tecnológica y de datos",
         "expositores": "Archuby, Gustavo (IdIHCS, CONICET)"
-      },
-      /*{
-        "titulo": "SoberanIA: Inferencia Local, Optimización Austera y Autonomía Pedagógica desde la Patagonia",
-        "expositores": "Novoa, Daniel Ricardo (Territorio y Desarrollo Local)"
-      }*/
+      }
     ]
   },
   {
     "dia": "12 de noviembre",
     "horario": "17:00 a 18:30",
     "espacio": "Campus UNRN-Espacio 2",
-    "tipo": "Ponencias 11",
+    "tipo": "Ponencias 10",
     "titulo": "Preservación, Colecciones y Digitalización",
-    "moderador": "Gimena del Río Riande",
+    "moderador": "Gimena del Rio Riande",
     "ponencias": [
       {
         "titulo": "Las Humanidades Digitales como marco estratégico para la preservación del patrimonio documental: enfoques, prácticas y desafíos",
-        "expositores": "Peña Pimentel, Miriam (Instituto de Investigaciones Bibliográficas-Universidad Nacional Autónoma de México)"
+        "expositores": "Peña Pimentel, Miriam (Instituto de Investigaciones Bibliográficas - Universidad Nacional Autónoma de México)"
       },
       {
         "titulo": "Producción científica mundial sobre digitalización documental con tecnologías emergentes en archivos (2023-2026)",
@@ -444,6 +449,10 @@ let todosLosEventos = [
       {
         "titulo": "Reflexiones sobre el macroanálisis supervisado de datos en proyectos de Humanidades Digitales",
         "expositores": "del Rio Riande, Gimena - De León, Romina (HD LAB, CONICET)"
+      },
+      {
+        "titulo": "¿Qué significa minimal computing en Argentina?",
+        "expositores": "Butelman, Matías (CNBA)"
       }
     ]
   },
@@ -451,7 +460,7 @@ let todosLosEventos = [
     "dia": "12 de noviembre",
     "horario": "17:00 a 18:30",
     "espacio": "Campus UNRN-Espacio 3",
-    "tipo": "Ponencias 9",
+    "tipo": "Ponencias 11",
     "titulo": "Sociedad y subjetividades",
     "moderador": "María Valentina Riganti",
     "ponencias": [
@@ -460,7 +469,7 @@ let todosLosEventos = [
         "expositores": "Giordana, Patricia - Aguirre, Guillermina (UNRN)"
       },
       {
-        "titulo": "(re)Ciclarse en la ciudad: el archivo digital comunitario y la posvida de la ciudad latinoamericana",
+        "titulo": "(re)Ciclarse en la ciudad: el archivo digital comunitario y la vida posvida de la ciudad latinoamericana",
         "expositores": "Zamora, Alejandro (York University, Canadá)"
       },
       {
@@ -474,13 +483,13 @@ let todosLosEventos = [
     "horario": "18:30 a 19:30",
     "espacio": "Aula Magna",
     "tipo": "Conferencia",
-    "titulo": "Conferencia: Still, We Build: Collaboration Across Borders in Digital Humanities",
-    "expositores": "Rosenblum, Brian (University of Kansas, Estados Unidos)"
+    "titulo": "Still, We Build: Collaboration Across Borders in Digital Humanities",
+    "expositores": "Rosenblum, Brian (University of Kansas, Estados Unidos) — Presenta: Gimena del Río"
   },
   {
     "dia": "12 de noviembre",
     "horario": "20:30",
-    "espacio": "Lugar a definir",
+    "espacio": "La Balsa",
     "tipo": "Evento Social",
     "titulo": "CENA CAMARADERÍA",
     "expositores": ""
@@ -496,8 +505,8 @@ let todosLosEventos = [
   {
     "dia": "13 de noviembre",
     "horario": "8:00 a 10:00",
-    "espacio": "Campus UNRN-Espacio 1",
-    "tipo": "Taller 12",
+    "espacio": "UPCN",
+    "tipo": "Taller 11",
     "titulo": "Salud y Humanidades Digitales en tiempos de inteligencia artificial: paradigmas, tensiones y alcances",
     "expositores": "Goldsmidt, Julieta Yasmín (UBA-UTN)",
     "resumen": "El procesamiento de registros médicos, organizados en datos discretos y tabulables, cuenta hoy con herramientas robustas. El taller propone recorrer tres modos posibles de incorporar IA a este material: el consumo de APIs comerciales, el despliegue de modelos abiertos en infraestructura híbrida con GPU, y la ejecución local de modelos pequeños bajo el paradigma del minimal computing. La actividad cierra con un intercambio sobre experiencias regionales, donde se discutirán las dimensiones políticas, éticas y culturales en juego."
@@ -506,16 +515,16 @@ let todosLosEventos = [
     "dia": "13 de noviembre",
     "horario": "8:00 a 10:00",
     "espacio": "Campus UNRN-Espacio 2",
-    "tipo": "Taller 13",
+    "tipo": "Taller 12",
     "titulo": "Inteligencia artificial para la extracción de información en Ciencias Humanas y Sociales: grafos de conocimiento a partir de documentos no estructurados",
-    "expositores": "Cortés, Federico (CITECDE, UNRN)",
-    "resumen": "Los grandes modelos de lenguaje (LLM) han abierto la posibilidad de extraer información estructurada a partir de documentoso no estructurados. Este taller, de orientación práctica, introduce a investigadores e investigadoras de Ciencias Humanas y Sociales en la extracción automática de grafos de conocimiento (knowledge graphs) desde un corpus de PDF, utilizando la herramienta de código abierto KGGen. El recorrido parte de un problema concreto: la mayor parte del patrimonio textual con el que trabajamos —artículos, revistas, archivos— circula como documentos no estructurados, de los que resulta difícil derivar datos analizables. Tomaremos como caso la revista literaria argentina SITIO (1981-1987). No se requieren conocimientos previos de programación; se trabajará con materiales guiados paso a paso. El código sobre el que nos basaremos está publicado en https://github.com/fedexx1/sitio-revista."
+    "expositores": "Cortés, Federico (CITECDE UNRN)",
+    "resumen": "Los grandes modelos de lenguaje (LLM) han abierto la posibilidad de extraer información estructurada a partir de documentos no estructurados. Este taller, de orientación práctica, introduce a investigadores e investigadoras de Ciencias Humanas y Sociales en la extracción automática de grafos de conocimiento (knowledge graphs) desde un corpus de PDF, utilizando la herramienta de código abierto KGGen. El recorrido parte de un problema concreto: la mayor parte del patrimonio textual con el que trabajamos —artículos, revistas, archivos— circula como documentos no estructurados, de los que resulta difícil derivar datos analizables. Tomaremos como caso la revista literaria argentina SITIO (1981-1987). No se requieren conocimientos previos de programación; se trabajará con materiales guiados paso a paso. El código sobre el que nos basaremos está publicado en https://github.com/fedexx1/sitio-revista."
   },
   {
     "dia": "13 de noviembre",
     "horario": "8:00 a 10:00",
     "espacio": "Manzana Histórica-Feria del Libro",
-    "tipo": "Taller 14",
+    "tipo": "Taller 13",
     "titulo": "Trabajo editorial en revistas científicas 2: Introducción a la gestión administrativa a través de OJS",
     "expositores": "Corbellini, Natalia (UNLP)",
     "resumen": "El taller propone un primer acercamiento a la gestión global del proceso editorial a través de la plataforma OJS, personalizando las diferentes opciones para adecuarlas al modo de trabajo de cada revista y su equipo editorial. Tendrá en cuenta las actualizaciones disponibles de módulos para marcado y publicación. Se recorrerán distintas opciones de la plataforma para vincularse con autores, lectores, revisores y miembros de los comités académicos."
@@ -530,9 +539,9 @@ let todosLosEventos = [
   },
   {
     "dia": "13 de noviembre",
-    "horario": "10:00 a 12:00",
+    "horario": "10:30 a 12:00",
     "espacio": "Campus UNRN-Espacio 1",
-    "tipo": "Ponencias 12",
+    "tipo": "Ponencias 13",
     "titulo": "Infraestructuras y ciencia abierta",
     "moderador": "Pamela Gionco",
     "ponencias": [
@@ -556,9 +565,9 @@ let todosLosEventos = [
   },
   {
     "dia": "13 de noviembre",
-    "horario": "10:00 a 12:00",
+    "horario": "10:30 a 12:00",
     "espacio": "Campus UNRN-Espacio 2",
-    "tipo": "Ponencias 13",
+    "tipo": "Ponencias 14",
     "titulo": "Humanidades Digitales en acción 2",
     "moderador": "Soledad Vercellino",
     "ponencias": [
@@ -582,18 +591,18 @@ let todosLosEventos = [
   },
   {
     "dia": "13 de noviembre",
-    "horario": "10:00 a 12:00",
+    "horario": "10:30 a 12:00",
     "espacio": "Manzana histórica-Feria del libro",
-    "tipo": "Ponencias 14",
+    "tipo": "Ponencias 15",
     "titulo": "Humanidades Digitales y campo editorial",
     "moderador": "Jesica Stecco",
     "ponencias": [
       {
         "titulo": "Colegios invisibles y capital simbólico: Análisis de las redes de mentoría en el sector editorial argentino (1991-2025)",
-        "expositores": "Dato, Hebe (IIDYPCA, CONICET-UNRN) - Passo, Jorgelina (UBA)"
+        "expositores": "Dato, Hebe (IIDYPCA, CONICET-UNRN) - Jorgelina Passo (UBA)"
       },
       {
-        "titulo": "Fanzines argentinos: experiencias de digitalización y publicación 'mínimas'",
+        "titulo": "Fanzines argentinos: experiencias de digitalización y publicación \"mínimas\"",
         "expositores": "del Rio Riande, Gimena - Volkind, Laura (HD LAB, CONICET)"
       },
       {
@@ -608,11 +617,11 @@ let todosLosEventos = [
   },
   {
     "dia": "13 de noviembre",
-    "horario": "12:00 a 13:30",
+    "horario": "12:30 a 13:30",
     "espacio": "Campus UNRN-Espacio 1",
     "tipo": "Actividad",
     "titulo": "Actualización de actividades de la AAHD y conformación del grupo de interés en gestión de datos",
-    "expositores": "Brownell, Pamela"
+    "expositores": "Pamela Brownell"
   },
   {
     "dia": "13 de noviembre",
@@ -626,25 +635,21 @@ let todosLosEventos = [
     "dia": "13 de noviembre",
     "horario": "15:00 a 16:30",
     "espacio": "Campus UNRN-Espacio 1",
-    "tipo": "Ponencias 15",
+    "tipo": "Ponencias 16",
     "titulo": "Educación y digitalidad",
     "moderador": "Viviana Svensson",
     "ponencias": [
       {
         "titulo": "Reconfiguraciones del aprendizaje colectivo en la Patagonia Norte: aportes epistémicos desde una mirada crítica decolonial",
-        "expositores": " Honcharuk, Mileva (Instituto de Formación Docente Continua de Viedma) - Marin Aranda, María Alejandra (Instituto de Formación Docente Continua de Sierra Grande)"
+        "expositores": "Honcharuk, Mileva (Instituto de Formación Docente Continua de Viedma) - Marin Aranda, María Alejandra (Instituto de Formación Docente Continua de Sierra Grande)"
       },
       {
         "titulo": "Ingresantes universitarios y percepciones sobre IA. Explorando en la Lic. en Sistemas de la Universidad Nacional de Río Negro",
         "expositores": "Llancapán, Emanuel (UNRN) - Lovos, Edith (CIEDIS, UNRN)- Cantamutto, Lucía (CIEDIS, UNRN-CONICET)"
       },
       {
-        "titulo": "Objetos técnicos y regímenes en conflicto en la educación nacida digital",
-        "expositores": "Kesler, Betina (Universidad Austral)"
-      },
-      {
         "titulo": "La calidad educativa en disputa: una mirada tecnopolítica a los entornos virtuales desde las Humanidades Digitales Críticas",
-        "expositores": "Svensson, Viviana (CURZAS, UNCOMA)"
+        "expositores": "Svensson, Viviana (CURZAS UNComa)"
       }
     ]
   },
@@ -652,7 +657,7 @@ let todosLosEventos = [
     "dia": "13 de noviembre",
     "horario": "15:00 a 16:30",
     "espacio": "Campus UNRN-Espacio 2",
-    "tipo": "Ponencias 16",
+    "tipo": "Ponencias 17",
     "titulo": "Humanidades Digitales en acción 3",
     "moderador": "Luna Cháves",
     "ponencias": [
@@ -665,10 +670,6 @@ let todosLosEventos = [
         "expositores": "Roca, Ignacio (UNLPAM)"
       },
       {
-        "titulo": "¿Qué significa minimal computing en Argentina?",
-        "expositores": "Butelman, Matías (CNBA)"
-      },
-      {
         "titulo": "La utilidad de Wikipedia en espacios educativos",
         "expositores": "Chaves, Luna (Wikimedia Argentina-UTDT)"
       }
@@ -678,7 +679,7 @@ let todosLosEventos = [
     "dia": "13 de noviembre",
     "horario": "15:00 a 16:30",
     "espacio": "Manzana Histórica-Feria del Libro",
-    "tipo": "Panel",
+    "tipo": "Panel 3",
     "titulo": "HD LAB: una apuesta por la sostenibilidad, sustentabilidad y preservación en Humanidades Digitales",
     "expositores": "del Rio Riande, Gimena - De León, Romina - Calarco, Gabriel - Volkind, Laura (IIBICRIT/HD LAB, CONICET) - Hernández, Nidia (DILA/HD LAB, CONICET)"
   }
