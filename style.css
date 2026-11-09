@@ -279,6 +279,8 @@ button {
 }
 
 .linea-colectivo {
+    display: flex;
+    flex-direction: column;
     padding: 20px;
     background: var(--blanco);
     border: 1px solid var(--unrn-gris-medio);
@@ -322,10 +324,24 @@ button {
     display: flex;
     flex-wrap: wrap;
     gap: 10px 18px;
-    margin-top: 14px;
+    margin-top: auto;
+    padding-top: 14px;
 }
 
 .enlaces-linea a {
+    color: var(--unrn-rojo);
+    font-weight: bold;
+}
+
+.fuentes-colectivos {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px 24px;
+    margin: 0 auto 18px;
+}
+
+.fuentes-colectivos a {
     color: var(--unrn-rojo);
     font-weight: bold;
 }
