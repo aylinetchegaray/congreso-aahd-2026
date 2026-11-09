@@ -334,11 +334,18 @@ button {
 }
 
 .fuentes-colectivos {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 10px 24px;
+    max-width: 1000px;
     margin: 0 auto 18px;
+    text-align: center;
+}
+
+.fuentes-colectivos h3 {
+    grid-column: 1 / -1;
+    margin: 0;
+    font-size: 1rem;
 }
 
 .fuentes-colectivos a {
@@ -472,6 +479,14 @@ button {
 
     .lineas-colectivo {
         grid-template-columns: 1fr;
+    }
+
+    .fuentes-colectivos {
+        grid-template-columns: 1fr;
+    }
+
+    .fuentes-colectivos h3 {
+        grid-column: auto;
     }
 
     .lista-hoteles li {
