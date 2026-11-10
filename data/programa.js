@@ -37,15 +37,6 @@ let todosLosEventos = [
   {
     "dia": "11 de noviembre",
     "horario": "11:00 a 13:00",
-    "espacio": "Campus UNRN-Espacio 1",
-    "tipo": "Taller 4",
-    "titulo": "Reconocimiento y transcripción automática de textos impresos antiguos con Transkribus",
-    "expositores": "De León, Romina (HD LAB, CONICET)",
-    "resumen": "En este taller se ofrecerá una introducción práctica al uso de Transkribus, una de las plataformas más difundidas para el reconocimiento automático de texto manuscrito (Handwritten Text Recognition, HTR), aplicada al estudio de fuentes antiguas. En primer lugar, se abordarán los fundamentos conceptuales del HTR, sus diferencias respecto de las tecnologías tradicionales de OCR y las posibilidades que ofrecen los modelos de aprendizaje automático para la lectura de escrituras históricas. Se trabajará sobre aspectos clave del flujo de trabajo en Transkribus: preparación y carga de documentos, análisis del diseño de página, segmentación de regiones y líneas de texto, aplicación de modelos públicos, evaluación de resultados, corrección de transcripciones y exportación de datos para su posterior análisis."
-  },
-  {
-    "dia": "11 de noviembre",
-    "horario": "11:00 a 13:00",
     "espacio": "UPCN-Alem 240",
     "tipo": "Taller 5",
     "titulo": "Construcción de tableros interactivos en Tableau a partir de fuentes históricas",
