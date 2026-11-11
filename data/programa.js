@@ -329,7 +329,7 @@ let todosLosEventos = [
   },
   {
     "dia": "12 de noviembre",
-    "horario": "13:00",
+    "horario": "13:30",
     "espacio": "Aula Magna",
     "tipo": "Bienvenida",
     "titulo": "Palabras de bienvenida",
