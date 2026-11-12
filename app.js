@@ -6,7 +6,7 @@ const selectTipo = document.getElementById('filtro-tipo');
 const selectHorario = document.getElementById('filtro-horario');
 const botonLimpiarFiltros = document.getElementById('btn-limpiar-filtros');
 
-let diaActual = '11 de noviembre';
+let diaActual = '12 de noviembre';
 
 // ==========================================================
 // MODAL DE INFORMACIÓN
@@ -451,4 +451,11 @@ document.getElementById('modal-info').addEventListener('close', () => {
 // ==========================================================
 // INICIALIZAR
 // ==========================================================
+botonesPestañas.forEach(b => {
+    if (b.getAttribute('data-dia') === diaActual) {
+        b.classList.add('activo');
+    } else {
+        b.classList.remove('activo');
+    }
+});
 aplicarFiltros();

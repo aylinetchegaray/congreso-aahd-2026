@@ -604,6 +604,33 @@ button {
     color: var(--blanco);
 }
 
+.boton-pestaña.dia-pasado,
+.dia-pasado {
+    opacity: 0.6;
+    background-color: #f1f5f9;
+    color: #64748b;
+    border-color: #cbd5e1;
+    font-weight: normal;
+    cursor: pointer;
+}
+
+.boton-pestaña.dia-pasado:hover,
+.dia-pasado:hover {
+    opacity: 0.85;
+    background-color: #e2e8f0;
+    color: var(--unrn-oscuro);
+    border-color: #94a3b8;
+}
+
+.boton-pestaña.dia-pasado.activo,
+.dia-pasado.activo {
+    opacity: 1;
+    border-color: var(--unrn-oscuro);
+    background-color: var(--unrn-oscuro);
+    color: var(--blanco);
+    font-weight: bold;
+}
+
 /* --- PAUSAS --- */
 .tarjeta-evento.pausa {
     background-color: var(--unrn-claro);

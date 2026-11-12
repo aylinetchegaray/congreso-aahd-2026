@@ -392,6 +392,22 @@ let todosLosEventos = [
       {
         "titulo": "Queremos cuidar/curar el patrimonio natural ¿por dónde empezar?: Proyecto Archivos del Paraná",
         "expositores": "Brussa, Virginia (UNR) - Gimena del Rio Riande (HD Lab CONICET)"
+      },
+      {
+        "titulo": "La utilidad de Wikipedia en espacios educativos",
+        "expositores": "Chaves, Luna (Wikimedia Argentina-UTDT)"
+      },
+      {
+        "titulo": "Reconfiguraciones del aprendizaje colectivo en la Patagonia Norte: aportes epistémicos desde una mirada crítica decolonial",
+        "expositores": "Honcharuk, Mileva (Instituto de Formación Docente Continua de Viedma) - Marin Aranda, María Alejandra (Instituto de Formación Docente Continua de Sierra Grande)"
+      },
+      {
+        "titulo": "La calidad educativa en disputa: una mirada tecnopolítica a los entornos virtuales desde las Humanidades Digitales Críticas",
+        "expositores": "Svensson, Viviana (CURZAS UNComa)"
+      },
+      {
+        "titulo": "Ingresantes universitarios y percepciones sobre IA. Explorando en la Lic. en Sistemas de la Universidad Nacional de Río Negro",
+        "expositores": "Llancapán, Emanuel (UNRN) - Lovos, Edith (CIEDIS, UNRN)- Cantamutto, Lucía (CIEDIS, UNRN-CONICET)"
       }
     ]
   },
@@ -418,6 +434,10 @@ let todosLosEventos = [
       {
         "titulo": "Inteligencia artificial sobre infraestructura local: un proyecto de gestión del patrimonio documental con soberanía tecnológica y de datos",
         "expositores": "Archuby, Gustavo (IdIHCS, CONICET)"
+      },
+      {
+        "titulo": "VDEO SoberanIA: Inferencia Local, Optimización Austera y Autonomía Pedagógica desde la Patagonia",
+        "expositores": "Novoa, Daniel Ricardo (Territorio y Desarrollo Local, Sierra Grande, Río Negro)"
       }
     ]
   },
@@ -434,16 +454,12 @@ let todosLosEventos = [
         "expositores": "Peña Pimentel, Miriam (Instituto de Investigaciones Bibliográficas - Universidad Nacional Autónoma de México)"
       },
       {
-        "titulo": "Producción científica mundial sobre digitalización documental con tecnologías emergentes en archivos (2023-2026)",
-        "expositores": "Elera-Mendieta, Ica (Universidad Nacional Mayor de San Marcos, Perú)"
+        "titulo": "¿Qué significa minimal computing en Argentina?",
+        "expositores": "Butelman, Matías (CNBA)"
       },
       {
         "titulo": "Reflexiones sobre el macroanálisis supervisado de datos en proyectos de Humanidades Digitales",
         "expositores": "del Rio Riande, Gimena - De León, Romina (HD LAB, CONICET)"
-      },
-      {
-        "titulo": "¿Qué significa minimal computing en Argentina?",
-        "expositores": "Butelman, Matías (CNBA)"
       }
     ]
   },
@@ -571,8 +587,8 @@ let todosLosEventos = [
         "expositores": "Farias, Macarena (IECH, CONICET-UNR)"
       },
       {
-        "titulo": "Humanidades digitales y dispositivos de campo: la inventiva etnográfica en el estudio de prácticas digitaletradas",
-        "expositores": "Eisner, Laura (UNRN)"
+        "titulo": "VIDEOProducción científica mundial sobre digitalización documental con tecnologías emergentes en archivos (2023-2026)",
+        "expositores": "Elera-Mendieta, Ica (Universidad Nacional Mayor de San Marcos, Perú)"
       },
       {
         "titulo": "Transformación Digital en Río Negro: negociaciones cotidianas en la implementación de la Historia de Salud Integrada (HSI) en Centros de Atención Primaria de la Salud",
@@ -622,29 +638,7 @@ let todosLosEventos = [
     "titulo": "PAUSA ALMUERZO",
     "expositores": ""
   },
-  {
-    "dia": "13 de noviembre",
-    "horario": "15:00 a 16:30",
-    "espacio": "Campus UNRN-Espacio 1",
-    "tipo": "Ponencias 16",
-    "titulo": "Educación y digitalidad",
-    "moderador": "Viviana Svensson",
-    "ponencias": [
-      {
-        "titulo": "Reconfiguraciones del aprendizaje colectivo en la Patagonia Norte: aportes epistémicos desde una mirada crítica decolonial",
-        "expositores": "Honcharuk, Mileva (Instituto de Formación Docente Continua de Viedma) - Marin Aranda, María Alejandra (Instituto de Formación Docente Continua de Sierra Grande)"
-      },
-      {
-        "titulo": "Ingresantes universitarios y percepciones sobre IA. Explorando en la Lic. en Sistemas de la Universidad Nacional de Río Negro",
-        "expositores": "Llancapán, Emanuel (UNRN) - Lovos, Edith (CIEDIS, UNRN)- Cantamutto, Lucía (CIEDIS, UNRN-CONICET)"
-      },
-      {
-        "titulo": "La calidad educativa en disputa: una mirada tecnopolítica a los entornos virtuales desde las Humanidades Digitales Críticas",
-        "expositores": "Svensson, Viviana (CURZAS UNComa)"
-      }
-    ]
-  },
-  {
+  /*{
     "dia": "13 de noviembre",
     "horario": "15:00 a 16:30",
     "espacio": "Campus UNRN-Espacio 2",
@@ -660,12 +654,8 @@ let todosLosEventos = [
         "titulo": "Hacia una praxis situada: institucionalización incipiente de las Humanidades Digitales en la Universidad Nacional de La Pampa",
         "expositores": "Roca, Ignacio (UNLPAM)"
       },
-      {
-        "titulo": "La utilidad de Wikipedia en espacios educativos",
-        "expositores": "Chaves, Luna (Wikimedia Argentina-UTDT)"
-      }
     ]
-  },
+  },*/
   {
     "dia": "13 de noviembre",
     "horario": "15:00 a 16:30",
