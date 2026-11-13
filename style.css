@@ -631,6 +631,18 @@ button {
     font-weight: bold;
 }
 
+/* --- BANNER CONGRESO FINALIZADO --- */
+.banner-finalizado {
+    background-color: var(--unrn-oscuro, #1a1d20);
+    color: #ffffff;
+    text-align: center;
+    padding: 14px 20px;
+    font-weight: 700;
+    font-size: 15px;
+    letter-spacing: 0.5px;
+    border-bottom: 2px solid var(--unrn-rojo, #E3002B);
+}
+
 /* --- PAUSAS --- */
 .tarjeta-evento.pausa {
     background-color: var(--unrn-claro);

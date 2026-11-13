@@ -6,7 +6,7 @@ const selectTipo = document.getElementById('filtro-tipo');
 const selectHorario = document.getElementById('filtro-horario');
 const botonLimpiarFiltros = document.getElementById('btn-limpiar-filtros');
 
-let diaActual = '12 de noviembre';
+let diaActual = '11 de noviembre';
 
 // ==========================================================
 // MODAL DE INFORMACIÓN
@@ -449,13 +449,106 @@ document.getElementById('modal-info').addEventListener('close', () => {
 });
 
 // ==========================================================
-// INICIALIZAR
+// GESTIÓN AUTOMÁTICA SEGÚN FECHA DEL SISTEMA
 // ==========================================================
-botonesPestañas.forEach(b => {
-    if (b.getAttribute('data-dia') === diaActual) {
-        b.classList.add('activo');
+function configurarEstadoSegunFecha() {
+    const ahora = new Date();
+    const anio = ahora.getFullYear();
+    const mes = ahora.getMonth(); // 10 = Noviembre (0-indexed)
+    const dia = ahora.getDate();
+
+    const btnDia1 = document.querySelector('.boton-pestaña[data-dia="11 de noviembre"]');
+    const btnDia2 = document.querySelector('.boton-pestaña[data-dia="12 de noviembre"]');
+    const btnDia3 = document.querySelector('.boton-pestaña[data-dia="13 de noviembre"]');
+    const btnTodos = document.querySelector('.boton-pestaña[data-dia="todos"]');
+
+    // Limpiar clases iniciales
+    botonesPestañas.forEach(b => b.classList.remove('activo', 'dia-pasado'));
+
+    if (anio < 2026 || (anio === 2026 && (mes < 10 || (mes === 10 && dia <= 11)))) {
+        // Día 1: 11 de noviembre (o previo)
+        diaActual = '11 de noviembre';
+        if (btnDia1) {
+            btnDia1.classList.add('activo');
+            btnDia1.textContent = 'Día 1 (11 Nov)';
+        }
+        if (btnDia2) btnDia2.textContent = 'Día 2 (12 Nov)';
+        if (btnDia3) btnDia3.textContent = 'Día 3 (13 Nov)';
+    } else if (anio === 2026 && mes === 10 && dia === 12) {
+        // Día 2: 12 de noviembre
+        diaActual = '12 de noviembre';
+        if (btnDia1) {
+            btnDia1.classList.add('dia-pasado');
+            btnDia1.textContent = 'Día 1 (Finalizado)';
+        }
+        if (btnDia2) {
+            btnDia2.classList.add('activo');
+            btnDia2.textContent = 'Día 2 (12 Nov)';
+        }
+        if (btnDia3) btnDia3.textContent = 'Día 3 (13 Nov)';
+    } else if (anio === 2026 && mes === 10 && dia === 13) {
+        // Día 3: 13 de noviembre
+        diaActual = '13 de noviembre';
+        if (btnDia1) {
+            btnDia1.classList.add('dia-pasado');
+            btnDia1.textContent = 'Día 1 (Finalizado)';
+        }
+        if (btnDia2) {
+            btnDia2.classList.add('dia-pasado');
+            btnDia2.textContent = 'Día 2 (Finalizado)';
+        }
+        if (btnDia3) {
+            btnDia3.classList.add('activo');
+            btnDia3.textContent = 'Día 3 (13 Nov)';
+        }
     } else {
-        b.classList.remove('activo');
+        // Día 14 de noviembre o posterior (Congreso Finalizado)
+        diaActual = 'todos'; // Seleccionado por defecto para mostrar el archivo completo
+
+        if (btnDia1) {
+            btnDia1.classList.add('dia-pasado');
+            btnDia1.textContent = 'Día 1 (Finalizado)';
+        }
+        if (btnDia2) {
+            btnDia2.classList.add('dia-pasado');
+            btnDia2.textContent = 'Día 2 (Finalizado)';
+        }
+        if (btnDia3) {
+            btnDia3.classList.add('dia-pasado');
+            btnDia3.textContent = 'Día 3 (Finalizado)';
+        }
+        if (btnTodos) {
+            btnTodos.classList.add('activo');
+        }
+
+        // Ocultar por completo las acciones globales (botones de inscripción)
+        const accionesGlobales = document.querySelector('.acciones-globales');
+        if (accionesGlobales) {
+            accionesGlobales.style.display = 'none';
+        }
+
+        // Inyectar dinámicamente banner debajo del header institucional
+        const header = document.querySelector('header');
+        if (header && !document.getElementById('banner-congreso-finalizado')) {
+            const banner = document.createElement('div');
+            banner.id = 'banner-congreso-finalizado';
+            banner.className = 'banner-finalizado no-imprimir';
+            banner.textContent = 'El Congreso AAHD 2026 ha finalizado. ¡Gracias por participar!';
+            header.insertAdjacentElement('afterend', banner);
+        }
     }
-});
-aplicarFiltros();
+}
+
+// ==========================================================
+// INICIALIZACIÓN
+// ==========================================================
+function inicializarApp() {
+    configurarEstadoSegunFecha();
+    aplicarFiltros();
+}
+
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', inicializarApp);
+} else {
+    inicializarApp();
+}
